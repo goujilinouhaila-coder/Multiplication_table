@@ -1,5 +1,7 @@
 # Multiplication_table 
 
+<img src="https://zupimages.net/viewer.php?id=21/09/xw0d.png" alt="image">
+
 
 ## Synopsis
 In this project; we will explore some of the symmetries that hide in the distribution of numbers in the multiplication table of positive integers when viewed through modulo k arithmetic as we vary k; in a way that we know less often: Modular Arithmetic. Based on our construction process; The graphic presentation contains only straight lines; in other words, it is a kind of optical illusion that we are witnessing and it is the entanglement of all these straight lines that gives us the impression of this curved figure that appears.
