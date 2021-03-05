@@ -1,6 +1,6 @@
 # Multiplication_table 
 
-<img src="https://zupimages.net/viewer.php?id=21/09/xw0d.png" alt="image">
+<img src="https://www.zupimages.net/up/21/09/xw0d.png" alt="image">
 
 
 ## Synopsis
