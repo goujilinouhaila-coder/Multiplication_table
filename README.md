@@ -11,6 +11,17 @@ The only image that can possibly be remembered for modular arithmetic is that of
 ## Wonder 
 By exploring the multiplication tables, each time we will see on the figure less strokes of what should be there; this means that the square of the multiplication table that is being studied is equal to 1 modulate the number of points. 
 
+## Getting the code
+Clone project and charge current directory to it 
+
+```sh 
+    git clone git@github.com:goujilinouhaila-coder/Multiplication_table.git
+```
+
+```
+   cd Multiplication_table
+```
+
 ## Install
 
 ##  Documentation
