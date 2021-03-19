@@ -32,9 +32,10 @@ Clone project and charge current directory to it
 
 - Goujili Nouhaila, nouhaila.goujili@etu.umontpellier.fr
 - Berrandou Assia, assia.berrandou@etu.umontpellier.fr     
-- Sobolak Valerian valerian.sobolak@etu.umontpellier.fr
+- Sobolak Valerian, valerian.sobolak@etu.umontpellier.fr
 - Sene Assane, assane.sene@etu.umontpellier.fr
 
 ## URL
 
 https://www.youtube.com/watch?v=-X49VQgi86E
+
