@@ -1,8 +1,15 @@
 import multiplication_table
+import numpy as np
 
-graph_object = multiplication_table.Graph(6, 5)
-graph_object.add_edge(2, 4)
-graph_object.add_edge(1, 5)
-graph_object.add_edge(4, 5)
+
+#Enter number of table (can be an integer or a float) and modulo number (must be an integer)
+
+table_number = 2 #problem if table_number is a float
+modulo_number = 13
+
+graph_object = multiplication_table.Graph(table_number, modulo_number)
+graph_object.create_matrix()
+
 graph_object.print_matrix()
 graph_object.print_graph()
+
