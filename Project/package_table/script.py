@@ -1,5 +1,5 @@
 import multiplication_table
-import numpy as np
+import tkinter as Tk
 
 
 #Enter number of table (can be an integer or a float) and modulo number (must be an integer)
@@ -13,3 +13,6 @@ graph_object.create_matrix()
 graph_object.print_matrix()
 graph_object.print_graph()
 
+root = Tk()
+init_IU(root)
+root.mainloop()
