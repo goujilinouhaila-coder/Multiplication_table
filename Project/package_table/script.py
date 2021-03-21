@@ -14,5 +14,5 @@ graph_object.print_matrix()
 graph_object.print_graph()
 
 root = Tk()
-init_IU(root)
+init_IU(root, 1)
 root.mainloop()
