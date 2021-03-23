@@ -31,11 +31,25 @@ def dot(canvas, graph, R):
         canvas.create_oval(A, B, fill='black') # create modulo_number circles (R=3)
 
 
-def nb_peak():
+def nb_peak(cnv, a, b, j, Dots_C):
     # Each point is associated with a number, starting with 0 until modulo_number - 1 
     # Maybe use this function only if the modulo_number < 50 or 100, to not overload the graph ?
-
-
+    if a == 200 and b < 1e-10:
+        cnv.create_text(Dots_C, anchor = 's', text = str(j), font = "Arial 10 bold")
+    elif a == -200 and b < 1e-10:
+        cnv.create_text(Dots_C, anchor = 'n', text = str(j), font = "Arial 10 bold")
+    elif a < 1e-10  and b == 200:
+        cnv.create_text(Dots_C, anchor = 'w', text = str(j), font = "Arial 10 bold")
+    elif a < 1e-10 and b == -200:
+        cnv.create_text(Dots_C, anchor = 'e', text = str(j), font = "Arial 10 bold")
+    elif 0 < a < 200 and 0 < b < 200:
+        cnv.create_text(Dots_C, anchor = 'sw', text = str(j), font = "Arial 10 bold")
+    elif -200 < a < 0 and 0 < b < 200:
+        cnv.create_text(Dots_C, anchor = 'nw', text = str(j), font = "Arial 10 bold")
+    elif -200 < a < 0 and -200 < b < 0 :
+        cnv.create_text(Dots_C, anchor = 'ne', text = str(j), font = "Arial 10 bold")
+    else :
+        cnv.create_text(Dots_C, anchor = 'se', text = str(j), font = "Arial 10 bold")
 
 
 # Exemple
