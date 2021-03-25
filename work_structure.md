@@ -7,9 +7,9 @@ We decide that the assignment of tasks will take the following way:
 2. For The first visualization: There will be three sub-tasks:
 
 <ul>
-<li>Display the circle, dots functions for the base in function the modulo by **Valerian Sobolak** </li>
-<li>Display of edges in function of the modulo and the number of multiplication table by: **Assia Berrandou** </li>
-<li>Creation of the graphic user interface by: **Nouhaila Goujili**</li>
+<li>Display the circle, dots functions for the base in function the modulo by Valerian Sobolak </li>
+<li>Display of edges in function of the modulo and the number of multiplication table by: Assia Berrandou </li>
+<li>Creation of the graphic user interface by: Nouhaila Goujili</li>
 </ul>
 
 
