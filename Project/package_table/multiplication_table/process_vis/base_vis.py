@@ -18,18 +18,20 @@ def circle(canvas, C, R):
     B = (xC+R, yC+R)
     return canvas.create_oval(A, B, width = 2)
 
+def coord(x, y, a, b):
+    return(x+b, y-a)
 
 def dot(canvas, graph, R):
     # Add the number of points needed on the cercle, they are proportionally spaced (angle : 2pi/modulo_number)
     t = (2*np.pi)/graph # I remove the graph.mod and put only graph instead, need to see this with you
-    for k in range(graph): # angle for the dots (modulo_number)
-        angle = [(R*np.cos(k*t), R*np.sin(k*t))] # return base can be use for the creation of the edges
+    angle = [(R*np.cos(k*t), R*np.sin(k*t)) for k in range(graph)] # angle for the dots (modulo_number)
     for j in range(len(angle)):
         a, b = angle[j]
-        A = (322+b, 322-a) 
-        B = (328+b, 328-a)
+        A = coord(322, 322, a, b)
+        B = coord(328, 328, a, b)
+        Dots_C = (325+b, 325-a) # Center of each dots
         canvas.create_oval(A, B, fill='black') # create modulo_number circles (R=3)
-
+        nb_peak(canvas, a, b, j, Dots_C)
 
 def nb_peak(cnv, a, b, j, Dots_C):
     # Each point is associated with a number, starting with 0 until modulo_number - 1 
@@ -51,23 +53,5 @@ def nb_peak(cnv, a, b, j, Dots_C):
     else :
         cnv.create_text(Dots_C, anchor = 'se', text = str(j), font = "Arial 10 bold")
 
-
-# Exemple
-modulo = 10
-C = (325,325)
-R = 200
-
-root = Tk()
-cnv = Canvas(root, width = 650 , height = 650, bg = 'ivory')
-cnv.pack()
-t = (2*np.pi)/modulo
-angle = [(R*np.cos(k*t), R*np.sin(k*t)) for k in range(modulo)]
-for j in range(len(angle)):
-    a, b = angle[j]
-    A = (322+b, 322-a)
-    B = (328+b, 328-a)
-    cnv.create_oval(A, B, fill='black')
-circle(cnv, C, R)
-cnv.mainloop()
 
 
