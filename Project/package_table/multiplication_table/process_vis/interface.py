@@ -1,7 +1,7 @@
 from tkinter import Tk, Canvas, Scale  
 from math import sin, cos, pi 
 import numpy as np 
-from .base_vis import circle, dot 
+from base_vis import circle, dot 
 
 def table(n):
     global N #Declaration of the variable
