@@ -14,11 +14,15 @@ class Graph:
         self.M[i, j] = 1 
         self.M[j, i] = 1
     
+    
     def create_matrix(self):
         for i in range(self.mod):
-            j = (self.N*i) % self.mod
-            self.add_edge(i, j)
+            self.add_edge(i, self.modulo_result(i))
     
+    def modulo_result(self, i):
+        return (self.N * i) % self.mod
+
+
     def print_graph(self):
         index = np.where(np.triu(self.M,1)==1) 
         for i in range(len(index[0])):
