@@ -37,14 +37,13 @@ def dot(canvas, graph, radius, center):
         A = coord(center-3, center-3, a, b)
         B = coord(center+3, center+3, a, b)
         canvas.create_oval(A, B, fill='black') # create modulo_number circles (R=3)
-        name_peak(canvas, radius, graph, center)
+    name_peak(canvas, radius, graph, center)
 
 def name_peak(cnv, radius, graph, center): 
-    angle = angle_tab(radius+15, graph)
+    angle = angle_tab(radius+17, graph)
     for j in range(len(angle)):
         a, b = angle[j]
         Dots_C = (center+b, center-a) # Center of each dots
         if (graph.mod<= 150): 
-            size = str(int(20)) #A modifier car size pas bonne !!!!!!!!!!!!!!!!
+            size = str(int(min (18,16*62/graph.mod))) #A modifier car size pas bonne !!!!!!!!!!!!!!!!
             cnv.create_text(Dots_C, text = str(j), font = "Arial " + size + " bold")
-# max (19, )

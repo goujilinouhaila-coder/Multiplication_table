@@ -13,12 +13,7 @@ graph_object.create_matrix()
 graph_object.print_matrix()
 graph_object.print_graph()
 
-root = Tk.Tk()
-mt.init_IU(root, graph_object)
-root.mainloop()
-
+mt.user_IU()
 # 10     16     
 # 150    6
 
-# 15     2.6666
-# 0.04   0.625
