@@ -15,5 +15,4 @@ def one_edge(graph,canvas, i, angle, center):
     xB, yB = angle[j]
     A = bv.coord(center, center, xA,yA)
     B = bv.coord(center, center, xB, yB)
-    print(A)
     return canvas.create_line(A, B, fill='black', width=2)
