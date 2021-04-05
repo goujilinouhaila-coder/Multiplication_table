@@ -48,18 +48,3 @@ def name_peak(cnv, radius, graph, center):
             size = str(int(20)) #A modifier car size pas bonne !!!!!!!!!!!!!!!!
             cnv.create_text(Dots_C, text = str(j), font = "Arial " + size + " bold")
 # max (19, )
-
-# def all_edges(canvas, graph, radius, center):
-#     angle = angle_tab(radius, graph)
-#     for i in range(graph.mod): 
-#         one_edge(graph, canvas,i, angle, center)
-    
-
-# def one_edge(graph,canvas, i, angle, center):
-#     j = graph.modulo_result(i)
-#     xA, yA= angle[i]
-#     xB, yB = angle[j]
-#     A = coord(center, center, xA,yA)
-#     B = coord(center, center, xB, yB)
-#     return canvas.create_line(A, B, fill='black', width=2)
-
