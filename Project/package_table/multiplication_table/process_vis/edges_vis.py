@@ -1,6 +1,8 @@
 from tkinter import Tk, Canvas
 import numpy as np
-import base_vis as bv
+import multiplication_table.process_vis.base_vis as bv
+
+
 
 def all_edges(canvas, graph, radius, center):
     angle = bv.angle_tab(radius, graph)

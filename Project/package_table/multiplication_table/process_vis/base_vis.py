@@ -1,6 +1,6 @@
 from tkinter import Tk, Canvas
 import numpy as np
-# import edges_vis as ev
+import multiplication_table.process_vis.edges_vis as ev
 
 def init_IU(self, graph):
     cnv = Canvas(self, width = 750, height = 750, bg = 'ivory')
@@ -9,7 +9,7 @@ def init_IU(self, graph):
     radius=300 
     circle(cnv, center, radius)
     dot(cnv, graph, radius, center[0])
-    all_edges(cnv, graph, radius, center[0])
+    ev.all_edges(cnv, graph, radius, center[0])
 
 
 def circle(canvas, center, radius):
@@ -45,11 +45,9 @@ def name_peak(cnv, radius, graph, center):
         a, b = angle[j]
         Dots_C = (center+b, center-a) # Center of each dots
         if (graph.mod<= 150): 
-            size = str(int(6)) #A modifier car size pas bonne !!!!!!!!!!!!!!!!
+            size = str(int(20)) #A modifier car size pas bonne !!!!!!!!!!!!!!!!
             cnv.create_text(Dots_C, text = str(j), font = "Arial " + size + " bold")
-
-
-
+# max (19, )
 
 # def all_edges(canvas, graph, radius, center):
 #     angle = angle_tab(radius, graph)
@@ -64,3 +62,4 @@ def name_peak(cnv, radius, graph, center):
 #     A = coord(center, center, xA,yA)
 #     B = coord(center, center, xB, yB)
 #     return canvas.create_line(A, B, fill='black', width=2)
+
