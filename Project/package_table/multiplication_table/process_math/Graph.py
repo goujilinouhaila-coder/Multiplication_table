@@ -20,7 +20,7 @@ class Graph:
             self.add_edge(i, self.modulo_result(i))
     
     def modulo_result(self, i):
-        return (self.N * i) % self.mod
+        return int((self.N * i) % self.mod)
 
 
     def print_graph(self):
