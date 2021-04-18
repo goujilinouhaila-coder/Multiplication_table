@@ -31,13 +31,14 @@ def angle_tab(radius, graph):
 
 def dot(canvas, graph, radius, center):
     # Add the number of points needed on the cercle, they are proportionally spaced (angle : 2pi/modulo_number)
-    angle = angle_tab(radius, graph)
-    for j in range(len(angle)):
-        a, b = angle[j]
-        A = coord(center-3, center-3, a, b)
-        B = coord(center+3, center+3, a, b)
-        canvas.create_oval(A, B, fill='black') # create modulo_number circles (R=3)
-    name_peak(canvas, radius, graph, center)
+    if (graph.mod<=150):
+        angle = angle_tab(radius, graph)
+        for j in range(len(angle)):
+            a, b = angle[j]
+            A = coord(center-3, center-3, a, b)
+            B = coord(center+3, center+3, a, b)
+            canvas.create_oval(A, B, fill='black') # create modulo_number circles (R=3)
+        name_peak(canvas, radius, graph, center)
 
 def name_peak(cnv, radius, graph, center): 
     angle = angle_tab(radius+17, graph)
