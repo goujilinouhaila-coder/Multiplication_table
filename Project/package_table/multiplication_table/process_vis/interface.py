@@ -8,8 +8,8 @@ import multiplication_table.process_vis.base_vis as bv
 
 def table(n):
     global N #Declaration of the variable
-    N = int(n)
-    graph.N = int(n)
+    N = float(n)
+    graph.N = float(n)
     show_update()
    
 
@@ -40,7 +40,7 @@ def user_IU():
     cnv = Canvas(root, width = 750, height = 750, bg = 'ivory')
     cnv.pack(side="left")
     show_update()
-    table_cursor = Scale(root, label="Table of ...",font="Arial 15 bold",orient = "horizontal", command=table,from_=2, to=450, length=250)
+    table_cursor = Scale(root, label="Table of ...",font="Arial 15 bold",orient = "horizontal", command=table,from_=2, to=450, length=250, resolution=0.01)
     table_cursor.pack(pady=15)
     peak_cursor = Scale(root, label="Number of peaks",font="Arial 15 bold",orient = "horizontal", command=peak,from_=2, to=200, length=250)
     peak_cursor.pack(pady=5)

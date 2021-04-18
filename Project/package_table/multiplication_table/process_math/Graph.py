@@ -5,7 +5,7 @@ class Graph:
     def __init__(self, table_number, modulo_number):
         self.N = table_number
         self.mod = modulo_number     
-        self.M = np.full((self.mod, self.mod),0) 
+        self.M = np.full((self.mod*100, self.mod*100),0) 
 
     def print_matrix(self):
         print(self.M)
@@ -16,8 +16,8 @@ class Graph:
     
     
     def create_matrix(self):
-        for i in range(self.mod):
-            self.add_edge(i, self.modulo_result(i))
+        for i in np.arange(0,self.mod,1):
+            self.add_edge(int(i*100), int(self.modulo_result(i)*100))
     
     def modulo_result(self, i):
         return (self.N * i) % self.mod
@@ -26,5 +26,5 @@ class Graph:
     def print_graph(self):
         index = np.where(np.triu(self.M,1)==1) 
         for i in range(len(index[0])):
-            print(index[0][i],"<--->", index[1][i]) 
+            print(index[0][i]/100,"<--->", index[1][i]/100) 
     

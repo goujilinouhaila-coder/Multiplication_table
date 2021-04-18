@@ -6,7 +6,7 @@ import multiplication_table.process_vis.base_vis as bv
 def all_edges(canvas, graph, radius, center):
     angle = bv.angle_tab(radius, graph)
     for i in range(graph.mod): 
-        one_edge(graph, canvas,i, angle, center)
+        one_edge(graph, canvas, i, angle, center)
     
 
 def one_edge(graph,canvas, i, angle, center):
