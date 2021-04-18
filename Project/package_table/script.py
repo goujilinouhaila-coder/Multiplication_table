@@ -13,7 +13,9 @@ graph_object.create_matrix()
 graph_object.print_matrix()
 graph_object.print_graph()
 
-mt.user_IU()
+#mt.user_IU()
 # 10     16     
 # 150    6
 
+motion_object= mt.Motion()
+motion_object.animate_circle()
