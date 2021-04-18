@@ -15,3 +15,5 @@ graph_object.print_graph()
 
 mt.user_IU()
 
+motion_object= mt.Motion()
+motion_object.animate_circle()
