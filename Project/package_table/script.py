@@ -11,7 +11,9 @@ graph_object.create_matrix()
 graph_object.print_matrix()
 graph_object.print_graph()
 
-mt.user_IU()
+mt.Interface_gestion()
 
 # motion_object = mt.Motion()
 # motion_object.animate_circle()
+
+mt.test()
