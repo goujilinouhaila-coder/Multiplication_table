@@ -23,8 +23,7 @@ class Edge:
 
     def delete_one_edge(self, i, canvas, root):
         canvas.delete(root, self.edge_tab[i])
-
-    
+  
     def delete_all_edge(self, canvas, root):
         for i in range(len(self.edge_tab)):
             self.delete_one_edge(i, canvas, root)
