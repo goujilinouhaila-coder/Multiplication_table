@@ -28,7 +28,7 @@ def create_animation_canvas(window):
     canvas.pack(fill="both", expand=True)
     return canvas
 
-edge = canvas.create_line(200,200,400,400,fill = "black",width=2)
+
 class Motion:
 
     
@@ -65,7 +65,7 @@ class Motion:
       modulo=2
       center=(360,360)
       graph = mt.Graph(N, modulo)
-      #edge = self.canvas.create_line(200,200,400,400,fill = "black",width=2)
+      edge = self.canvas.create_line(200,200,400,400,fill = "black",width=2)
       #self.canvas.after(10000,self.movement(edge))
       self.movement(edge)
       self.window.mainloop()
@@ -79,12 +79,5 @@ class Motion:
       #   time.sleep(animation_refresh_seconds)
           
 
-
-  ##Tout ce qui est en bas sera dans le script 
-
-  # The actual execution starts here
-  #animation_window = create_animation_window()
-  #animation_canvas = create_animation_canvas(animation_window)
-  #animate_circle(animation_window,animation_canvas, animation_circle_min_movement, animation_circle_min_movement)
       
 
