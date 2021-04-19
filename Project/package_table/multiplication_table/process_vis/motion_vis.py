@@ -15,6 +15,7 @@ animation_circle_min_movement = 5
 # delay between successive frames in seconds
 animation_refresh_seconds = 5
 
+<<<<<<< HEAD
 def create_animation_window():
     window = Tk()
     window.title("Tkinter Animation ")
@@ -30,31 +31,56 @@ def create_animation_canvas(window):
 
 
 class Motion:
+=======
+>>>>>>> main
+
+
+# def create_animation_window():
+#     window = Tk()
+#     window.title("Tkinter Animation ")
+#     window.geometry(f'{animation_window_width}x{animation_window_height}')
+#     return window
+
+#   # Create a canvas for animation and add it to main window
+# def create_animation_canvas(window):
+#     canvas = Canvas(window)
+#     canvas.configure(bg="ivory")
+#     canvas.pack(fill="both", expand=True)
+#     return canvas
+
+# edge = canvas.create_line(200,200,400,400,fill = "black",width=2)
+class Motion:
 
     
   def __init__(self):
-    self.window = create_animation_window()
-    self.canvas = create_animation_canvas(self.window)
-
+    self.window = self.create_animation_window()
+    self.canvas = self.create_animation_canvas(self.window)
     
 
+  def create_animation_window(self):
+      window = Tk()
+      window.title("Tkinter Animation ")
+      window.geometry(f'{animation_window_width}x{animation_window_height}')
+      return window
 
-
-
-
-
+    # Create a canvas for animation and add it to main window
+  def create_animation_canvas(self, window):
+      canvas = Canvas(window)
+      canvas.configure(bg="white")
+      canvas.pack(fill="both", expand=True)
+      return canvas
 
   def show_update(self):
-      self.canvas.delete('all')
-      bv.circle(self.canvas, center, radius)
-      bv.dot(self.canvas, graph, radius, center[0])
-      ev.all_edges(self.canvas, graph, radius, center[0])
+    self.canvas.delete('all')
+    bv.circle(self.canvas, center, radius)
+    bv.dot(self.canvas, graph, radius, center[0])
+    ev.all_edges(self.canvas, graph, radius, center[0])
 
 
   def movement(self,edge):
     self.canvas.itemconfigure(edge, fill="red")
     self.canvas.coords(edge,100,100,400,400)
-    self.window.after(10000,self.movement)
+    self.window.after(10,self.movement)
 
 
   # Create and animate the circle 
@@ -66,7 +92,11 @@ class Motion:
       center=(360,360)
       graph = mt.Graph(N, modulo)
       edge = self.canvas.create_line(200,200,400,400,fill = "black",width=2)
+<<<<<<< HEAD
       #self.canvas.after(10000,self.movement(edge))
+=======
+      self.canvas.after(10000,self.movement(edge))
+>>>>>>> main
       self.movement(edge)
       self.window.mainloop()
 
