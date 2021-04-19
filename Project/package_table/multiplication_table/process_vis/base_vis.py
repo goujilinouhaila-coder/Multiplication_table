@@ -3,22 +3,15 @@ import numpy as np
 import multiplication_table.process_vis.edges_vis as ev
 
 
-def init_IU(self, graph):
-    cnv = Canvas(self, width=750, height=750, bg='ivory')
-    cnv.pack()
-    center = (375, 375)
-    radius = 300
-    circle(cnv, center, radius)
-    dot(cnv, graph, radius, center[0])
-    ev.all_edges(cnv, graph, radius, center[0])
 
 
-def circle(canvas, center, radius):
+def circle(canvas, center, radius, state_circle, background_circle, outline_circle):
     # Create a circle of radius R in the canvas
-    xC, yC = center
-    A = (xC-radius, yC-radius)
-    B = (xC+radius, yC+radius)
-    return canvas.create_oval(A, B, width=2)
+    if (state_circle):
+        xC, yC = center
+        A = (xC-radius, yC-radius)
+        B = (xC+radius, yC+radius)
+        canvas.create_oval(A, B, width=2, fill = background_circle, outline= outline_circle)
 
 
 def coord(x, y, a, b):
@@ -34,7 +27,7 @@ def angle_tab(radius, graph):
     return angle
 
 
-def dot(canvas, graph, radius, center):
+def dot(canvas, graph, radius, center, color_graph, color_name):
     # Add the number of points needed on the cercle, they are proportionally
     # spaced (angle : 2pi/modulo_number)
     if (graph.mod <= 150):
@@ -44,11 +37,11 @@ def dot(canvas, graph, radius, center):
             A = coord(center-3, center-3, a, b)
             B = coord(center+3, center+3, a, b)
             # create modulo_number circles (R=3)
-            canvas.create_oval(A, B, fill='black')
-        name_peak(canvas, radius, graph, center)
+            canvas.create_oval(A, B, fill= color_graph)
+        name_peak(canvas, radius, graph, center, color_name)
 
 
-def name_peak(cnv, radius, graph, center):
+def name_peak(cnv, radius, graph, center, color_name):
     angle = angle_tab(radius+17, graph)
     for j in np.arange(0, len(angle), 100):
         a, b = angle[j]
@@ -56,4 +49,4 @@ def name_peak(cnv, radius, graph, center):
         if (graph.mod <= 150):
             size = str(int(min(18, 16*62/graph.mod)))
             cnv.create_text(Dots_C, text=str(int(j/100)),
-                            font="Arial " + size + " bold")
+                            font="Arial " + size + " bold", fill= color_name)
