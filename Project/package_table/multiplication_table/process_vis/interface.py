@@ -6,19 +6,27 @@ import multiplication_table.process_vis.base_vis as bv
 
 class Interface_gestion:
 
-    def __init__(self, speed, state_button):
+    def __init__(self, speed, state_button, background, state_circle, color_graph, background_circle, outline_circle, color_name, edges_width):
+        self.state_circle = state_circle
+        self.edges_width= edges_width
+        self.color_name= color_name
+        self.outline_circle = outline_circle
+        self.background_circle = background_circle
+        self.color_graph = color_graph
         self.speed = speed
-        self.window_init()
+        self.window_init(background)
         self.graph_init()
         self.user_IU()
         if (state_button):
             self.motion_button()
         self.root.mainloop()
+     
 
-    def window_init(self):
+    def window_init(self, background):
         self.root = Tk()
-        self.cnv = Canvas(self.root, width=750, height=750, bg='white')
+        self.cnv = Canvas(self.root, width=750, height=750, bg=background)
         self.cnv.pack(side="left", fill="both", expand=True)
+
 
     def graph_init(self):
         self.radius = 300
@@ -26,9 +34,9 @@ class Interface_gestion:
         self.modulo = 2
         self.center = (360, 360)
         self.graph = mt.Graph(self.N, self.modulo)
-        bv.circle(self.cnv, self.center, self.radius)
-        bv.dot(self.cnv, self.graph, self.radius, self.center[0])
-        ev.Edge(self.cnv, self.graph, self.radius, self.center[0])
+        bv.circle(self.cnv, self.center, self.radius, self.state_circle, self.background_circle, self.outline_circle)
+        bv.dot(self.cnv, self.graph, self.radius, self.center[0], self.color_graph, self.color_name)
+        ev.Edge(self.cnv, self.graph, self.radius, self.center[0], self.color_graph, self.edges_width)
 
     def table(self, n):
         self.N = float(n)
@@ -42,9 +50,9 @@ class Interface_gestion:
 
     def show_update(self):
         self.cnv.delete("all")
-        bv.circle(self.cnv, self.center, self.radius)
-        bv.dot(self.cnv, self.graph, self.radius, self.center[0])
-        ev.Edge(self.cnv, self.graph, self.radius, self.center[0])
+        bv.circle(self.cnv, self.center, self.radius, self.state_circle, self.background_circle, self.outline_circle)
+        bv.dot(self.cnv, self.graph, self.radius, self.center[0], self.color_graph, self.color_name)
+        ev.Edge(self.cnv, self.graph, self.radius, self.center[0], self.color_graph, self.edges_width)
 
     # Coding the function with the "Scale" widget which allows the user
     # to select a numeric value by moving  a cursor
@@ -59,8 +67,10 @@ class Interface_gestion:
         self.peak_cursor = Scale(self.root, label="Number of peaks",
                                  font="Arial 15 bold", orient="horizontal",
                                  command=self.peak, from_=2, to=200,
-                                 length=250, repeatdelay=500)
+                                 length=250, repeatdelay=500)                
         self.peak_cursor.pack(pady=5)
+        self.peak_cursor.set(10)
+        
 
     def move_value(self):
         self.state_button = not self.state_button
