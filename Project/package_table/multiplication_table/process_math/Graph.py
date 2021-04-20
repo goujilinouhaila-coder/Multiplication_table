@@ -1,13 +1,25 @@
 import numpy as np
 
-
 class Graph:
+    """
+    This class is for ....
+    """
     def __init__(self, table_number, modulo_number):
+        """
+        :This function: 
+        
+        :param name: self - accesing attributes
+        :param type: str
+        :return: str
+        """
         self.N = table_number
         self.mod = int(modulo_number)   
         self.M = np.full((self.mod*100, self.mod*100), 0) 
 
     def print_matrix(self):
+        """
+        Test
+        """
         print(self.M)
 
     def add_edge(self, i, j):

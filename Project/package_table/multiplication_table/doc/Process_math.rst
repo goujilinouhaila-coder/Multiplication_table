@@ -1,8 +1,0 @@
-Process math
-============
-
-Description
-
-Graph
------
-
