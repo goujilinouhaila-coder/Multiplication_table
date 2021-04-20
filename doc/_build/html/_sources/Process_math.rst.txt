@@ -1,0 +1,10 @@
+Process math
+============
+
+Description
+
+Graph
+-----
+
+.. autofunction:: Project.package_table.multiplication_table.process_math.Graph.Graph.__init__
+
