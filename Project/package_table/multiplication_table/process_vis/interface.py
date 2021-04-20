@@ -12,7 +12,7 @@ class Interface_gestion:
         self.window_init(background)
         self.graph_init()
         self.graph_vis()
-        self.user_IU()
+        self.slider()
         if (state_button):
             self.motion_button()
         self.root.mainloop()
@@ -60,19 +60,19 @@ class Interface_gestion:
         self.cnv.delete("all")
         self.graph_vis()
 
-    def user_IU(self):
-        self.table_cursor = Scale(self.root, label="Table of ...",
-                                  font="Arial 15 bold", orient="horizontal",
+    def slider(self):
+        self.peak_cursor = Scale(self.root, label="Modulo",
+                                 font="Arial 12 bold", orient="horizontal",
+                                 command=self.peak, from_=2, to=200,
+                                 length=250, repeatdelay=500)                
+        self.peak_cursor.pack(pady=10, anchor="center")
+        self.peak_cursor.set(10)
+        self.table_cursor = Scale(self.root, label="Table",
+                                  font="Arial 12 bold", orient="horizontal",
                                   command=self.table, from_=2, to=400,
                                   length=250, resolution=0.01,
                                   repeatdelay=1000)
-        self.table_cursor.pack(side="right",padx=5, pady=2,expand=False)
-        self.peak_cursor = Scale(self.root, label="Number of peaks",
-                                 font="Arial 15 bold", orient="horizontal",
-                                 command=self.peak, from_=2, to=200,
-                                 length=250, repeatdelay=500)                
-        self.peak_cursor.pack(side="right",padx=5, pady=2, expand=False)
-        self.peak_cursor.set(10)
+        self.table_cursor.pack(pady=10, anchor="center")
 
     def move_value(self):
         self.state_button = not self.state_button
@@ -85,7 +85,7 @@ class Interface_gestion:
         self.state_button = False
         button_play = Button(self.root, text="Play/Pause",
                              command=self.move_value)
-        button_play.pack(padx=50, pady=5, side="bottom")
-        quit = Button(self.root, text="QUIT", fg="black",
+        button_play.pack(padx=50, pady=5, side="top")
+        quit = Button(self.root, text="Quit", fg="black",
                       command=self.root.destroy)
         quit.pack(padx=50, pady=5, side="bottom")
