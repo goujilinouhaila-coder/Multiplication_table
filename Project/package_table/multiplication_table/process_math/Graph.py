@@ -2,11 +2,11 @@ import numpy as np
 
 class Graph:
     """
-    This class is for ..
+    This class is for ....
     """
     def __init__(self, table_number, modulo_number):
         """
-        :This function:
+        :This function: 
         
         :param name: self - accesing attributes
         :param type: str
