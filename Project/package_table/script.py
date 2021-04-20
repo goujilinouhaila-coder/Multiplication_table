@@ -10,6 +10,7 @@ graph_object = mt.Graph(table_number, modulo_number)
 graph_object.create_matrix()
 graph_object.print_graph()
 
-mt.Interface_gestion(speed=10, state_button=True, background ='white', state_circle= True, color_graph= 'red', background_circle= "", outline_circle= 'green', color_name= "yellow", edges_width= 3)
-# speed=vitesse visualisation
-# state_button = affiche le bouton correspondant au deplacement 
+mt.Interface_gestion(speed=10, state_button=True, background='white',
+                     state_circle=True, color_graph='black',
+                     background_circle="", outline_circle='black',
+                     color_name="red", edges_width=2)
