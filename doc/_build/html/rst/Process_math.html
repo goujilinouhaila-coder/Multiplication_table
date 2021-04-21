@@ -33,6 +33,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -168,31 +169,75 @@
 <dl class="py class">
 <dt id="Project.package_table.multiplication_table.process_math.Graph.Graph">
 <em class="property">class </em><code class="sig-prename descclassname">Project.package_table.multiplication_table.process_math.Graph.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_number</span></em>, <em class="sig-param"><span class="n">modulo_number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Project.package_table.multiplication_table.process_math.Graph.Graph" title="Permalink to this definition">¶</a></dt>
+<<<<<<< HEAD
 <dd><p>This class is for ….</p>
+=======
+<dd><p>Graph class is used to contain the related specifications to the modular multiplication and create the associated undirected graph in the console</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>float</em>) – corresponds to the multiplication table assigned by the user. This number is rounded to <span class="math notranslate nohighlight">\(10^{-2}\)</span>.</p></li>
+<li><p><strong>mod</strong> (<em>int</em>) – corresponds to the modulo number entered by the user.</p></li>
+<li><p><strong>M</strong> (<em>numpy</em>) – Symmetric adjacency matrix used to represent the graph. This dimension of this matrix is (mod*100, mod*100) whose non-diagonal element <span class="math notranslate nohighlight">\(m_{ij}\)</span> corresponds to an edge between vertex i and vertex j.</p></li>
+</ul>
+</dd>
+</dl>
+>>>>>>> main
 </dd></dl>
 
 <dl class="py function">
 <dt id="Project.package_table.multiplication_table.process_math.Graph.Graph.__init__">
 <code class="sig-prename descclassname">Project.package_table.multiplication_table.process_math.Graph.Graph.</code><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">table_number</span></em>, <em class="sig-param"><span class="n">modulo_number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Project.package_table.multiplication_table.process_math.Graph.Graph.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">This function</dt>
-<dd class="field-odd"><p></p></dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>name</strong> – self - accesing attributes</p></li>
-<li><p><strong>type</strong> – str</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
+<dd><p>Constructor method. This method instantiates an empty graph.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="Project.package_table.multiplication_table.process_math.Graph.Graph.print_matrix">
 <code class="sig-prename descclassname">Project.package_table.multiplication_table.process_math.Graph.Graph.</code><code class="sig-name descname">print_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Project.package_table.multiplication_table.process_math.Graph.Graph.print_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Test</p>
+<dd><p>Displays the adjacency matrix</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Project.package_table.multiplication_table.process_math.Graph.Graph.add_edge">
+<code class="sig-prename descclassname">Project.package_table.multiplication_table.process_math.Graph.Graph.</code><code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Project.package_table.multiplication_table.process_math.Graph.Graph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create one edge between vertices i and j</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> (<em>int</em>) – vertex i</p></li>
+<li><p><strong>j</strong> (<em>int</em>) – vertex j</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Project.package_table.multiplication_table.process_math.Graph.Graph.create_matrix">
+<code class="sig-prename descclassname">Project.package_table.multiplication_table.process_math.Graph.Graph.</code><code class="sig-name descname">create_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Project.package_table.multiplication_table.process_math.Graph.Graph.create_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the adjacency matrix from the results of the modular multiplication</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Project.package_table.multiplication_table.process_math.Graph.Graph.modulo_result">
+<code class="sig-prename descclassname">Project.package_table.multiplication_table.process_math.Graph.Graph.</code><code class="sig-name descname">modulo_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">i</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Project.package_table.multiplication_table.process_math.Graph.Graph.modulo_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the result of the modular multiplication. For example, if N=2, i=7 and mod=10, this function return 2*7 mod 10 = 4</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – vertex i</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns the result of the modular multiplication</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Project.package_table.multiplication_table.process_math.Graph.Graph.print_graph">
+<code class="sig-prename descclassname">Project.package_table.multiplication_table.process_math.Graph.Graph.</code><code class="sig-name descname">print_graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Project.package_table.multiplication_table.process_math.Graph.Graph.print_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays in a textual format all the vertices, each one of them is accompanied by all the edges incident to it</p>
 </dd></dl>
 
 </div>

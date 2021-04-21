@@ -27,6 +27,7 @@ def angle_tab(radius, graph):
 def dot(canvas, graph, radius, center, color_graph, color_name):
     # Add the number of points needed on the cercle, they are proportionally
     # spaced (angle : 2pi/modulo_number)
+    col=0
     if (graph.mod <= 150):
         angle = angle_tab(radius, graph)
         for j in np.arange(0, len(angle), 100):
@@ -34,7 +35,8 @@ def dot(canvas, graph, radius, center, color_graph, color_name):
             A = coord(center-3, center-3, a, b)
             B = coord(center+3, center+3, a, b)
             # create modulo_number circles (R=3)
-            canvas.create_oval(A, B, fill=color_graph)
+            canvas.create_oval(A, B, fill=color_graph[col])
+            col=(col+1)%len(color_graph)
         name_peak(canvas, radius, graph, center, color_name)
 
 
