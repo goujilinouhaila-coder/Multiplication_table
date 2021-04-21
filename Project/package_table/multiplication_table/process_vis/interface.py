@@ -1,7 +1,7 @@
-from tkinter import Tk, Canvas, Scale, Button
-import multiplication_table as mt
-import multiplication_table.process_vis.edges_vis as ev
-import multiplication_table.process_vis.base_vis as bv
+# from tkinter import Tk, Canvas, Scale, Button
+# import multiplication_table as mt
+# import multiplication_table.process_vis.edges_vis as ev
+# import multiplication_table.process_vis.base_vis as bv
 
 
 class Interface_gestion:
@@ -17,7 +17,7 @@ class Interface_gestion:
         :param speed: corresponds to the speed of the circle's movement. 
         :type speed: float
         :param state_button: show the button if it's true.
-        type state_button: boolean
+        :type state_button: boolean
         :param state_circle:  displays the frame of the circle if it takes True.
         :type state_circle: boolean
         :param color_graph: it's about a table of colors of the circle frame.
