@@ -168,6 +168,77 @@
 <p>Description</p>
 <div class="section" id="base-visualization">
 <h2>Base visualization<a class="headerlink" href="#base-visualization" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="process_vis.base_vis.circle">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function create a circle in the canvas</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>canvas</strong> – Canvas where the circle will be created</p></li>
+<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
+<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the the frame of the circle if it takes True</p></li>
+<li><p><strong>background_circle</strong> (<em>str</em>) – Choice of the color for the circle’s background</p></li>
+<li><p><strong>outline_circle</strong> (<em>str</em>) – Choice of the color for the circle’s lines</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.base_vis.coord">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">coord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.coord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give the coordinnates of the new mark (interger numbers)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.base_vis.angle_tab">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">angle_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.angle_tab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*:math:<cite>pi</cite>/modulo_number)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>radius</strong> (<em>int</em>) – Radius of the circle</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a list of coordonnates which give the angle of each dots</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.base_vis.dot">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the number of points needed on the cercle thanks to the angle_tab function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>canvas</strong> – Canvas where the dots will be created</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
+<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
+<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – Choice of the color for the numbers placed on the frame of the circle</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.base_vis.name_peak">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">name_peak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cnv</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.name_peak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a number, for each dots, on the frame of the circle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cnv</strong> – Canvas where the numbers will be added</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
+<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – Choice of the color for the numbers placed on the frame of the circle</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="edges-visualization">
 <h2>Edges visualization<a class="headerlink" href="#edges-visualization" title="Permalink to this headline">¶</a></h2>

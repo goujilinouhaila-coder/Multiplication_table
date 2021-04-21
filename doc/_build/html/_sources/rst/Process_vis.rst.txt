@@ -6,6 +6,16 @@ Description
 Base visualization
 ------------------
 
+.. autofunction:: process_vis.base_vis.circle
+
+.. autofunction:: process_vis.base_vis.coord
+
+.. autofunction:: process_vis.base_vis.angle_tab
+
+.. autofunction:: process_vis.base_vis.dot 
+
+.. autofunction:: process_vis.base_vis.name_peak
+
 Edges visualization
 -------------------
 
