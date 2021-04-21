@@ -1,7 +1,7 @@
-# from tkinter import Tk, Canvas, Scale, Button
-# import multiplication_table as mt
-# import multiplication_table.process_vis.edges_vis as ev
-# import multiplication_table.process_vis.base_vis as bv
+from tkinter import Tk, Canvas, Scale, Button
+import multiplication_table as mt
+import multiplication_table.process_vis.edges_vis as ev
+import multiplication_table.process_vis.base_vis as bv
 
 
 class Interface_gestion:
