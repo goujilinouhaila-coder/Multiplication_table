@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Process visualization &mdash; Multiplication table  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Process math" href="Process_math.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Multiplication table
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Process_math.html">Process math</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Process visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-visualization">Base visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edges-visualization">Edges visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interface">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#motion-visualization">Motion visualization</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Multiplication table</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Process visualization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/rst/Process_vis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="process-visualization">
+<h1>Process visualization<a class="headerlink" href="#process-visualization" title="Permalink to this headline">¶</a></h1>
+<p>Description</p>
+<div class="section" id="base-visualization">
+<h2>Base visualization<a class="headerlink" href="#base-visualization" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="process_vis.base_vis.circle">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function create a circle in the canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>canvas</strong> – Canvas where the circle will be created</p></li>
+<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
+<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the the frame of the circle if it takes True</p></li>
+<li><p><strong>background_circle</strong> (<em>str</em>) – Choice of the color for the circle’s background</p></li>
+<li><p><strong>outline_circle</strong> (<em>str</em>) – Choice of the color for the circle’s lines</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.base_vis.coord">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">coord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.coord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give the coordinnates of the new mark (interger numbers)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coord</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span>
+<span class="go">(260,160)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.base_vis.angle_tab">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">angle_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.angle_tab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*pi/modulo_number).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>int</em>) – Radius of the circle</p></li>
+<li><p><strong>graph</strong> – Graph type object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a list of coordonnates which give the angle of each dots</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.base_vis.dot">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the number of points needed on the cercle thanks to the angle_tab function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>canvas</strong> – Canvas where the dots will be created</p></li>
+<li><p><strong>graph</strong> – Graph type object</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
+<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
+<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – Choice of the color for the numbers placed on the frame of the circle</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.base_vis.name_peak">
+<code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">name_peak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cnv</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.name_peak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a number, for each dots, on the frame of the circle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cnv</strong> – Canvas where the numbers will be added</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
+<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – Choice of the color for the numbers placed on the frame of the circle</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="edges-visualization">
+<h2>Edges visualization<a class="headerlink" href="#edges-visualization" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="process_vis.interface.Interface_gestion">
+<em class="property">class </em><code class="sig-prename descclassname">process_vis.interface.</code><code class="sig-name descname">Interface_gestion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">speed</span></em>, <em class="sig-param"><span class="n">state_button</span></em>, <em class="sig-param"><span class="n">background</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em>, <em class="sig-param"><span class="n">color_name</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class supports functions which is used, for the graphical interface and link between the different aspects of visualization,
+as well as the colors and design. It also generates the movement  in any canvas or tkinter toplevel.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.__init__">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">speed</span></em>, <em class="sig-param"><span class="n">state_button</span></em>, <em class="sig-param"><span class="n">background</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em>, <em class="sig-param"><span class="n">color_name</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.design_aspect">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">design_aspect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">speed</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em>, <em class="sig-param"><span class="n">color_name</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.design_aspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization of the design aspect parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>speed</strong> – Corresponds to the speed of the circle’s movement.</p></li>
+<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the frame of the circle if it takes True</p></li>
+<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
+<li><p><strong>background_circle</strong> (<em>str</em>) – Generates the color of the background of the circle</p></li>
+<li><p><strong>outline_circle</strong> (<em>str</em>) – The color of the circle’ lines</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – The color of the numbers placed on the frame of the circle</p></li>
+<li><p><strong>edges_width</strong> (<em>float</em><em> or </em><em>int</em>) – The width of ridgs (edges)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.window_init">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">window_init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">background</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.window_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the interface’window refers to a rectangular area somewhere on the user’s display screen through which you can interact.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.graph_init">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">graph_init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.graph_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method initializes the graph, as one its radius, its center, as well as its multiplication table and its modulo.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.graph_vis">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">graph_vis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.graph_vis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the visualization part of the graph, concerning its dots and edges.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.table">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.table" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is the table of n where the value read by the cursor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>str</em>) – Represent the number in base 10. Like exemple if the cursor is moved switches to position 40; we have a table call (“42”)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.peak">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">peak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">mod</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.peak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents the modulo of the multiplication table and which returns to the peaks of the circle.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.show_update">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">show_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.show_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the previous Canvas and recreates a new one.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.slider">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">slider</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.slider" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method generates the two cursors which captures the number of the table and the number of vertices (modulo).
+The table cursor captures all tables from 2 to 400, it is placed horizontally and is 250 pixels long. The same for the other cursor
+of the modulo which represents the number of points (vertices).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.move_value">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">move_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.move_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>By this method, we add 0.01 each time we take a value from the multiplication table.
+We rebuild the movement which is continuous.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="process_vis.interface.Interface_gestion.motion_button">
+<code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">motion_button</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.motion_button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a button control on the motion graphic and visual, to play or stop the animation.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="motion-visualization">
+<h2>Motion visualization<a class="headerlink" href="#motion-visualization" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Process_math.html" class="btn btn-neutral float-left" title="Process math" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Goujili Nouhaila, Berrandou Assia, Sene Assane and Sobolak Valerian.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
