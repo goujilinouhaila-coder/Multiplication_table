@@ -22,6 +22,31 @@ Edges visualization
 Interface
 ---------
 
+<<<<<<< HEAD
+.. autoclass:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.__init__
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.design_aspect
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.window_init
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.graph_init
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.graph_vis
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.table
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.peak
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.show_update
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.slider
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.move_value
+
+.. autofunction:: Project.package_table.multiplication_table.process_vis.interface.Interface_gestion.motion_button
+=======
 .. autoclass:: process_vis.interface.Interface_gestion
 
 .. autofunction:: process_vis.interface.Interface_gestion.__init__
@@ -45,6 +70,7 @@ Interface
 .. autofunction:: process_vis.interface.Interface_gestion.move_value
 
 .. autofunction:: process_vis.interface.Interface_gestion.motion_button
+>>>>>>> 4f24c5e325c2c4812919d011ce7caff433d9496d
 
 Motion visualization
 --------------------

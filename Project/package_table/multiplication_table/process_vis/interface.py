@@ -203,10 +203,17 @@ class Interface_gestion:
 
     def create_description(self):
         newWindow = Toplevel(self.root)
-        text = Label(newWindow, text="A midi j'ai mangé de la chantilligjkttttttttttttttttttttttttttttttttttttttttddeeeeeeeeeeeee \n \n \n ")
+        text = Label(newWindow, text="Play/Pause : The buttom to play or stop the animation. \n  ")
         text.pack()
-        text = Label(newWindow, text="A midi j'ai mangé de la chantilligjkttttttttttttttttttttttttttttttttttttttttddeeeeeeeeeeeee \n \n \n ")
+        text = Label(newWindow, text="Photo : Take pictures of the circle, at the moment to make the gif.\n  ")
         text.pack()
+        text = Label(newWindow, text="Vidéo : Make a gif from the images captured.\n  ")
+        text.pack()
+        text = Label(newWindow, text="Table of : Open the multiplication table.\n  ")
+        text.pack()
+        text = Label(newWindow, text="Quit : To quit the interface. \n You should pass by there and quit it, to avoid errors .\n  ")
+        text.pack()
+
 
     def motion_button(self):
         '''
