@@ -87,7 +87,6 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Process_math.html">Process math</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Process visualization</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#base-visualization">Base visualization</a></li>
@@ -171,7 +170,7 @@
 <dl class="py function">
 <dt id="process_vis.base_vis.circle">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.circle" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function create a circle in the canvas</p>
+<dd><p>This function create a circle in the canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -190,18 +189,32 @@
 <dt id="process_vis.base_vis.coord">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">coord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.coord" title="Permalink to this definition">¶</a></dt>
 <dd><p>Give the coordinnates of the new mark (interger numbers)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coord</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span>
+<span class="go">(260,160)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt id="process_vis.base_vis.angle_tab">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">angle_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.angle_tab" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*:math:<cite>pi</cite>/modulo_number)</p>
+<dd><p>Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*pi/modulo_number).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>radius</strong> (<em>int</em>) – Radius of the circle</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>int</em>) – Radius of the circle</p></li>
+<li><p><strong>graph</strong> – Graph type object</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a list of coordonnates which give the angle of each dots</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of float</p>
 </dd>
 </dl>
 </dd></dl>
@@ -209,11 +222,12 @@
 <dl class="py function">
 <dt id="process_vis.base_vis.dot">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.dot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the number of points needed on the cercle thanks to the angle_tab function</p>
+<dd><p>Add the number of points needed on the cercle thanks to the angle_tab function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>canvas</strong> – Canvas where the dots will be created</p></li>
+<li><p><strong>graph</strong> – Graph type object</p></li>
 <li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
 <li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
 <li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
@@ -226,7 +240,7 @@
 <dl class="py function">
 <dt id="process_vis.base_vis.name_peak">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">name_peak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cnv</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.name_peak" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a number, for each dots, on the frame of the circle</p>
+<dd><p>Add a number, for each dots, on the frame of the circle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -255,21 +269,7 @@ as well as the colors and design. It also generates the movement  in any canvas 
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.__init__">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">speed</span></em>, <em class="sig-param"><span class="n">state_button</span></em>, <em class="sig-param"><span class="n">background</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em>, <em class="sig-param"><span class="n">color_name</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function is a constructor method, that instantiates the speed and all different aspects of the design and movement of the circle.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>speed</strong> (<em>float</em>) – corresponds to the speed of the circle’s movement.</p></li>
-<li><p><strong>state_button</strong> (<em>boolean</em>) – show the button if it’s true.</p></li>
-<li><p><strong>state_circle</strong> (<em>boolean</em>) – displays the frame of the circle if it takes True.</p></li>
-<li><p><strong>color_graph</strong> (<em>list of strings</em>) – it’s about a table of colors of the circle frame.</p></li>
-<li><p><strong>background_circle</strong> (<em>str</em>) – Generates the color of the background of the circle.</p></li>
-<li><p><strong>outline_circle</strong> (<em>str</em>) – The color of the circle’ lines.</p></li>
-<li><p><strong>color_name</strong> (<em>str</em>) – The color of the numbers placed on the frame of the circle.</p></li>
-<li><p><strong>edges_width</strong> (<em>float</em><em> or </em><em>int.</em>) – The width of ridgs(edges).</p></li>
-</ul>
-</dd>
-</dl>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -279,13 +279,13 @@ as well as the colors and design. It also generates the movement  in any canvas 
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>speed</strong> – corresponds to the speed of the circle’s movement.</p></li>
-<li><p><strong>state_circle</strong> (<em>boolean</em>) – displays the frame of the circle if it takes True.</p></li>
-<li><p><strong>color_graph</strong> (<em>list of strings</em>) – it’s about a table of colors of the circle frame.</p></li>
-<li><p><strong>background_circle</strong> (<em>str</em>) – Generates the color of the background of the circle.</p></li>
-<li><p><strong>outline_circle</strong> (<em>str</em>) – The color of the circle’ lines.</p></li>
-<li><p><strong>color_name</strong> (<em>str</em>) – The color of the numbers placed on the frame of the circle.</p></li>
-<li><p><strong>edges_width</strong> (<em>float</em><em> or </em><em>int.</em>) – The width of ridgs(edges).</p></li>
+<li><p><strong>speed</strong> – Corresponds to the speed of the circle’s movement.</p></li>
+<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the frame of the circle if it takes True</p></li>
+<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
+<li><p><strong>background_circle</strong> (<em>str</em>) – Generates the color of the background of the circle</p></li>
+<li><p><strong>outline_circle</strong> (<em>str</em>) – The color of the circle’ lines</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – The color of the numbers placed on the frame of the circle</p></li>
+<li><p><strong>edges_width</strong> (<em>float</em><em> or </em><em>int</em>) – The width of ridgs (edges)</p></li>
 </ul>
 </dd>
 </dl>
@@ -315,7 +315,7 @@ as well as the colors and design. It also generates the movement  in any canvas 
 <dd><p>This method is the table of n where the value read by the cursor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>n</strong> (<em>str</em>) – Represent the number in base 10. Like exemple if the cursor is moved switches to position 40; we have a table call (“42”).</p>
+<dd class="field-odd"><p><strong>n</strong> (<em>str</em>) – Represent the number in base 10. Like exemple if the cursor is moved switches to position 40; we have a table call (“42”)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -329,7 +329,7 @@ as well as the colors and design. It also generates the movement  in any canvas 
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.show_update">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">show_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.show_update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Removes the previous Canvas and recreates a new one</p>
+<dd><p>Removes the previous Canvas and recreates a new one.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -350,7 +350,7 @@ We rebuild the movement which is continuous.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.motion_button">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">motion_button</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.motion_button" title="Permalink to this definition">¶</a></dt>
-<dd><p>provides a button control on the motion graphic and visual, to play or stop the animation.</p>
+<dd><p>Provides a button control on the motion graphic and visual, to play or stop the animation.</p>
 </dd></dl>
 
 </div>
