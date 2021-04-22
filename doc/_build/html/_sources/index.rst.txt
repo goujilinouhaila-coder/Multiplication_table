@@ -10,7 +10,6 @@ Welcome to Multiplication table's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   ./rst/introduction.rst
    ./rst/Process_math.rst  
    ./rst/Process_vis.rst
    
