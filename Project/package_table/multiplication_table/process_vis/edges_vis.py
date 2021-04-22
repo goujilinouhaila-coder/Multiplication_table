@@ -3,6 +3,7 @@ import multiplication_table.process_vis.base_vis as bv
 
 def all_edges(canvas, graph, radius, center, color_graph, edges_width):
 <<<<<<< HEAD
+<<<<<<< HEAD
     """
     This function takes:
      -six parameters:
@@ -18,6 +19,8 @@ def all_edges(canvas, graph, radius, center, color_graph, edges_width):
     """
 =======
 >>>>>>> main
+=======
+>>>>>>> main
     angle = bv.angle_tab(radius, graph)
     col=0
     for i in range(0, graph.mod):
@@ -27,6 +30,7 @@ def all_edges(canvas, graph, radius, center, color_graph, edges_width):
 
 
 def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
+<<<<<<< HEAD
 <<<<<<< HEAD
     """
     This function draws for any i fixed the edges between i and the result
@@ -41,6 +45,8 @@ def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
     param xB, yB: angle
     type xB, yB: int
     """
+=======
+>>>>>>> main
 =======
 >>>>>>> main
     j = int(graph.modulo_result(i)*100)
