@@ -19,23 +19,22 @@ class Interface_gestion:
         """
         This function is a constructor method, that instantiates the speed and all different aspects of the design and movement of the circle. 
 
-        :param speed: corresponds to the speed of the circle's movement. 
+        :param speed: Corresponds to the speed of the circle's movement 
         :type speed: float
-        :param state_button: show the button if it's true.
+        :param state_button: Show the button if it's true
         :type state_button: boolean
-        :param state_circle:  displays the frame of the circle if it takes True.
+        :param state_circle: Displays the frame of the circle if it takes True
         :type state_circle: boolean
-        :param color_graph: it's about a table of colors of the circle frame.
+        :param color_graph: It's about a table of colors of the circle frame
         :type color_graph: list of strings
-        :param background_circle:  Generates the color of the background of the circle. 
+        :param background_circle:  Generates the color of the background of the circle
         :type background_circle: str
-        :param outline_circle: The color of the circle' lines.
+        :param outline_circle: The color of the circle' lines
         :type outline_circle: str
-        :param color_name: The color of the numbers placed on the frame of the circle.
+        :param color_name: The color of the numbers placed on the frame of the circle
         :type color_name: str
-        :param edges_width: The width of ridgs(edges).
+        :param edges_width: The width of ridgs (edges)
         :type edges_width: float or int. 
-
         """
         self.design_aspect(speed, state_circle, color_graph, background_circle,
                            outline_circle, color_name, edges_width)
@@ -49,24 +48,22 @@ class Interface_gestion:
 
     def design_aspect(self, speed, state_circle, color_graph, background_circle, outline_circle, color_name, edges_width):
         """
-
         Initialization of the design aspect parameters.
 
-        :param speed: corresponds to the speed of the circle's movement. 
+        :param speed: Corresponds to the speed of the circle's movement. 
         :type N: float
-        :param state_circle:  displays the frame of the circle if it takes True.
+        :param state_circle: Displays the frame of the circle if it takes True
         :type state_circle: boolean
-        :param color_graph: it's about a table of colors of the circle frame.
+        :param color_graph: It's about a table of colors of the circle frame
         :type color_graph: list of strings
-        :param background_circle:  Generates the color of the background of the circle. 
+        :param background_circle: Generates the color of the background of the circle 
         :type background_circle: str
-        :param outline_circle: The color of the circle' lines.
+        :param outline_circle: The color of the circle' lines
         :type outline_circle: str
-        :param color_name: The color of the numbers placed on the frame of the circle.
+        :param color_name: The color of the numbers placed on the frame of the circle
         :type color_name: str
-        :param edges_width: The width of ridgs(edges).
-        :type edges_width: float or int. 
-        
+        :param edges_width: The width of ridgs (edges)
+        :type edges_width: float or int
         """
         self.state_circle = state_circle
         self.outline_circle = outline_circle
@@ -87,7 +84,6 @@ class Interface_gestion:
     def graph_init(self):
         '''
         This method initializes the graph, as one its radius, its center, as well as its multiplication table and its modulo.
-
         '''
         self.radius = 300
         self.N = 2
@@ -108,10 +104,9 @@ class Interface_gestion:
 
     def table(self, n):
         """
-
         This method is the table of n where the value read by the cursor.
 
-        :param n: Represent the number in base 10. Like exemple if the cursor is moved switches to position 40; we have a table call ("42").
+        :param n: Represent the number in base 10. Like exemple if the cursor is moved switches to position 40; we have a table call ("42")
         :type n: str 
         """
         self.N = float(n)
@@ -128,7 +123,7 @@ class Interface_gestion:
 
     def show_update(self):
         '''
-        Removes the previous Canvas and recreates a new one
+        Removes the previous Canvas and recreates a new one.
         '''
         self.cnv.delete("all")
         self.graph_vis()
@@ -156,7 +151,6 @@ class Interface_gestion:
         '''
         By this method, we add 0.01 each time we take a value from the multiplication table.
         We rebuild the movement which is continuous.
-
         '''
         self.state_button = not self.state_button
         while (self.state_button):
@@ -209,14 +203,21 @@ class Interface_gestion:
 
     def create_description(self):
         newWindow = Toplevel(self.root)
-        text = Label(newWindow, text="A midi j'ai mangé de la chantilligjkttttttttttttttttttttttttttttttttttttttttddeeeeeeeeeeeee \n \n \n ")
+        text = Label(newWindow, text="Play/Pause : The buttom to play or stop the animation. \n  ")
         text.pack()
-        text = Label(newWindow, text="A midi j'ai mangé de la chantilligjkttttttttttttttttttttttttttttttttttttttttddeeeeeeeeeeeee \n \n \n ")
+        text = Label(newWindow, text="Photo : Take pictures of the circle, at the moment to make the gif.\n  ")
         text.pack()
+        text = Label(newWindow, text="Vidéo : Make a gif from the images captured.\n  ")
+        text.pack()
+        text = Label(newWindow, text="Table of : Open the multiplication table.\n  ")
+        text.pack()
+        text = Label(newWindow, text="Quit : To quit the interface. \n You should pass by there and quit it, to avoid errors .\n  ")
+        text.pack()
+
 
     def motion_button(self):
         '''
-        provides a button control on the motion graphic and visual, to play or stop the animation.
+        Provides a button control on the motion graphic and visual, to play or stop the animation.
         '''
         self.state_button = False
         button_play = Button(self.root, text="Play/Pause",

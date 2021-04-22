@@ -19,6 +19,10 @@ Base visualization
 Edges visualization
 -------------------
 
+.. autofunction:: process_vis.edges_vis.all_edges
+
+.. autofunction:: process_vis.edges_vis.one_edge
+
 Interface
 ---------
 
@@ -45,8 +49,6 @@ Interface
 .. autofunction:: process_vis.interface.Interface_gestion.move_value
 
 .. autofunction:: process_vis.interface.Interface_gestion.motion_button
-
-
 
 Motion visualization
 --------------------
