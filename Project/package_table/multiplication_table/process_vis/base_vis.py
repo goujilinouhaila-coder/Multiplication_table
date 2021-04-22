@@ -2,7 +2,21 @@ import numpy as np
 
 
 def circle(canvas, center, radius, state_circle, background_circle, outline_circle):
-    # Create a circle of radius R in the canvas
+    """
+    This function create a circle in the canvas
+
+    :param canvas: Canvas where the circle will be created
+    :param center: Center of the circle in the canvas
+    :type center: int
+    :param radius: Corresponds to the radius of the circle
+    :type radius: int
+    :param state_circle: Displays the the frame of the circle if it takes True
+    :type state_circle: boolean
+    :param background_circle: Choice of the color for the circle's background
+    :type background_circle: str
+    :param outline_circle: Choice of the color for the circle's lines
+    :type outline_circle: str
+    """
     if (state_circle):
         xC, yC = center
         A = (xC-radius, yC-radius)
@@ -12,21 +26,41 @@ def circle(canvas, center, radius, state_circle, background_circle, outline_circ
 
 
 def coord(x, y, a, b):
+    """
+    Give the coordinnates of the new mark (interger numbers)
+    """
     return(x+b, y-a)
 
 
 def angle_tab(radius, graph):
+    """
+    Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*:math:`pi`/modulo_number)
+
+    :param radius: Radius of the circle
+    :type radius: int
+    :return: Returns a list of coordonnates which give the angle of each dots
+    """
     t = (2*np.pi)/(graph.mod)
     angle = [None] * graph.mod*100
     for k in range(graph.mod*100):
         angle[k] = (radius*np.cos(k*t/100), radius*np.sin(k*t/100))
-        # angle for the dots (modulo_number)
     return angle
 
 
 def dot(canvas, graph, radius, center, color_graph, color_name):
-    # Add the number of points needed on the cercle, they are proportionally
-    # spaced (angle : 2pi/modulo_number)
+    """
+    Add the number of points needed on the cercle thanks to the angle_tab function
+
+    :param canvas: Canvas where the dots will be created
+    :param radius: Corresponds to the radius of the circle
+    :type radius: int
+    :param center: Center of the circle in the canvas
+    :type center: int
+    :param color_graph: It's about a table of colors of the circle frame
+    :type color_graph: list of strings
+    :param color_name: Choice of the color for the numbers placed on the frame of the circle
+    :type color_name: str
+    """
     col=0
     if (graph.mod <= 150):
         angle = angle_tab(radius, graph)
@@ -41,6 +75,17 @@ def dot(canvas, graph, radius, center, color_graph, color_name):
 
 
 def name_peak(cnv, radius, graph, center, color_name):
+    """
+    Add a number, for each dots, on the frame of the circle
+
+    :param cnv: Canvas where the numbers will be added
+    :param radius: Corresponds to the radius of the circle
+    :type radius: int 
+    :param center: Center of the circle in the canvas
+    :type center: int
+    :param color_name: Choice of the color for the numbers placed on the frame of the circle
+    :type color_name: str
+    """
     angle = angle_tab(radius+17, graph)
     for j in np.arange(0, len(angle), 100):
         a, b = angle[j]
