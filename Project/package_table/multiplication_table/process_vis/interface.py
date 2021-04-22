@@ -1,7 +1,12 @@
-from tkinter import Tk, Canvas, Scale, Button
+from tkinter import Tk, Canvas, Scale, Button , Toplevel, Label, Scrollbar, Text, END, Y
 import multiplication_table as mt
 import multiplication_table.process_vis.edges_vis as ev
 import multiplication_table.process_vis.base_vis as bv
+from PIL import Image
+import imageio
+import os
+import shutil
+import numpy as np
 
 
 class Interface_gestion:
@@ -10,7 +15,9 @@ class Interface_gestion:
     as well as the colors and design. It also generates the movement  in any canvas or tkinter toplevel.
     """
 
-    def __init__(self, speed, state_button, background, state_circle, color_graph, background_circle, outline_circle, color_name, edges_width):
+    def __init__(self, speed, state_button, background, state_circle, color_graph, background_circle, outline_circle, color_name, edges_width): 
+        self.nb_frame = 0
+        self.nb_video = 0
         """
         This function is a constructor method, that instantiates the speed and all different aspects of the design and movement of the circle. 
 
@@ -32,8 +39,6 @@ class Interface_gestion:
         :type edges_width: float or int. 
 
         """
-
-
         self.design_aspect(speed, state_circle, color_graph, background_circle,
                            outline_circle, color_name, edges_width)
         self.window_init(background)
@@ -160,6 +165,53 @@ class Interface_gestion:
             self.table_cursor.set(self.table_cursor.get()+0.01)
             self.root.after(self.speed)
             self.root.update()
+        
+    def save_frame(self):
+        text = self.cnv.create_text(640,730,fill="black",font="Arial 12 italic bold",text="Table de "+ str(self.N) + " modulo " + str(self.modulo))
+        self.cnv.postscript(file="Project/package_table/temp/eps/frame.eps")
+        img = Image.open("Project/package_table/temp/eps/frame.eps")
+        if (self.nb_frame==0):
+            os.mkdir('Project/package_table/temp/png'+str(self.nb_video))
+        img.save('Project/package_table/temp/png'+str(self.nb_video)+'/' + str(self.nb_frame) + '.png')
+        self.cnv.delete(text)
+        self.nb_frame = self.nb_frame + 1
+
+    def save_video(self):
+        if (os.path.exists('Project/package_table/temp/png' + str(self.nb_video))):
+            folder = 'Project/package_table/temp/png' + str(self.nb_video)
+            frame=[]
+            for i in range (self.nb_frame):
+                frame.append(str(i) + ".png")
+            files = [f"{folder}\{file}" for file in frame]
+            images = [imageio.imread(file) for file in files]
+            imageio.mimwrite('gif/gif'+ str(self.nb_video)+'.gif', images, fps=5)
+            self.nb_video= self.nb_video + 1
+            self.nb_frame = 0
+
+    def destroy_root(self):
+        for i in range(self.nb_video):
+            shutil.rmtree('Project/package_table/temp/png'+str(i))
+        self.root.destroy()
+
+    def createNewWindow(self):
+        new_root = Tk()
+        new_root.geometry("300x350")
+        scrollbar = Scrollbar(new_root)
+        scrollbar.pack(side='right', fill=Y)
+        textbox = Text(new_root)
+        textbox.pack()
+        for i in range(self.modulo):
+            textbox.insert(END, str(self.N)+ " * " + str(i) + " modulo " + str(self.modulo) + " = " + str(round(self.N*i%self.modulo,2)) + "\n")
+        textbox.config(yscrollcommand=scrollbar.set)
+        scrollbar.config(command=textbox.yview)
+        new_root.mainloop()
+    
+    def create_description(self):
+        newWindow = Toplevel(self.root)
+        text=Label(newWindow, text="A midi j'ai mangé de la chantilligjkttttttttttttttttttttttttttttttttttttttttddeeeeeeeeeeeee \n \n \n ")
+        text.pack()
+        text=Label(newWindow, text="A midi j'ai mangé de la chantilligjkttttttttttttttttttttttttttttttttttttttttddeeeeeeeeeeeee \n \n \n ")
+        text.pack()
 
     def motion_button(self):
         '''
@@ -169,6 +221,18 @@ class Interface_gestion:
         button_play = Button(self.root, text="Play/Pause",
                              command=self.move_value)
         button_play.pack(padx=50, pady=5, side="top")
+        button_photo= Button(self.root, text="Photo",
+                                  command=self.save_frame)
+        button_photo.pack(padx=50, pady=5, side="top")
+        button_video = Button(self.root, text="Vidéo",
+                                  command=self.save_video)
+        button_video.pack(padx=50, pady=5, side="top")
+        button_table_window = Button(self.root, text="Table of",
+                                  command=self.createNewWindow)
+        button_table_window.pack(padx=50, pady=5, side="top")
+        button_table_window = Button(self.root, text="Description",
+                                  command=self.create_description)
+        button_table_window.pack(padx=50, pady=5, side="top")
         quit = Button(self.root, text="Quit", fg="black",
-                      command=self.root.destroy)
+                      command=self.destroy_root)
         quit.pack(padx=50, pady=5, side="bottom")
