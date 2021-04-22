@@ -2,8 +2,6 @@ import multiplication_table.process_vis.base_vis as bv
 
 
 def all_edges(canvas, graph, radius, center, color_graph, edges_width):
-<<<<<<< HEAD
-<<<<<<< HEAD
     """
     This function takes:
      -six parameters:
@@ -17,10 +15,6 @@ def all_edges(canvas, graph, radius, center, color_graph, edges_width):
        angle and col
     And call the second function
     """
-=======
->>>>>>> main
-=======
->>>>>>> main
     angle = bv.angle_tab(radius, graph)
     col=0
     for i in range(0, graph.mod):
@@ -30,28 +24,23 @@ def all_edges(canvas, graph, radius, center, color_graph, edges_width):
 
 
 def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
-<<<<<<< HEAD
-<<<<<<< HEAD
     """
     This function draws for any i fixed the edges between i and the result
     of the modular calculate ( N*i modulo mod)
     
-    param i: fixed
-    type: int
-    param j: modular calculate
-    type j: int
-    param xA, yA: angle
-    type xA, yA: int
-    param xB, yB: angle
-    type xB, yB: int
+    :param i: fixed
+    :type i: int
+    :param j: modular calculate
+    :type j: int
+    :param xA, yA: angle
+    :type xA, yA: int
+    :param xB, yB: angle
+    :type xB, yB: int
     """
-=======
->>>>>>> main
-=======
->>>>>>> main
     j = int(graph.modulo_result(i)*100)
     xA, yA = angle[i*100]
     xB, yB = angle[j]
     A = bv.coord(center, center, xA, yA)
     B = bv.coord(center, center, xB, yB)
     canvas.create_line(A, B, fill=color_graph, width=edges_width)
+
