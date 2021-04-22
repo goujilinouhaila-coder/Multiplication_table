@@ -46,7 +46,5 @@ Interface
 
 .. autofunction:: process_vis.interface.Interface_gestion.motion_button
 
-
-
 Motion visualization
 --------------------
