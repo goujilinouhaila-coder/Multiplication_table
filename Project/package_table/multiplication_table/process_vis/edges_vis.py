@@ -31,16 +31,17 @@ def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
     This function draws for any i fixed the edge between the vertex i and the vertex j whitch is given by the result
     of the modular calculate.
     
+    :param graph: Graph type object
+    :param canvas: Canvas where the edge will be created
     :param i: Vertex i
     :type i: int
-    :param j: Vertex j 
-    :type j: int
-    :param xA,yA: Coordinates of the first vertex
-    :type xA,yA: int or float
-    :param xB,yB: Coordinates of the second vertex
-    :type xB,yB: int or float
-    :return: Returns the  Canvas widget
-    :rtype: tkinter.Canvas
+    :param angle: List of coordinates of every vertex
+    :param center: Center of the circle in the canvas
+    :type center: int
+    :param color_graph: It's about a table of colors of the circle frame
+    :param edges_width: 
+    :param edges_width: The width of ridgs (edges)
+    :type edges_width: float or int
     """
     j = int(graph.modulo_result(i)*100)
     xA, yA = angle[i*100]
