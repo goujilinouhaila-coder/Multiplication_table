@@ -121,7 +121,7 @@ class Interface_gestion:
         self.graph.N = float(n)
         self.show_update()
 
-    def peak(self, mod):
+    def vertices(self, mod):
         '''
         Represents the modulo of the multiplication table and which returns to the peaks of the circle.
         '''
@@ -147,7 +147,7 @@ class Interface_gestion:
         '''
         self.peak_cursor = Scale(self.root, label="Modulo",
                                  font="Arial 12 bold", orient="horizontal",
-                                 command=self.peak, from_=2, to=200,
+                                 command=self.vertices, from_=2, to=200,
                                  length=250, repeatdelay=500)                
         self.peak_cursor.pack(pady=10, anchor="center")
         self.peak_cursor.set(10)
