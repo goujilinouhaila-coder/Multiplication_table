@@ -1,4 +1,8 @@
 import numpy as np
+from scipy import sparse
+from scipy.sparse import isspmatrix
+import numpy as np 
+import time 
 
 class Graph:
     """
@@ -26,25 +30,6 @@ class Graph:
         """
         print(self.M)
 
-    def add_edge(self, i, j):
-        """
-        Create one edge between vertices i and j.
-
-        :param i: Vertex i
-        :type i: int
-        :param j: Vertex j
-        :type j: int
-        """
-        self.M[i, j] = 1
-        self.M[j, i] = 1
-
-    def create_matrix(self):
-        """ 
-        Fill the adjacency matrix from the results of the modular multiplication.   
-        """
-        for i in np.arange(0, self.mod, 1):
-            self.add_edge(int(i*100), int(self.modulo_result(i)*100))
-
     def modulo_result(self, i):
         """
         Returns the result of the modular multiplication. 
@@ -66,6 +51,22 @@ class Graph:
         """
         Displays in a textual format all the vertices, each one of them is accompanied by all the edges incident to it. 
         """
-        index = np.where(np.triu(self.M, 1) == 1)
-        for i in range(len(index[0])):
-            print(index[0][i]/100, "<--->", index[1][i]/100)
+        for i in range(len(self.M.row)):
+            print(self.M.row[i], "<--->", self.M.col[i]/100)
+
+    def sparse_matrix(self):
+        """ 
+        Fill the adjacency sparse matrix from the results of the modular multiplication.   
+        """
+        start = time.time()
+        val = [1]*self.mod
+        row = np.array(range(self.mod))
+        col = np.zeros(self.mod)
+        for i in range(self.mod):
+            col[i] = self.modulo_result(i)*100
+
+        self.M = sparse.coo_matrix((val[1:],(row[1:],col[1:])), shape = (self.mod*100, self.mod*100))
+        end = time.time()
+
+
+
