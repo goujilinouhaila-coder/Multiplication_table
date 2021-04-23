@@ -21,7 +21,7 @@ def all_edges(canvas, graph, radius, center, color_graph, edges_width):
     for i in range(0, graph.mod):
         one_edge(graph, canvas, i, angle, center,
                  color_graph[col], edges_width)
-        col=(col+1)%len(color_graph)
+        col = (col+1)%len(color_graph)
 
 
 def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
