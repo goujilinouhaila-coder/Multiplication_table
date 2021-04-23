@@ -6,6 +6,9 @@ from PIL import Image
 import imageio
 import os
 import shutil
+import time 
+from scipy import sparse
+from scipy.sparse import isspmatrix
 
 class Interface_gestion:
     """
@@ -99,12 +102,15 @@ class Interface_gestion:
         '''
         Initialize the visualization part of the graph, concerning its dots and edges. 
         '''
+        start = time.time()
         bv.circle(self.cnv, self.center, self.radius, self.state_circle,
                   self.background_circle, self.outline_circle)
         bv.dot(self.cnv, self.graph, self.radius, self.center[0],
                self.color_graph, self.color_name)
         ev.all_edges(self.cnv, self.graph, self.radius, self.center[0],
                      self.color_graph, self.edges_width)
+        end = time.time()
+        print("graph_vis'time : "+ str(end-start)
 
     def table(self, n):
         """
@@ -129,8 +135,11 @@ class Interface_gestion:
         '''
         Removes the previous Canvas and recreates a new one.
         '''
+        start = time.time()
         self.cnv.delete("all")
         self.graph_vis()
+        end = time.time()
+        print("Show_update'time : "+ str(end-start))
 
     def slider(self):
         '''
