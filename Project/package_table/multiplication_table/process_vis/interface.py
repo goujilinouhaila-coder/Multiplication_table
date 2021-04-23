@@ -14,8 +14,6 @@ class Interface_gestion:
     """
 
     def __init__(self, speed, state_button, background, state_circle, color_graph, background_circle, outline_circle, color_name, edges_width): 
-        self.nb_frame = 0
-        self.nb_video = 0
         """
         This function is a constructor method, that instantiates the speed and all different aspects of the design and movement of the circle. 
 
@@ -35,7 +33,13 @@ class Interface_gestion:
         :type color_name: str
         :param edges_width: The width of ridgs (edges)
         :type edges_width: float or int. 
+        :param nb_frame: The number of images captured for a gif
+        :type nb_frame: int
+        :param nb_video: The number of video already created 
+        :type nb_video: int
         """
+        self.nb_frame = 0
+        self.nb_video = 0
         self.design_aspect(speed, state_circle, color_graph, background_circle,
                            outline_circle, color_name, edges_width)
         self.window_init(background)
@@ -159,6 +163,9 @@ class Interface_gestion:
             self.root.update()
 
     def save_frame(self):
+        """
+        This method captures the current canvas, converts it to .png format and saves it in the correct directory "/temp/png{number_video}".
+        """
         text = self.cnv.create_text(640, 730, fill="black", 
                                     font="Arial 12 italic bold",
                                     text="Table de "+str(self.N) + " modulo "+str(self.modulo))
@@ -171,6 +178,11 @@ class Interface_gestion:
         self.nb_frame = self.nb_frame + 1
 
     def save_video(self):
+        """
+        This method accesses the folder where the corresponding images are saved.
+        Then it creates the gif from the captured images.
+        The latter is saved in the folder "/gif" in the format: gif{number}.gif
+        """
         if (os.path.exists('Project/package_table/temp/png'+str(self.nb_video))):
             folder = 'Project/package_table/temp/png' + str(self.nb_video)
             frame = []
@@ -183,11 +195,19 @@ class Interface_gestion:
             self.nb_frame = 0
 
     def destroy_root(self):
+        """
+        This method deletes all the files whose format is "/temp/png{number_video}". 
+        Then, it destroys all the canvas and closes the window.
+        """
         for i in range(self.nb_video):
             shutil.rmtree('Project/package_table/temp/png'+str(i))
         self.root.destroy()
 
     def create_table_window(self):
+        """ 
+        This method creates an another window which contains all the modular calculations of the current Canvas.
+        This window is managed by a scrollbar.
+        """
         self.state_button = False
         new_root = Tk()
         new_root.geometry("300x350")
@@ -202,6 +222,9 @@ class Interface_gestion:
         new_root.mainloop()
 
     def create_description(self):
+        """ 
+        This method creates an another window which contains a description of the different graphicals performances.
+        """
         newWindow = Toplevel(self.root)
         text = Label(newWindow, text="Play/Pause : The buttom to play or stop the animation. \n  ")
         text.pack()
