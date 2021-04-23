@@ -48,4 +48,14 @@ Interface
 
 .. autofunction:: process_vis.interface.Interface_gestion.move_value
 
+.. autofunction:: process_vis.interface.Interface_gestion.save_frame
+
+.. autofunction:: process_vis.interface.Interface_gestion.save_video
+
+.. autofunction:: process_vis.interface.Interface_gestion.destroy_root
+
+.. autofunction:: process_vis.interface.Interface_gestion.create_table_window
+
+.. autofunction:: process_vis.interface.Interface_gestion.create_description
+
 .. autofunction:: process_vis.interface.Interface_gestion.motion_button

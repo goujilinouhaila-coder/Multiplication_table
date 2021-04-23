@@ -12,7 +12,7 @@ class Graph:
     :type N: float
     :param mod: Corresponds to the modulo number entered by the user
     :type mod: int
-    :param M: Symmetric adjacency matrix used to represent the graph. This dimension of this matrix is (mod*100, mod*100) whose non-diagonal element :math:`m_{ij}` corresponds to an edge between vertex i and vertex j
+    :param M: Symmetric adjacency sparse matrix used to represent the graph. This dimension of this matrix is (mod*100, mod*100) whose non-diagonal element :math:`m_{ij}` corresponds to an edge between vertex i and vertex j
     :type M: numpy
     """
 

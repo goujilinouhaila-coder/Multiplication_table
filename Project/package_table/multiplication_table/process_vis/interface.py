@@ -110,15 +110,15 @@ class Interface_gestion:
         ev.all_edges(self.cnv, self.graph, self.radius, self.center[0],
                      self.color_graph, self.edges_width)
         end = time.time()
-        print("graph_vis'time : "+ str(end-start)
+        print("graph_vis'time : "+ str(end-start))
 
     def table(self, n):
-        """
+        '''
         This method is the table of n where the value read by the cursor.
 
         :param n: Represent the number in base 10. Like exemple if the cursor is moved switches to position 40; we have a table call ("42")
         :type n: str 
-        """
+        '''
         self.N = float(n)
         self.graph.N = float(n)
         self.show_update()

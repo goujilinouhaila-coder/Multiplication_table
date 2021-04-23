@@ -174,7 +174,7 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>N</strong> (<em>float</em>) – Corresponds to the multiplication table assigned by the user. This number is rounded to <span class="math notranslate nohighlight">\(10^{-2}\)</span></p></li>
 <li><p><strong>mod</strong> (<em>int</em>) – Corresponds to the modulo number entered by the user</p></li>
-<li><p><strong>M</strong> (<em>numpy</em>) – Symmetric adjacency matrix used to represent the graph. This dimension of this matrix is (mod*100, mod*100) whose non-diagonal element <span class="math notranslate nohighlight">\(m_{ij}\)</span> corresponds to an edge between vertex i and vertex j</p></li>
+<li><p><strong>M</strong> (<em>numpy</em>) – Symmetric adjacency sparse matrix used to represent the graph. This dimension of this matrix is (mod*100, mod*100) whose non-diagonal element <span class="math notranslate nohighlight">\(m_{ij}\)</span> corresponds to an edge between vertex i and vertex j</p></li>
 </ul>
 </dd>
 </dl>
@@ -190,26 +190,6 @@
 <dt id="process_math.Graph.Graph.print_matrix">
 <code class="sig-prename descclassname">process_math.Graph.Graph.</code><code class="sig-name descname">print_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph.print_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays the adjacency matrix.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="process_math.Graph.Graph.add_edge">
-<code class="sig-prename descclassname">process_math.Graph.Graph.</code><code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph.add_edge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create one edge between vertices i and j.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>i</strong> (<em>int</em>) – Vertex i</p></li>
-<li><p><strong>j</strong> (<em>int</em>) – Vertex j</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="process_math.Graph.Graph.create_matrix">
-<code class="sig-prename descclassname">process_math.Graph.Graph.</code><code class="sig-name descname">create_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph.create_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fill the adjacency matrix from the results of the modular multiplication.</p>
 </dd></dl>
 
 <dl class="py function">
