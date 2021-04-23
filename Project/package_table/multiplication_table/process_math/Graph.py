@@ -1,11 +1,12 @@
 import numpy as np
 from scipy import sparse
-import time 
+import time
+
 
 class Graph:
     """
     Graph class is used to contain the related specifications to the modular multiplication and create the associated undirected graph in the console.
-        
+      
     :param N: Corresponds to the multiplication table assigned by the user. This number is rounded to :math:`10^{-2}`
     :type N: float
     :param mod: Corresponds to the modulo number entered by the user
@@ -40,7 +41,7 @@ class Graph:
         :Example:
 
             For N=2, i=7 and mod=10 \n
-            >>> modulo_result(2,10,7) 
+            >>> modulo_result(Graph(2,10),7)
             4
         """
         return (self.N * int(i)) % self.mod
