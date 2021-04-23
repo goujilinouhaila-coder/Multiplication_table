@@ -3,17 +3,18 @@ import multiplication_table.process_vis.base_vis as bv
 
 def all_edges(canvas, graph, radius, center, color_graph, edges_width):
     """
-    This function takes:
-     -six parameters:
-       canvas: display object
-       graph: it's the graphic
-       radius: it's the radius of the circle
-       center: it's the center of the circle
-       color_graph: for coloring the graph
-       edges_width: the width of edges. Can be int or float
-     -two global variables:
-       angle and col
-    And call the second function
+    This function reiterates the :py:meth:`one_edge` function for every vertex i between 0 and the modulo number - 1.
+
+    :param canvas: Canvas where edges will be created
+    :param graph: Graph type object
+    :param radius: Corresponds to the radius of the circle
+    :type radius: int
+    :param center: Center of the circle in the canvas
+    :type center: int
+    :param color_graph: It's about a table of colors of the circle frame
+    :type color_graph: list of strings
+    :param edges_width: The width of ridgs (edges)
+    :type edges_width: float or int
     """
     angle = bv.angle_tab(radius, graph)
     col=0
@@ -25,17 +26,17 @@ def all_edges(canvas, graph, radius, center, color_graph, edges_width):
 
 def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
     """
-    This function draws for any i fixed the edges between i and the result
-    of the modular calculate ( N*i modulo mod)
+    This function draws for any i fixed the edge between the vertex i and the vertex j whitch is given by the result
+    of the modular calculate.
     
-    :param i: fixed
+    :param i: Vertex i
     :type i: int
-    :param j: modular calculate
+    :param j: Vertex j 
     :type j: int
-    :param xA, yA: angle
-    :type xA, yA: int
-    :param xB, yB: angle
-    :type xB, yB: int
+    :param xA,yA: Coordinates of the first vertex
+    :type xA,yA: int or float
+    :param xB,yB: Coordinates of the second vertex
+    :type xB,yB: int or float
     """
     j = int(graph.modulo_result(i)*100)
     xA, yA = angle[i*100]
