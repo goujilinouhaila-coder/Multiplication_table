@@ -6,9 +6,7 @@ from PIL import Image
 import imageio
 import os
 import shutil
-import time 
-from scipy import sparse
-from scipy.sparse import isspmatrix
+import time
 
 class Interface_gestion:
     """
@@ -110,7 +108,7 @@ class Interface_gestion:
         ev.all_edges(self.cnv, self.graph, self.radius, self.center[0],
                      self.color_graph, self.edges_width)
         end = time.time()
-        print("graph_vis'time : "+ str(end-start))
+        print("graph_vis'time : " + str(end-start))
 
     def table(self, n):
         '''
@@ -139,7 +137,7 @@ class Interface_gestion:
         self.cnv.delete("all")
         self.graph_vis()
         end = time.time()
-        print("Show_update'time : "+ str(end-start))
+        print("Show_update'time : " + str(end-start))
 
     def slider(self):
         '''
@@ -245,7 +243,6 @@ class Interface_gestion:
         text.pack()
         text = Label(newWindow, text="Quit : To quit the interface. \n You should pass by there and quit it, to avoid errors .\n  ")
         text.pack()
-
 
     def motion_button(self):
         '''
