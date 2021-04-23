@@ -16,6 +16,8 @@ def circle(canvas, center, radius, state_circle, background_circle, outline_circ
     :type background_circle: str
     :param outline_circle: Choice of the color for the circle's lines
     :type outline_circle: str
+    :return: Returns the  Canvas widget
+    :rtype: tkinter.Canvas
     """
     if (state_circle):
         xC, yC = center
@@ -23,6 +25,7 @@ def circle(canvas, center, radius, state_circle, background_circle, outline_circ
         B = (xC+radius, yC+radius)
         canvas.create_oval(A, B, width=2, fill=background_circle,
                            outline=outline_circle)
+    return canvas
 
 
 def coord(x, y, a, b):
@@ -68,6 +71,8 @@ def dot(canvas, graph, radius, center, color_graph, color_name):
     :type color_graph: list of strings
     :param color_name: Choice of the color for the numbers placed on the frame of the circle
     :type color_name: str
+    :return: Returns the  Canvas widget
+    :rtype: tkinter.Canvas
     """
     col=0
     if (graph.mod <= 150):
@@ -79,10 +84,11 @@ def dot(canvas, graph, radius, center, color_graph, color_name):
             # create modulo_number circles (R=3)
             canvas.create_oval(A, B, fill=color_graph[col])
             col = (col+1)%len(color_graph)
-        name_peak(canvas, radius, graph, center, color_name)
+        name_vertices(canvas, radius, graph, center, color_name)
+    return canvas
 
 
-def name_peak(cnv, radius, graph, center, color_name):
+def name_vertices(cnv, radius, graph, center, color_name):
     """
     Add a number, for each dots, on the frame of the circle.
 
@@ -93,6 +99,8 @@ def name_peak(cnv, radius, graph, center, color_name):
     :type center: int
     :param color_name: Choice of the color for the numbers placed on the frame of the circle
     :type color_name: str
+    :return: Returns the  Canvas widget
+    :rtype: tkinter.Canvas
     """
     angle = angle_tab(radius+17, graph)
     for j in np.arange(0, len(angle), 100):
@@ -102,3 +110,4 @@ def name_peak(cnv, radius, graph, center, color_name):
             size = str(int(min(18, 16*62/graph.mod)))
             cnv.create_text(Dots_C, text=str(int(j/100)),
                             font="Arial " + size + " bold", fill=color_name)
+    return cnv
