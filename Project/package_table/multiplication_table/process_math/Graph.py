@@ -1,7 +1,5 @@
 import numpy as np
 from scipy import sparse
-from scipy.sparse import isspmatrix
-import numpy as np 
 import time 
 
 class Graph:
@@ -64,7 +62,6 @@ class Graph:
         col = np.zeros(self.mod)
         for i in range(self.mod):
             col[i] = self.modulo_result(i)*100
-
         self.M = sparse.coo_matrix((val[1:],(row[1:],col[1:])), shape = (self.mod*100, self.mod*100))
         end = time.time()
 
