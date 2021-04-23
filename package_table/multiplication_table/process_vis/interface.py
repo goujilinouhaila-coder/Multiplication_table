@@ -8,17 +8,21 @@ import os
 import shutil
 import time
 
+
 class Interface_gestion:
     """
-    This class supports functions which is used, for the graphical interface and link between the different aspects of visualization, 
-    as well as the colors and design. It also generates the movement  in any canvas or tkinter toplevel.
+    This class supports functions which is used, for the graphical interface
+    and link between the different aspects of visualization,
+    as well as the colors and design. It also generates the movement
+    in any canvas or tkinter toplevel.
     """
 
     def __init__(self, speed, state_button, background, state_circle, color_graph, background_circle, outline_circle, color_name, edges_width): 
         """
-        This function is a constructor method, that instantiates the speed and all different aspects of the design and movement of the circle. 
+        This function is a constructor method, that instantiates the speed
+        and all different aspects of the design and movement of the circle.
 
-        :param speed: Corresponds to the speed of the circle's movement 
+        :param speed: Corresponds to the speed of the circle's movement
         :type speed: float
         :param state_button: Show the button if it's true
         :type state_button: boolean
@@ -32,11 +36,11 @@ class Interface_gestion:
         :type outline_circle: str
         :param color_name: The color of the numbers placed on the frame of the circle
         :type color_name: str
-        :param edges_width: The width of ridgs (edges)
-        :type edges_width: float or int. 
+        :param edges_width: The width of ridgs (edges) (in pixels)
+        :type edges_width: int
         :param nb_frame: The number of images captured for a gif
         :type nb_frame: int
-        :param nb_video: The number of video already created 
+        :param nb_video: The number of video already created
         :type nb_video: int
         """
         self.nb_frame = 0
@@ -55,20 +59,20 @@ class Interface_gestion:
         """
         Initialization of the design aspect parameters.
 
-        :param speed: Corresponds to the speed of the circle's movement. 
+        :param speed: Corresponds to the speed of the circle's movement
         :type N: float
         :param state_circle: Displays the frame of the circle if it takes True
         :type state_circle: boolean
         :param color_graph: It's about a table of colors of the circle frame
         :type color_graph: list of strings
-        :param background_circle: Generates the color of the background of the circle 
+        :param background_circle: Generates the color of the background of the circle
         :type background_circle: str
         :param outline_circle: The color of the circle' lines
         :type outline_circle: str
         :param color_name: The color of the numbers placed on the frame of the circle
         :type color_name: str
-        :param edges_width: The width of ridgs (edges)
-        :type edges_width: float or int
+        :param edges_width: The width of ridgs (edges) (in pixels)
+        :type edges_width: int
         """
         self.state_circle = state_circle
         self.outline_circle = outline_circle
@@ -80,7 +84,8 @@ class Interface_gestion:
 
     def window_init(self, background):
         '''
-        Initialize the interface'window refers to a rectangular area somewhere on the user's display screen through which you can interact.
+        Initialize the interface'window refers to a rectangular area somewhere
+        on the user's display screen through which you can interact.
         '''
         self.root = Tk()
         self.cnv = Canvas(self.root, width=750, height=750, bg=background)
@@ -88,7 +93,8 @@ class Interface_gestion:
 
     def graph_init(self):
         '''
-        This method initializes the graph, as one its radius, its center, as well as its multiplication table and its modulo.
+        This method initializes the graph, as one its radius, its center, 
+        as well as its multiplication table and its modulo.
         '''
         self.radius = 300
         self.N = 2
@@ -98,7 +104,8 @@ class Interface_gestion:
 
     def graph_vis(self):
         '''
-        Initialize the visualization part of the graph, concerning its dots and edges. 
+        Initialize the visualization part of the graph, concerning its dots
+        and edges.
         '''
         start = time.time()
         bv.circle(self.cnv, self.center, self.radius, self.state_circle,
@@ -115,7 +122,7 @@ class Interface_gestion:
         This method is the table of n where the value read by the cursor.
 
         :param n: Represent the number in base 10. Like exemple if the cursor is moved switches to position 40; we have a table call ("42")
-        :type n: str 
+        :type n: str
         '''
         self.N = float(n)
         self.graph.N = float(n)
@@ -123,7 +130,8 @@ class Interface_gestion:
 
     def vertices(self, mod):
         '''
-        Represents the modulo of the multiplication table and which returns to the peaks of the circle.
+        Represents the modulo of the multiplication table and which returns to
+        the peaks of the circle.
         '''
         self.modulo = int(mod)
         self.graph.mod = int(mod)
@@ -141,14 +149,16 @@ class Interface_gestion:
 
     def slider(self):
         '''
-        This method generates the two cursors which captures the number of the table and the number of vertices (modulo). 
-        The table cursor captures all tables from 2 to 400, it is placed horizontally and is 250 pixels long. The same for the other cursor 
-        of the modulo which represents the number of points (vertices).
+        This method generates the two cursors which captures the number of the
+        table and the number of vertices (modulo). The table cursor captures
+        all tables from 2 to 400, it is placed horizontally and is 250 pixels
+        long. The same for the other cursor of the modulo which represents
+        the number of points (vertices).
         '''
         self.peak_cursor = Scale(self.root, label="Modulo",
                                  font="Arial 12 bold", orient="horizontal",
                                  command=self.vertices, from_=2, to=200,
-                                 length=250, repeatdelay=500)                
+                                 length=250, repeatdelay=500)              
         self.peak_cursor.pack(pady=10, anchor="center")
         self.peak_cursor.set(10)
         self.table_cursor = Scale(self.root, label="Table",
@@ -160,7 +170,8 @@ class Interface_gestion:
 
     def move_value(self):
         '''
-        By this method, we add 0.01 each time we take a value from the multiplication table.
+        By this method, we add 0.01 each time we take a value from the
+        multiplication table.
         We rebuild the movement which is continuous.
         '''
         self.state_button = not self.state_button
@@ -171,48 +182,53 @@ class Interface_gestion:
 
     def save_frame(self):
         """
-        This method captures the current canvas, converts it to .png format and saves it in the correct directory "/temp/png{number_video}".
+        This method captures the current canvas, converts it to .png format
+        and saves it in the correct directory "/temp/png{number_video}".
         """
         text = self.cnv.create_text(640, 730, fill="black", 
                                     font="Arial 12 italic bold",
                                     text="Table de "+str(self.N) + " modulo "+str(self.modulo))
-        self.cnv.postscript(file="Project/package_table/temp/eps/frame.eps")
-        img = Image.open("Project/package_table/temp/eps/frame.eps")
+        self.cnv.postscript(file="package_table/temp/eps/frame.eps")
+        img = Image.open("package_table/temp/eps/frame.eps")
         if (self.nb_frame == 0):
-            os.mkdir('Project/package_table/temp/png'+str(self.nb_video))
-        img.save('Project/package_table/temp/png'+str(self.nb_video)+'/'+str(self.nb_frame)+'.png')
+            os.mkdir('package_table/temp/png'+str(self.nb_video))
+        img.save('package_table/temp/png'+str(self.nb_video)+'/'+str(self.nb_frame)+'.png')
         self.cnv.delete(text)
         self.nb_frame = self.nb_frame + 1
 
     def save_video(self):
         """
-        This method accesses the folder where the corresponding images are saved.
+        This method accesses the folder where the corresponding images 
+        are saved.
         Then it creates the gif from the captured images.
         The latter is saved in the folder "/gif" in the format: gif{number}.gif
         """
-        if (os.path.exists('Project/package_table/temp/png'+str(self.nb_video))):
-            folder = 'Project/package_table/temp/png' + str(self.nb_video)
+        if (os.path.exists('package_table/temp/png'+str(self.nb_video))):
+            folder = 'package_table/temp/png' + str(self.nb_video)
             frame = []
             for i in range(self.nb_frame):
                 frame.append(str(i) + ".png")
             files = [f"{folder}\{file}" for file in frame]
             images = [imageio.imread(file) for file in files]
-            imageio.mimwrite('gif/gif'+ str(self.nb_video)+'.gif', images, fps=5)
+            imageio.mimwrite('gif/gif'+str(self.nb_video)+'.gif',
+                             images, fps=5)
             self.nb_video = self.nb_video + 1
             self.nb_frame = 0
 
     def destroy_root(self):
         """
-        This method deletes all the files whose format is "/temp/png{number_video}". 
+        This method deletes all the files whose format is
+        "/temp/png{number_video}".
         Then, it destroys all the canvas and closes the window.
         """
         for i in range(self.nb_video):
-            shutil.rmtree('Project/package_table/temp/png'+str(i))
+            shutil.rmtree('package_table/temp/png'+str(i))
         self.root.destroy()
 
     def create_table_window(self):
         """ 
-        This method creates an another window which contains all the modular calculations of the current Canvas.
+        This method creates an another window which contains all the modular
+        calculations of the current Canvas.
         This window is managed by a scrollbar.
         """
         self.state_button = False
@@ -223,14 +239,15 @@ class Interface_gestion:
         textbox = Text(new_root)
         textbox.pack()
         for i in range(self.modulo):
-            textbox.insert(END, str(self.N)+" x " + str(i) + " modulo "+str(self.modulo) + " = " + str(round(self.N*i%self.modulo,2)) + "\n")
+            textbox.insert(END, str(self.N)+" x " + str(i) + " modulo "+str(self.modulo) + " = " + str(round(self.N* i % self.modulo, 2)) + "\n")
         textbox.config(yscrollcommand=scrollbar.set)
         scrollbar.config(command=textbox.yview)
         new_root.mainloop()
 
     def create_description(self):
         """ 
-        This method creates an another window which contains a description of the different graphicals performances.
+        This method creates an another window which contains a description of
+        the different graphicals performances.
         """
         newWindow = Toplevel(self.root)
         text = Label(newWindow, text="Play/Pause : The buttom to play or stop the animation. \n  ")
@@ -246,7 +263,8 @@ class Interface_gestion:
 
     def motion_button(self):
         '''
-        Provides a button control on the motion graphic and visual, to play or stop the animation.
+        Provides a button control on the motion graphic and visual, to play or
+        stop the animation.
         '''
         self.state_button = False
         button_play = Button(self.root, text="Play/Pause",

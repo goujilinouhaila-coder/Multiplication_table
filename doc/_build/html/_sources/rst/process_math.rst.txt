@@ -1,7 +1,7 @@
 Process math
 ============
 
-Description
+This folder contains .... A REMPLIR :!!!!!!!!!!!!!!!!!!!!!!!
 
 Graph
 -----
@@ -12,9 +12,7 @@ Graph
 
 .. autofunction:: process_math.Graph.Graph.print_matrix
 
-.. autofunction:: process_math.Graph.Graph.add_edge
-
-.. autofunction:: process_math.Graph.Graph.create_matrix
+.. autofunction:: process_math.Graph.Graph.sparse_matrix
 
 .. autofunction:: process_math.Graph.Graph.modulo_result
 

@@ -1,7 +1,7 @@
 Process visualization
 =====================
 
-Description  
+This folder contains .... A REMPLIR :!!!!!!!!!!!!!!!!!!!!!!!
 
 Base visualization
 ------------------
@@ -14,7 +14,7 @@ Base visualization
 
 .. autofunction:: process_vis.base_vis.dot 
 
-.. autofunction:: process_vis.base_vis.name_peak
+.. autofunction:: process_vis.base_vis.name_vertices
 
 Edges visualization
 -------------------
@@ -40,7 +40,7 @@ Interface
 
 .. autofunction:: process_vis.interface.Interface_gestion.table
 
-.. autofunction:: process_vis.interface.Interface_gestion.peak
+.. autofunction:: process_vis.interface.Interface_gestion.vertices
 
 .. autofunction:: process_vis.interface.Interface_gestion.show_update
 

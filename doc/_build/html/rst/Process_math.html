@@ -162,13 +162,14 @@
             
   <div class="section" id="process-math">
 <h1>Process math<a class="headerlink" href="#process-math" title="Permalink to this headline">¶</a></h1>
-<p>Description</p>
+<p>This folder contains …. A REMPLIR :!!!!!!!!!!!!!!!!!!!!!!!</p>
 <div class="section" id="graph">
 <h2>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="process_math.Graph.Graph">
 <em class="property">class </em><code class="sig-prename descclassname">process_math.Graph.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_number</span></em>, <em class="sig-param"><span class="n">modulo_number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Graph class is used to contain the related specifications to the modular multiplication and create the associated undirected graph in the console.</p>
+<dd><p>Graph class is used to contain the related specifications to the modular
+multiplication and create the associated undirected graph in the console.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -193,6 +194,13 @@
 </dd></dl>
 
 <dl class="py function">
+<dt id="process_math.Graph.Graph.sparse_matrix">
+<code class="sig-prename descclassname">process_math.Graph.Graph.</code><code class="sig-name descname">sparse_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph.sparse_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the adjacency sparse matrix from the results of the modular
+multiplication.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="process_math.Graph.Graph.modulo_result">
 <code class="sig-prename descclassname">process_math.Graph.Graph.</code><code class="sig-name descname">modulo_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">i</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph.modulo_result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the result of the modular multiplication.</p>
@@ -208,7 +216,7 @@
 </dd>
 <dt class="field-even">Example</dt>
 <dd class="field-even"><p>For N=2, i=7 and mod=10</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">modulo_result</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">modulo_result</span><span class="p">(</span><span class="n">Graph</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mi">7</span><span class="p">)</span>
 <span class="go">4</span>
 </pre></div>
 </div>
@@ -219,7 +227,8 @@
 <dl class="py function">
 <dt id="process_math.Graph.Graph.print_graph">
 <code class="sig-prename descclassname">process_math.Graph.Graph.</code><code class="sig-name descname">print_graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph.print_graph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Displays in a textual format all the vertices, each one of them is accompanied by all the edges incident to it.</p>
+<dd><p>Displays in a textual format all the vertices, each one of them is
+accompanied by all the edges incident to it.</p>
 </dd></dl>
 
 </div>

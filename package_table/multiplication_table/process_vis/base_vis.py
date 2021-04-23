@@ -16,7 +16,7 @@ def circle(canvas, center, radius, state_circle, background_circle, outline_circ
     :type background_circle: str
     :param outline_circle: Choice of the color for the circle's lines
     :type outline_circle: str
-    :return: Returns the  Canvas widget
+    :return: Returns the Canvas widget
     :rtype: tkinter.Canvas
     """
     if (state_circle):
@@ -42,7 +42,8 @@ def coord(x, y, a, b):
 
 def angle_tab(radius, graph):
     """
-    Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*pi/modulo number).
+    Returns a list of coordinnates which give the angle of each dots, they are
+    proportionally spaced (angle : 2*pi/modulo number).
 
     :param radius: Radius of the circle
     :type radius: int
@@ -59,7 +60,8 @@ def angle_tab(radius, graph):
 
 def dot(canvas, graph, radius, center, color_graph, color_name):
     """
-    Add the number of points needed on the cercle thanks to the :py:meth:`angle_tab` function.
+    Add the number of points needed on the cercle thanks to the
+    :py:meth:`angle_tab` function.
 
     :param canvas: Canvas where the dots will be created
     :param graph: Graph type object
@@ -71,10 +73,10 @@ def dot(canvas, graph, radius, center, color_graph, color_name):
     :type color_graph: list of strings
     :param color_name: Choice of the color for the numbers placed on the frame of the circle
     :type color_name: str
-    :return: Returns the  Canvas widget
+    :return: Returns the Canvas widget
     :rtype: tkinter.Canvas
     """
-    col=0
+    col = 0
     if (graph.mod <= 150):
         angle = angle_tab(radius, graph)
         for j in np.arange(0, len(angle), 100):
@@ -83,7 +85,7 @@ def dot(canvas, graph, radius, center, color_graph, color_name):
             B = coord(center+3, center+3, a, b)
             # create modulo_number circles (R=3)
             canvas.create_oval(A, B, fill=color_graph[col])
-            col = (col+1)%len(color_graph)
+            col = (col + 1) % len(color_graph)
         name_vertices(canvas, radius, graph, center, color_name)
     return canvas
 
@@ -94,7 +96,7 @@ def name_vertices(cnv, radius, graph, center, color_name):
 
     :param cnv: Canvas where the numbers will be added
     :param radius: Corresponds to the radius of the circle
-    :type radius: int 
+    :type radius: int
     :param center: Center of the circle in the canvas
     :type center: int
     :param color_name: Choice of the color for the numbers placed on the frame of the circle

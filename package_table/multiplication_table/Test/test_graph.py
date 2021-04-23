@@ -11,7 +11,7 @@ def test_modulo():
 
 
 def test_sparse():
-    assert isspmatrix(Graph(2, 10).M)
+    assert (isspmatrix(Graph(2, 10).M))
 
 
 def test_sparse_size():
