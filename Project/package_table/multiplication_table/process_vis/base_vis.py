@@ -39,7 +39,7 @@ def coord(x, y, a, b):
 
 def angle_tab(radius, graph):
     """
-    Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*pi/modulo_number).
+    Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*pi/modulo number).
 
     :param radius: Radius of the circle
     :type radius: int
@@ -56,7 +56,7 @@ def angle_tab(radius, graph):
 
 def dot(canvas, graph, radius, center, color_graph, color_name):
     """
-    Add the number of points needed on the cercle thanks to the angle_tab function.
+    Add the number of points needed on the cercle thanks to the :py:meth:`angle_tab` function.
 
     :param canvas: Canvas where the dots will be created
     :param graph: Graph type object

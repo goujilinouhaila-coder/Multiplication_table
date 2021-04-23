@@ -30,14 +30,11 @@ class Graph:
         """
         print(self.M)
 
-
-
-
     def modulo_result(self, i):
         """
         Returns the result of the modular multiplication. 
 
-        :param i: vertex i
+        :param i: Vertex i
         :type i: int
         :return: Returns the result of the modular multiplication
         :rtype: float
