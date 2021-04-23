@@ -3,7 +3,8 @@ import multiplication_table.process_vis.base_vis as bv
 
 def all_edges(canvas, graph, radius, center, color_graph, edges_width):
     """
-    This function reiterates the :py:meth:`one_edge` function for every vertex i between 0 and the modulo number - 1.
+    This function reiterates the :py:meth:`one_edge` function for every vertex 
+    i between 0 and the modulo number - 1.
 
     :param canvas: Canvas where edges will be created
     :param graph: Graph type object
@@ -13,24 +14,26 @@ def all_edges(canvas, graph, radius, center, color_graph, edges_width):
     :type center: int
     :param color_graph: It's about a table of colors of the circle frame
     :type color_graph: list of strings
-    :param edges_width: The width of ridgs (edges)
-    :type edges_width: float or int
-    :return: Returns the  Canvas widget
+    :param edges_width: The width of ridgs (edges) (in pixels)
+    :type edges_width: int
+    :return: Returns the Canvas widget
     :rtype: tkinter.Canvas
     """
     angle = bv.angle_tab(radius, graph)
-    col=0
+    col = 0
     for i in range(0, graph.mod):
         one_edge(graph, canvas, i, angle, center,
                  color_graph[col], edges_width)
-        col = (col+1)%len(color_graph)
+        col = (col + 1) % len(color_graph)
     return canvas
+
 
 def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
     """
-    This function draws for any i fixed the edge between the vertex i and the vertex j whitch is given by the result
+    This function draws for any i fixed the edge between the vertex i and
+    the vertex j whitch is given by the result
     of the modular calculate.
-    
+
     :param graph: Graph type object
     :param canvas: Canvas where the edge will be created
     :param i: Vertex i
@@ -39,9 +42,10 @@ def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
     :param center: Center of the circle in the canvas
     :type center: int
     :param color_graph: It's about a table of colors of the circle frame
-    :param edges_width: 
-    :param edges_width: The width of ridgs (edges)
-    :type edges_width: float or int
+    :param edges_width: The width of ridgs (edges) (in pixels)
+    :type edges_width: int
+    :return: Returns the Canvas widget
+    :rtype: tkinter.Canvas
     """
     j = int(graph.modulo_result(i)*100)
     xA, yA = angle[i*100]
