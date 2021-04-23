@@ -202,7 +202,7 @@
 <dl class="py function">
 <dt id="process_vis.base_vis.angle_tab">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">angle_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.angle_tab" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*pi/modulo_number).</p>
+<dd><p>Returns a list of coordinnates which give the angle of each dots, they are proportionally spaced (angle : 2*pi/modulo number).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -222,7 +222,7 @@
 <dl class="py function">
 <dt id="process_vis.base_vis.dot">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.dot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the number of points needed on the cercle thanks to the angle_tab function.</p>
+<dd><p>Add the number of points needed on the cercle thanks to the <a class="reference internal" href="#process_vis.base_vis.angle_tab" title="process_vis.base_vis.angle_tab"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle_tab()</span></code></a> function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -259,35 +259,33 @@
 <dl class="py function">
 <dt id="process_vis.edges_vis.all_edges">
 <code class="sig-prename descclassname">process_vis.edges_vis.</code><code class="sig-name descname">all_edges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.edges_vis.all_edges" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>This function takes:</dt><dd><dl class="simple">
-<dt>-six parameters:</dt><dd><p>canvas: display object
-graph: it’s the graphic
-radius: it’s the radius of the circle
-center: it’s the center of the circle
-color_graph: for coloring the graph
-edges_width: the width of edges. Can be int or float</p>
-</dd>
-<dt>-two global variables:</dt><dd><p>angle and col</p>
+<dd><p>This function reiterates the <a class="reference internal" href="#process_vis.edges_vis.one_edge" title="process_vis.edges_vis.one_edge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">one_edge()</span></code></a> function for every vertex i between 0 and the modulo number - 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>canvas</strong> – Canvas where edges will be created</p></li>
+<li><p><strong>graph</strong> – Graph type object</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
+<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
+<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
+<li><p><strong>edges_width</strong> (<em>float</em><em> or </em><em>int</em>) – The width of ridgs (edges)</p></li>
+</ul>
 </dd>
 </dl>
-</dd>
-</dl>
-<p>And call the second function</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="process_vis.edges_vis.one_edge">
 <code class="sig-prename descclassname">process_vis.edges_vis.</code><code class="sig-name descname">one_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">angle</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.edges_vis.one_edge" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function draws for any i fixed the edges between i and the result
-of the modular calculate ( N*i modulo mod)</p>
+<dd><p>This function draws for any i fixed the edge between the vertex i and the vertex j whitch is given by the result
+of the modular calculate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>i</strong> (<em>int</em>) – fixed</p></li>
-<li><p><strong>j</strong> (<em>int</em>) – modular calculate</p></li>
-<li><p><strong>yA</strong> (<em>xA</em><em>,</em>) – angle</p></li>
-<li><p><strong>yB</strong> (<em>xB</em><em>,</em>) – angle</p></li>
+<li><p><strong>i</strong> (<em>int</em>) – Vertex i</p></li>
+<li><p><strong>j</strong> (<em>int</em>) – Vertex j</p></li>
+<li><p><strong>xA</strong><strong>,</strong><strong>yA</strong> (<em>int</em><em> or </em><em>float</em>) – Coordinates of the first vertex</p></li>
+<li><p><strong>xB</strong><strong>,</strong><strong>yB</strong> (<em>int</em><em> or </em><em>float</em>) – Coordinates of the second vertex</p></li>
 </ul>
 </dd>
 </dl>

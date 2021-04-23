@@ -30,9 +30,9 @@ class Graph:
         """
         Create one edge between vertices i and j.
 
-        :param i: vertex i
+        :param i: Vertex i
         :type i: int
-        :param j: vertex j
+        :param j: Vertex j
         :type j: int
         """
         self.M[i, j] = 1
@@ -49,7 +49,7 @@ class Graph:
         """
         Returns the result of the modular multiplication. 
 
-        :param i: vertex i
+        :param i: Vertex i
         :type i: int
         :return: Returns the result of the modular multiplication
         :rtype: float
