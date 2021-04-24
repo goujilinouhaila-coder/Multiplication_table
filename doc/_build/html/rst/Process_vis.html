@@ -163,24 +163,26 @@
             
   <div class="section" id="process-visualization">
 <h1>Process visualization<a class="headerlink" href="#process-visualization" title="Permalink to this headline">¶</a></h1>
-<p>This folder contains all the functions that designate the graphic part of the project, which uses several graphic tools, such as Tkinter, Canvas and other Widgets.
-We have two types of representation, one which is fixed and the other which is interactive.
-As well as other aspects of the interface as an example : The GIF generator and other aspects of the representation such as the TABLE button.</p>
+<p>This folder contains all the functions and class that designate the graphic part of the project,
+which uses several graphic tools, such as Tkinter, Canvas and other Widgets.
+We have two types of representation, one which is fixed and the other is interactive.
+It also exists other aspects of the interface as an example : The GIF generator and other
+aspects of the representation such as the <strong>TABLE</strong> button.</p>
 <div class="section" id="base-visualization">
 <h2>Base visualization<a class="headerlink" href="#base-visualization" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="process_vis.base_vis.circle">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.circle" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function create a circle in the canvas.</p>
+<dd><p>This function create a circle item in the canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>canvas</strong> – Canvas where the circle will be created</p></li>
-<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
+<li><p><strong>canvas</strong> (<em>tkinter.Canvas</em>) – Canvas where the circle will be created</p></li>
+<li><p><strong>center</strong> (<em>tuple</em>) – Coordinates of the circle’s center in the Canvas</p></li>
 <li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
-<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the the frame of the circle if it takes True</p></li>
-<li><p><strong>background_circle</strong> (<em>str</em>) – Choice of the color for the circle’s background</p></li>
-<li><p><strong>outline_circle</strong> (<em>str</em>) – Choice of the color for the circle’s lines</p></li>
+<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the circle’s item if it takes True</p></li>
+<li><p><strong>background_circle</strong> (<em>str</em>) – Color of the circle’s background</p></li>
+<li><p><strong>outline_circle</strong> (<em>str</em>) – Color of the circle’s line</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -195,8 +197,14 @@ As well as other aspects of the interface as an example : The GIF generator and 
 <dl class="py function">
 <dt id="process_vis.base_vis.coord">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">coord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.coord" title="Permalink to this definition">¶</a></dt>
-<dd><p>Give the coordinnates of the new mark (interger numbers).</p>
+<dd><p>Give the coordinates to change the landmark for one point (interger numbers).</p>
 <dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Returns coordinates of one point in the Canvas landmark</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
 <dt class="field-odd">Example</dt>
 <dd class="field-odd"><p></p></dd>
 </dl>
@@ -209,20 +217,21 @@ As well as other aspects of the interface as an example : The GIF generator and 
 <dl class="py function">
 <dt id="process_vis.base_vis.angle_tab">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">angle_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.angle_tab" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a list of coordinnates which give the angle of each dots, they are
-proportionally spaced (angle : 2*pi/modulo number).</p>
+<dd><p>Returns a list of coordinnates in the basic landmark which gives the
+coordinnates of each vertex. Vertices are proportionally spaced
+(t = 2*pi/modulo number).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>radius</strong> (<em>int</em>) – Radius of the circle</p></li>
-<li><p><strong>graph</strong> – Graph type object</p></li>
+<li><p><strong>graph</strong> (<em>multiplication_table.process_math.Graph.Graph</em>) – Graph object which gives the modulo number</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns a list of coordonnates which give the angle of each dots</p>
+<dd class="field-even"><p>Returns a list of coordinates of all vertices</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list of float</p>
+<dd class="field-odd"><p>list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -230,17 +239,19 @@ proportionally spaced (angle : 2*pi/modulo number).</p>
 <dl class="py function">
 <dt id="process_vis.base_vis.dot">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.dot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the number of points needed on the cercle thanks to the
-<a class="reference internal" href="#process_vis.base_vis.angle_tab" title="process_vis.base_vis.angle_tab"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle_tab()</span></code></a> function.</p>
+<dd><p>Add the number of dots needed on the circle thanks to the
+<a class="reference internal" href="#process_vis.base_vis.angle_tab" title="process_vis.base_vis.angle_tab"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle_tab()</span></code></a> function. These points are proportionally spaced.
+Also, it calls <a class="reference internal" href="#process_vis.base_vis.name_vertices" title="process_vis.base_vis.name_vertices"><code class="xref py py-meth docutils literal notranslate"><span class="pre">name_vertices()</span></code></a> function which associates,
+for each dot, a number.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>canvas</strong> – Canvas where the dots will be created</p></li>
-<li><p><strong>graph</strong> – Graph type object</p></li>
-<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
-<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
-<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
-<li><p><strong>color_name</strong> (<em>str</em>) – Choice of the color for the numbers placed on the frame of the circle</p></li>
+<li><p><strong>canvas</strong> (<em>tkinter.Canvas</em>) – Canvas where the dots items will be created</p></li>
+<li><p><strong>graph</strong> (<em>multiplication_table.process_math.Graph.Graph</em>) – Graph object which gives the modulo number</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the circle’s radius</p></li>
+<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the Canvas</p></li>
+<li><p><strong>color_graph</strong> (<em>list</em>) – List of colors to change the dots color</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – Color of text items which represent the name of dots</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -255,18 +266,18 @@ proportionally spaced (angle : 2*pi/modulo number).</p>
 <dl class="py function">
 <dt id="process_vis.base_vis.name_vertices">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">name_vertices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cnv</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.name_vertices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a number, for each dots, on the frame of the circle.</p>
+<dd><p>Add a name, for each vertex, around the circle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cnv</strong> – Canvas where the numbers will be added</p></li>
-<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
+<li><p><strong>cnv</strong> (<em>tkinter.Canvas</em>) – Canvas where the name will be added</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the circle’s radius</p></li>
 <li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
-<li><p><strong>color_name</strong> (<em>str</em>) – Choice of the color for the numbers placed on the frame of the circle</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – Color of text items</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns the  Canvas widget</p>
+<dd class="field-even"><p>Returns the Canvas widget</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>tkinter.Canvas</p>
@@ -282,17 +293,17 @@ proportionally spaced (angle : 2*pi/modulo number).</p>
 <dl class="py function">
 <dt id="process_vis.edges_vis.all_edges">
 <code class="sig-prename descclassname">process_vis.edges_vis.</code><code class="sig-name descname">all_edges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.edges_vis.all_edges" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function reiterates the <a class="reference internal" href="#process_vis.edges_vis.one_edge" title="process_vis.edges_vis.one_edge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">one_edge()</span></code></a> function for every vertex
-i between 0 and the modulo number - 1.</p>
+<dd><p>This function reiterates the <a class="reference internal" href="#process_vis.edges_vis.one_edge" title="process_vis.edges_vis.one_edge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">one_edge()</span></code></a> function for each vertex
+i between 0 and the modulo number minus one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>canvas</strong> – Canvas where edges will be created</p></li>
-<li><p><strong>graph</strong> – Graph type object</p></li>
-<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
+<li><p><strong>canvas</strong> (<em>tkinter.Canvas</em>) – Canvas where edges will be created</p></li>
+<li><p><strong>graph</strong> (<em>multiplication_table.process_math.Graph.Graph</em>) – Graph object which gives the modulo number</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the circle’s radius</p></li>
 <li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
-<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
-<li><p><strong>edges_width</strong> (<em>int</em>) – The width of ridgs (edges) (in pixels)</p></li>
+<li><p><strong>color_graph</strong> (<em>list</em>) – List of colors to change the edges color</p></li>
+<li><p><strong>edges_width</strong> (<em>int</em>) – The width of edges in pixels</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -308,18 +319,17 @@ i between 0 and the modulo number - 1.</p>
 <dt id="process_vis.edges_vis.one_edge">
 <code class="sig-prename descclassname">process_vis.edges_vis.</code><code class="sig-name descname">one_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">angle</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.edges_vis.one_edge" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function draws for any i fixed the edge between the vertex i and
-the vertex j whitch is given by the result
-of the modular multiplication.</p>
+the vertex j. j is given by the result of the modular multiplication for i.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>graph</strong> – Graph type object</p></li>
-<li><p><strong>canvas</strong> – Canvas where the edge will be created</p></li>
+<li><p><strong>graph</strong> (<em>multiplication_table.process_math.Graph.Graph</em>) – Graph object which gives the modulo number</p></li>
+<li><p><strong>canvas</strong> (<em>tkinter.Canvas</em>) – Canvas where the edge will be created</p></li>
 <li><p><strong>i</strong> (<em>int</em>) – Vertex i</p></li>
-<li><p><strong>angle</strong> – List of coordinates of every vertex</p></li>
+<li><p><strong>angle</strong> (<em>list</em>) – List of coordinates of all vertices</p></li>
 <li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
-<li><p><strong>color_graph</strong> – It’s about a table of colors of the circle frame</p></li>
-<li><p><strong>edges_width</strong> (<em>int</em>) – The width of ridgs (edges) (in pixels)</p></li>
+<li><p><strong>color_graph</strong> (<em>str</em>) – Color of the edge</p></li>
+<li><p><strong>edges_width</strong> (<em>int</em>) – Width of edge in pixels</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -338,33 +348,41 @@ of the modular multiplication.</p>
 <dl class="py class">
 <dt id="process_vis.interface.Interface_gestion">
 <em class="property">class </em><code class="sig-prename descclassname">process_vis.interface.</code><code class="sig-name descname">Interface_gestion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">speed</span></em>, <em class="sig-param"><span class="n">state_button</span></em>, <em class="sig-param"><span class="n">background</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em>, <em class="sig-param"><span class="n">color_name</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class supports functions which is used, for the graphical interface
-and link between the different aspects of visualization,
-as well as the colors and design. It also generates the movement
-in any canvas or tkinter toplevel.</p>
+<dd><p>This class contains functions which are used, for the graphical interface
+and makes the link between the different aspects of the visualization,
+as well as design and movement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>speed</strong> (<em>float</em>) – Speed of the circle’s movement</p></li>
+<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the circle’s item if it takes True</p></li>
+<li><p><strong>color_graph</strong> (<em>list</em>) – List of colors to change the dots and edges color</p></li>
+<li><p><strong>background_circle</strong> (<em>str</em>) – Color of the circle’s background</p></li>
+<li><p><strong>outline_circle</strong> (<em>str</em>) – Color of the circle’s line</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – Color of text items for vertices’s name</p></li>
+<li><p><strong>edges_width</strong> (<em>int</em>) – Width of edges in pixels</p></li>
+<li><p><strong>nb_frame</strong> (<em>int</em>) – The number of images captured for a gif since the last gif.</p></li>
+<li><p><strong>nb_video</strong> (<em>int</em>) – The number of gif already created</p></li>
+<li><p><strong>root</strong> (<em>tkinter.Tk</em>) – Interface window</p></li>
+<li><p><strong>canvas</strong> (<em>tkinter.Canvas</em>) – Canvas where all items will be created</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the circle’s radius</p></li>
+<li><p><strong>center</strong> (<em>tuple</em>) – Coordinates of the circle’s center in the Canvas</p></li>
+<li><p><strong>N</strong> (<em>float</em>) – Corresponds to the multiplication table. This number is rounded to <span class="math notranslate nohighlight">\(10^{-2}\)</span></p></li>
+<li><p><strong>mod</strong> (<em>int</em>) – Corresponds to the modulo number</p></li>
+<li><p><strong>graph</strong> (<em>multiplication_table.process_math.Graph.Graph</em>) – Graph object which gives the modulo number</p></li>
+<li><p><strong>peak_cursor</strong> (<em>tkinter.Scale</em>) – Slider which change the modulo value according to the user</p></li>
+<li><p><strong>table_cursor</strong> (<em>tkinter.Scale</em>) – Slider which change the table value according to the user</p></li>
+<li><p><strong>state_button</strong> (<em>boolean</em>) – State of the button <a href="#id1"><span class="problematic" id="id2">**</span></a>Play/Pause</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.__init__">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">speed</span></em>, <em class="sig-param"><span class="n">state_button</span></em>, <em class="sig-param"><span class="n">background</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em>, <em class="sig-param"><span class="n">color_name</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is a constructor method, that instantiates the speed
-and all different aspects of the design and movement of the circle.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>speed</strong> (<em>float</em>) – Corresponds to the speed of the circle’s movement</p></li>
-<li><p><strong>state_button</strong> (<em>boolean</em>) – Show the button if it’s true</p></li>
-<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the frame of the circle if it takes True</p></li>
-<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
-<li><p><strong>background_circle</strong> (<em>str</em>) – Generates the color of the background of the circle</p></li>
-<li><p><strong>outline_circle</strong> (<em>str</em>) – The color of the circle’ lines</p></li>
-<li><p><strong>color_name</strong> (<em>str</em>) – The color of the numbers placed on the frame of the circle</p></li>
-<li><p><strong>edges_width</strong> (<em>int</em>) – The width of ridgs (edges) (in pixels)</p></li>
-<li><p><strong>nb_frame</strong> (<em>int</em>) – The number of images captured for a gif</p></li>
-<li><p><strong>nb_video</strong> (<em>int</em>) – The number of video already created</p></li>
-</ul>
-</dd>
-</dl>
+and all other aspects.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -374,13 +392,13 @@ and all different aspects of the design and movement of the circle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>speed</strong> – Corresponds to the speed of the circle’s movement</p></li>
-<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the frame of the circle if it takes True</p></li>
-<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
-<li><p><strong>background_circle</strong> (<em>str</em>) – Generates the color of the background of the circle</p></li>
-<li><p><strong>outline_circle</strong> (<em>str</em>) – The color of the circle’ lines</p></li>
-<li><p><strong>color_name</strong> (<em>str</em>) – The color of the numbers placed on the frame of the circle</p></li>
-<li><p><strong>edges_width</strong> (<em>int</em>) – The width of ridgs (edges) (in pixels)</p></li>
+<li><p><strong>speed</strong> (<em>float</em>) – Speed of the circle’s movement</p></li>
+<li><p><strong>state_circle</strong> (<em>boolean</em>) – Displays the circle’s item if it takes True</p></li>
+<li><p><strong>color_graph</strong> (<em>list</em>) – List of colors to change the dots and edges color</p></li>
+<li><p><strong>background_circle</strong> (<em>str</em>) – Color of the circle’s background</p></li>
+<li><p><strong>outline_circle</strong> (<em>str</em>) – Color of the circle’s line</p></li>
+<li><p><strong>color_name</strong> (<em>str</em>) – Color of text items for vertices’s name</p></li>
+<li><p><strong>edges_width</strong> (<em>int</em>) – Width of edges in pixels</p></li>
 </ul>
 </dd>
 </dl>
@@ -389,31 +407,38 @@ and all different aspects of the design and movement of the circle.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.window_init">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">window_init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">background</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.window_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize the interface’window refers to a rectangular area somewhere
-on the user’s display screen through which you can interact.</p>
+<dd><p>This method initializes the interface’window which refers to a
+rectangular area.
+The user can display screen through which he can interact.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>background</strong> (<em>str</em>) – Color of the Canvas’s background</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.graph_init">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">graph_init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.graph_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method initializes the graph, as one its radius, its center,
-as well as its multiplication table and its modulo.</p>
+<dd><p>This method initializes the graph by default, as one its radius, its
+center, its multiplication table and its modulo.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.graph_vis">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">graph_vis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.graph_vis" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize the visualization part of the graph, concerning its dots
-and edges.</p>
+<dd><p>This method displays its execution’s time in the terminal and also the
+visualization part of the graph in other words dots, circle and edges.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.table">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.table" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method is the table of n where the value read by the cursor.</p>
+<dd><p>This method set the value of table thanks to the cursor and calls the
+function <a class="reference internal" href="#process_vis.interface.Interface_gestion.show_update" title="process_vis.interface.Interface_gestion.show_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">show_update()</span></code></a> that will change the Canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>n</strong> (<em>str</em>) – Represent the number in base 10. Like exemple if the cursor is moved switches to position 40; we have a table call (“42”)</p>
+<dd class="field-odd"><p><strong>n</strong> (<em>str</em>) – Represent the table number. For example if the cursor is moved to position 40; we have called the table 2.40.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -421,14 +446,20 @@ and edges.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.vertices">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">vertices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">mod</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.vertices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Represents the modulo of the multiplication table and which returns to
-the peaks of the circle.</p>
+<dd><p>This method set the value of modulo thanks to the cursor and calls the
+function <a class="reference internal" href="#process_vis.interface.Interface_gestion.show_update" title="process_vis.interface.Interface_gestion.show_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">show_update()</span></code></a> that will change the Canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mod</strong> – Represent the modulo number. For example if the cursor is moved to position 40; we have called the table 42.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.show_update">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">show_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.show_update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Removes the previous Canvas and recreates a new one.</p>
+<dd><p>This method removes all Canvas items and recreates them after all the
+modifications</p>
 </dd></dl>
 
 <dl class="py function">
@@ -436,17 +467,16 @@ the peaks of the circle.</p>
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">slider</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.slider" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method generates the two cursors which captures the number of the
 table and the number of vertices (modulo). The table cursor captures
-all tables from 2 to 400, it is placed horizontally and is 250 pixels
-long. The same for the other cursor of the modulo which represents
-the number of points (vertices).</p>
+all tables from 2 to 400 with a step of 0.01 and the modulo cursor
+captures all modulo from 2 to 200 with a step of 1. They are
+placed horizontally and are 250 pixels long.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.move_value">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">move_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.move_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>By this method, we add 0.01 each time we take a value from the
-multiplication table.
-We rebuild the movement which is continuous.</p>
+<dd><p>This method increases the table number with a step of 0.01 while the
+user doesn’t press on the button</p>
 </dd></dl>
 
 <dl class="py function">
@@ -462,13 +492,13 @@ and saves it in the correct directory “/temp/png{number_video}”.</p>
 <dd><p>This method accesses the folder where the corresponding images
 are saved.
 Then it creates the gif from the captured images.
-The latter is saved in the folder “/gif” in the format: gif{number}.gif</p>
+This latter is saved in the folder “/gif” in the format: gif{number}.gif</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.destroy_root">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">destroy_root</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.destroy_root" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method deletes all the files whose format is
+<dd><p>This method deletes all the folders whose format is
 “/temp/png{number_video}”.
 Then, it destroys all the canvas and closes the window.</p>
 </dd></dl>
@@ -491,8 +521,8 @@ the different graphicals performances.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.motion_button">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">motion_button</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.motion_button" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provides a button control on the motion graphic and visual, to play or
-stop the animation.</p>
+<dd><p>Provides the control buttons, for example, the motion button which
+actives the animation.</p>
 </dd></dl>
 
 </div>

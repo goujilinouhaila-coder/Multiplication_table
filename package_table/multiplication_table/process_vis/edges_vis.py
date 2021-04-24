@@ -3,18 +3,20 @@ import multiplication_table.process_vis.base_vis as bv
 
 def all_edges(canvas, graph, radius, center, color_graph, edges_width):
     """
-    This function reiterates the :py:meth:`one_edge` function for every vertex 
-    i between 0 and the modulo number - 1.
+    This function reiterates the :py:meth:`one_edge` function for each vertex 
+    i between 0 and the modulo number minus one.
 
     :param canvas: Canvas where edges will be created
-    :param graph: Graph type object
-    :param radius: Corresponds to the radius of the circle
+    :type canvas: tkinter.Canvas
+    :param graph: Graph object which gives the modulo number 
+    :type graph: multiplication_table.process_math.Graph.Graph 
+    :param radius: Corresponds to the circle's radius
     :type radius: int
     :param center: Center of the circle in the canvas
     :type center: int
-    :param color_graph: It's about a table of colors of the circle frame
-    :type color_graph: list of strings
-    :param edges_width: The width of ridgs (edges) (in pixels)
+    :param color_graph: List of colors to change the edges color
+    :type color_graph: list
+    :param edges_width: The width of edges in pixels
     :type edges_width: int
     :return: Returns the Canvas widget
     :rtype: tkinter.Canvas
@@ -31,18 +33,21 @@ def all_edges(canvas, graph, radius, center, color_graph, edges_width):
 def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
     """
     This function draws for any i fixed the edge between the vertex i and
-    the vertex j whitch is given by the result
-    of the modular multiplication.
+    the vertex j. j is given by the result of the modular multiplication for i.
 
-    :param graph: Graph type object
+    :param graph: Graph object which gives the modulo number 
+    :type graph: multiplication_table.process_math.Graph.Graph    
     :param canvas: Canvas where the edge will be created
+    :type canvas: tkinter.Canvas
     :param i: Vertex i
     :type i: int
-    :param angle: List of coordinates of every vertex
+    :param angle:  List of coordinates of all vertices
+    :type angle: list
     :param center: Center of the circle in the canvas
     :type center: int
-    :param color_graph: It's about a table of colors of the circle frame
-    :param edges_width: The width of ridgs (edges) (in pixels)
+    :param color_graph: Color of the edge
+    :type color_graph: str
+    :param edges_width: Width of edge in pixels
     :type edges_width: int
     :return: Returns the Canvas widget
     :rtype: tkinter.Canvas
