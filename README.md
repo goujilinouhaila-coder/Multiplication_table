@@ -3,6 +3,8 @@
 <img src="https://zupimages.net/up/21/16/zxrf.png" width="450" height='400' alt="image"/>
 </p>
 
+[![Python package](https://github.com/goujilinouhaila-coder/Multiplication_table/actions/workflows/python-package.yml/badge.svg)](https://github.com/goujilinouhaila-coder/Multiplication_table/actions/workflows/python-package.yml)
+
 ## Synopsis
 In this project; we will explore some of the symmetries that hide in the distribution of numbers in the multiplication table of positive integers when viewed through modulo k arithmetic as we vary k; in a way that we know less often: Modular Arithmetic. Based on our construction process; The graphic presentation contains only straight lines; in other words, it is a kind of optical illusion that we are witnessing and it is the entanglement of all these straight lines that gives us the impression of this curved figure that appears.
 
