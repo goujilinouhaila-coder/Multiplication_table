@@ -1,7 +1,7 @@
 from tkinter import Tk, Canvas, Scale, Button, Toplevel, Label, Scrollbar, Text, END, Y
-import multiplication_table as mt
-import multiplication_table.process_vis.edges_vis as ev
-import multiplication_table.process_vis.base_vis as bv
+# import multiplication_table as mt
+# import multiplication_table.process_vis.edges_vis as ev
+# import multiplication_table.process_vis.base_vis as bv
 from PIL import Image
 import imageio
 import os
@@ -45,11 +45,11 @@ class Interface_gestion:
     :type N: float
     :param mod: Corresponds to the modulo number
     :type mod: int
-    :param graph: Graph object which gives the modulo number 
+    :param graph: Graph object which gives the modulo number
     :type graph: multiplication_table.process_math.Graph.Graph
-    :param peak_cursor: Slider which change the modulo value according to the user
+    :param peak_cursor: Slider which changes the modulo value according to the user
     :type peak_cursor: tkinter.Scale
-    :param table_cursor: Slider which change the table value according to the user
+    :param table_cursor: Slider which changes the table value according to the user
     :type table_cursor: tkinter.Scale
     :param state_button: State of the button **Play/Pause
     :type state_button: boolean
@@ -57,7 +57,7 @@ class Interface_gestion:
 
     def __init__(self, speed, state_button, background, state_circle, color_graph, background_circle, outline_circle, color_name, edges_width): 
         """
-        This function is a constructor method, that instantiates the speed
+        This method is a constructor method, that instantiates the speed
         and all other aspects.
         """
         self.nb_frame = 0
@@ -101,7 +101,7 @@ class Interface_gestion:
 
     def window_init(self, background):
         '''
-        This method initializes the interface'window which refers to a
+        This method initializes the interface's window which refers to a
         rectangular area.
         The user can display screen through which he can interact.
 
@@ -140,7 +140,7 @@ class Interface_gestion:
 
     def table(self, n):
         '''
-        This method set the value of table thanks to the cursor and calls the
+        This method sets the value of table thanks to the cursor and calls the
         function :py:meth:`show_update` that will change the Canvas.
 
         :param n: Represent the table number. For example if the cursor is moved to position 40; we have called the table 2.40.
@@ -152,7 +152,7 @@ class Interface_gestion:
 
     def vertices(self, mod):
         '''
-        This method set the value of modulo thanks to the cursor and calls the
+        This method sets the value of modulo thanks to the cursor and calls the
         function :py:meth:`show_update` that will change the Canvas.
 
         :param mod: Represent the modulo number. For example if the cursor is moved to position 40; we have called the table 42.
@@ -164,7 +164,7 @@ class Interface_gestion:
 
     def show_update(self):
         '''
-        This method removes all Canvas items and recreates them after all the 
+        This method removes all Canvas items and recreates them after all the
         modifications
         '''
         start = time.time()
@@ -196,8 +196,8 @@ class Interface_gestion:
 
     def move_value(self):
         '''
-        This method increases the table number with a step of 0.01 while the
-        user doesn't press on the button
+        This method increases the table number with a step of 0.01
+        automatically and continuously
         '''
         self.state_button = not self.state_button
         while (self.state_button):
@@ -252,7 +252,7 @@ class Interface_gestion:
 
     def create_table_window(self):
         """ 
-        This method creates an another window which contains all the modular
+        This method creates another window which contains all the modular
         calculations of the current Canvas.
         This window is managed by a scrollbar.
         """
@@ -271,8 +271,8 @@ class Interface_gestion:
 
     def create_description(self):
         """ 
-        This method creates an another window which contains a description of
-        the different graphicals performances.
+        This method creates another window which contains a description of
+        the different graphical performances.
         """
         newWindow = Toplevel(self.root)
         text = Label(newWindow, text="Play/Pause : The buttom to play or stop the animation. \n  ")

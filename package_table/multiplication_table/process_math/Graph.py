@@ -5,8 +5,8 @@ import time
 
 class Graph:
     """
-    Graph class is used to contain the related specifications to the modular
-    multiplication and create the associated undirected graph in the console.
+    Graph class is used to contain modular multiplication related 
+    specifications and to create the associated undirected graph in the console.
 
     :param N: Corresponds to the multiplication table assigned by the user. This number is rounded to :math:`10^{-2}`
     :type N: float
@@ -18,7 +18,8 @@ class Graph:
 
     def __init__(self, table_number, modulo_number):
         """
-        Constructor method. This method instantiates a graph from the parameters.
+        Constructor method. This method instantiates a graph from the 
+        parameters.
         """
         self.N = round(float(table_number), 2)
         self.mod = int(modulo_number)
@@ -57,7 +58,7 @@ class Graph:
 
     def sparse_matrix(self):
         """ 
-        Fill the adjacency sparse matrix from the results of the modular
+        Fills the adjacency sparse matrix from the results of the modular
         multiplication for all vertices.
         """
         start = time.time()

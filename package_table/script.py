@@ -14,6 +14,7 @@ graph_object = mt.Graph(table_number, modulo_number)
 graph_object.sparse_matrix()
 graph_object.print_graph()
 
+
 # Représentation fixe
 start = time.time()
 root = Tk()
