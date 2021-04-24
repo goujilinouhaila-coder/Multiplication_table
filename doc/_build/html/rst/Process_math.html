@@ -164,14 +164,14 @@
 <h1>Process math<a class="headerlink" href="#process-math" title="Permalink to this headline">¶</a></h1>
 <p>This folder contains all the functions that designate the mathematical part of the project.
 This part uses modular arithmetic and the structure of the graph, which is defined by
-vertices and edges who are represented by the adjacency matrices.</p>
+vertices and edges who are represented by adjacency matrices.</p>
 <div class="section" id="graph">
 <h2>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="process_math.Graph.Graph">
 <em class="property">class </em><code class="sig-prename descclassname">process_math.Graph.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_number</span></em>, <em class="sig-param"><span class="n">modulo_number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Graph class is used to contain the related specifications to the modular
-multiplication and create the associated undirected graph in the console.</p>
+<dd><p>Graph class is used to contain modular multiplication related
+specifications and to create the associated undirected graph in the console.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -186,7 +186,8 @@ multiplication and create the associated undirected graph in the console.</p>
 <dl class="py function">
 <dt id="process_math.Graph.Graph.__init__">
 <code class="sig-prename descclassname">process_math.Graph.Graph.</code><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">table_number</span></em>, <em class="sig-param"><span class="n">modulo_number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Constructor method. This method instantiates a graph from the parameters.</p>
+<dd><p>Constructor method. This method instantiates a graph from the
+parameters.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -198,7 +199,7 @@ multiplication and create the associated undirected graph in the console.</p>
 <dl class="py function">
 <dt id="process_math.Graph.Graph.sparse_matrix">
 <code class="sig-prename descclassname">process_math.Graph.Graph.</code><code class="sig-name descname">sparse_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_math.Graph.Graph.sparse_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fill the adjacency sparse matrix from the results of the modular
+<dd><p>Fills the adjacency sparse matrix from the results of the modular
 multiplication for all vertices.</p>
 </dd></dl>
 

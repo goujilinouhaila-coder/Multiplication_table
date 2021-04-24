@@ -3,8 +3,8 @@ Process visualization
 
 This folder contains all the functions and class that designate the graphic part of the project, 
 which uses several graphic tools, such as Tkinter, Canvas and other Widgets.
-We have two types of representation, one which is fixed and the other is interactive.
-It also exists other aspects of the interface as an example : The GIF generator and other 
+We have two types of representations, one which is fixed and the other which is interactive.
+There also are other aspects of the interface as an example : The GIF generator and other 
 aspects of the representation such as the **TABLE** button.
 
 Base visualization

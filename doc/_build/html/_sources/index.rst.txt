@@ -10,12 +10,12 @@ Welcome to Multiplication table's documentation !
    :width: 180
    :align: left
 
-This package was made as a project in the software devlopment course which its main goal is to create this package 
-that can produce some of the animations provided in this video : 
+This package was made as a project in the software development course and its main goal is to produce 
+some of the animations provided in this video : 
 **https://youtu.be/-X49VQgi86E**.
 
-You can choose some graphicals aspects as a variation on colors, lines widths, speeds, etc....
-Also, you can find in script.py some example of application to understand this package.
+You can choose some graphical aspects such as color varations, lines widths, speeds, etc....
+Also, you can find in script.py some examples of application to understand this package.
 
 For more informations, you can check this link : **https://github.com/goujilinouhaila-coder/Multiplication_table.git**
 
