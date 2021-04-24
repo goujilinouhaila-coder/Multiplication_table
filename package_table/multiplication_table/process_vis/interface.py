@@ -171,7 +171,7 @@ class Interface_gestion:
         self.cnv.delete("all")
         self.graph_vis()
         end = time.time()
-        print("Show_update'time : " + str(end-start))
+        # print("Show_update'time : " + str(end-start))
 
     def slider(self):
         '''
