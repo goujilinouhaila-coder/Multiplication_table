@@ -21,7 +21,7 @@ def test_angle_tab2():
         assert type(angle[i]) == tuple
 
 
-# These following tests are normally working in Vscode but we met some issues with the continious integration on github.
+# The following tests are usually working but we had some issues with the continuous integration on github.
 # When the workflow is running, it would seem it can't find the tkinter package.
 # This is why we put these functions in comments
         
