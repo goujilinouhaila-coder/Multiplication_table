@@ -32,7 +32,7 @@ def one_edge(graph, canvas, i, angle, center, color_graph, edges_width):
     """
     This function draws for any i fixed the edge between the vertex i and
     the vertex j whitch is given by the result
-    of the modular calculate.
+    of the modular multiplication.
 
     :param graph: Graph type object
     :param canvas: Canvas where the edge will be created

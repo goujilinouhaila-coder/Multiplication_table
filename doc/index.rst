@@ -3,15 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Multiplication table's documentation!
-================================================
+Welcome to Multiplication table's documentation !
+=================================================
+
+.. image:: https://cdn.discordapp.com/attachments/817467358313578499/835514095788359731/tk_24_04_2021_15_52_58_2.png
+   :width: 180
+   :align: left
 
 As part of a software development project, which its main goal to create this package 
 that can produce some of the animations provided in this video : 
 https://youtu.be/-X49VQgi86E.
+
 You can choose some graphicals aspects as a variation on colors, lines widths, speeds, etc....
 Also, you can find in script.py some example of application to understand this package.
-
 
 .. toctree::
    :maxdepth: 2

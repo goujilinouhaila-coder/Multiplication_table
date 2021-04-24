@@ -1,7 +1,9 @@
 Process visualization
 =====================
 
-This folder contains .... A REMPLIR :!!!!!!!!!!!!!!!!!!!!!!!
+This folder contains all the functions that designate the graphic part of the project, which uses several graphic tools, such as Tkinter, Canvas and other Widgets.
+We have two types of representation, one which is fixed and the other which is interactive.
+As well as other aspects of the interface as an example : The GIF generator and other aspects of the representation such as the TABLE button.
 
 Base visualization
 ------------------
