@@ -6,6 +6,13 @@
 Welcome to Multiplication table's documentation!
 ================================================
 
+As part of a software development project, which its main goal to create this package 
+that can produce some of the animations provided in this video : 
+https://youtu.be/-X49VQgi86E.
+You can choose some graphicals aspects as a variation on colors, lines widths, speeds, etc....
+Also, you can find in script.py some example of application to understand this package.
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
