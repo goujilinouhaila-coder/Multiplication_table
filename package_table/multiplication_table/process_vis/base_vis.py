@@ -3,18 +3,19 @@ import numpy as np
 
 def circle(canvas, center, radius, state_circle, background_circle, outline_circle):
     """
-    This function create a circle in the canvas.
+    This function create a circle item in the canvas. 
 
     :param canvas: Canvas where the circle will be created
-    :param center: Center of the circle in the canvas
-    :type center: int
+    :type canvas: tkinter.Canvas
+    :param center: Coordinates of the circle's center in the Canvas
+    :type center: tuple
     :param radius: Corresponds to the radius of the circle
     :type radius: int
-    :param state_circle: Displays the the frame of the circle if it takes True
+    :param state_circle: Displays the circle's item if it takes True
     :type state_circle: boolean
-    :param background_circle: Choice of the color for the circle's background
+    :param background_circle: Color of the circle's background
     :type background_circle: str
-    :param outline_circle: Choice of the color for the circle's lines
+    :param outline_circle: Color of the circle's line
     :type outline_circle: str
     :return: Returns the Canvas widget
     :rtype: tkinter.Canvas
@@ -23,15 +24,17 @@ def circle(canvas, center, radius, state_circle, background_circle, outline_circ
         xC, yC = center
         A = (xC-radius, yC-radius)
         B = (xC+radius, yC+radius)
-        canvas.create_oval(A, B, width=2, fill=background_circle,
+        canvas.create_oval(A, B, width=1, fill=background_circle,
                            outline=outline_circle)
     return canvas
 
 
 def coord(x, y, a, b):
     """
-    Give the coordinnates of the new mark (interger numbers).
+    Give the coordinates to change the landmark for one point (interger numbers).
 
+    :return: Returns coordinates of one point in the Canvas landmark
+    :rtype: tuple
     :Example:
     \n
     >>> coord(200,200,40,60)
@@ -42,14 +45,16 @@ def coord(x, y, a, b):
 
 def angle_tab(radius, graph):
     """
-    Returns a list of coordinnates which give the angle of each dots, they are
-    proportionally spaced (angle : 2*pi/modulo number).
+    Returns a list of coordinnates in the basic landmark which gives the
+    coordinnates of each vertex. Vertices are proportionally spaced
+    (t = 2*pi/modulo number).
 
     :param radius: Radius of the circle
     :type radius: int
-    :param graph: Graph type object
-    :return: Returns a list of coordonnates which give the angle of each dots
-    :rtype: list of float
+    :param graph: Graph object which gives the modulo number 
+    :type graph: multiplication_table.process_math.Graph.Graph 
+    :return: Returns a list of coordinates of all vertices
+    :rtype: list
     """
     t = (2*np.pi)/(graph.mod)
     angle = [None] * graph.mod*100
@@ -60,18 +65,22 @@ def angle_tab(radius, graph):
 
 def dot(canvas, graph, radius, center, color_graph, color_name):
     """
-    Add the number of points needed on the cercle thanks to the
-    :py:meth:`angle_tab` function.
+    Add the number of dots needed on the circle thanks to the
+    :py:meth:`angle_tab` function. These points are proportionally spaced.
+    Also, it calls :py:meth:`name_vertices` function which associates,
+    for each dot, a number.
 
-    :param canvas: Canvas where the dots will be created
-    :param graph: Graph type object
-    :param radius: Corresponds to the radius of the circle
+    :param canvas: Canvas where the dots items will be created
+    :type canvas: tkinter.Canvas
+    :param graph: Graph object which gives the modulo number 
+    :type graph: multiplication_table.process_math.Graph.Graph 
+    :param radius: Corresponds to the circle's radius
     :type radius: int
-    :param center: Center of the circle in the canvas
+    :param center: Center of the circle in the Canvas
     :type center: int
-    :param color_graph: It's about a table of colors of the circle frame
-    :type color_graph: list of strings
-    :param color_name: Choice of the color for the numbers placed on the frame of the circle
+    :param color_graph: List of colors to change the dots color
+    :type color_graph: list
+    :param color_name: Color of text items which represent the name of dots
     :type color_name: str
     :return: Returns the Canvas widget
     :rtype: tkinter.Canvas
@@ -92,16 +101,17 @@ def dot(canvas, graph, radius, center, color_graph, color_name):
 
 def name_vertices(cnv, radius, graph, center, color_name):
     """
-    Add a number, for each dots, on the frame of the circle.
+    Add a name, for each vertex, around the circle.
 
-    :param cnv: Canvas where the numbers will be added
-    :param radius: Corresponds to the radius of the circle
+    :param cnv: Canvas where the name will be added
+    :type cnv: tkinter.Canvas
+    :param radius: Corresponds to the circle's radius
     :type radius: int
     :param center: Center of the circle in the canvas
     :type center: int
-    :param color_name: Choice of the color for the numbers placed on the frame of the circle
+    :param color_name: Color of text items
     :type color_name: str
-    :return: Returns the  Canvas widget
+    :return: Returns the Canvas widget
     :rtype: tkinter.Canvas
     """
     angle = angle_tab(radius+17, graph)
