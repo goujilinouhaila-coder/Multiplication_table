@@ -3,7 +3,7 @@ import numpy as np
 
 def circle(canvas, center, radius, state_circle, background_circle, outline_circle):
     """
-    This function create a circle item in the canvas. 
+    This function creates a circle item in the canvas.
 
     :param canvas: Canvas where the circle will be created
     :type canvas: tkinter.Canvas
@@ -31,7 +31,8 @@ def circle(canvas, center, radius, state_circle, background_circle, outline_circ
 
 def coord(x, y, a, b):
     """
-    Give the coordinates to change the landmark for one point (interger numbers).
+    Gives the coordinates to change the landmark for one point (integer
+    numbers).
 
     :return: Returns coordinates of one point in the Canvas landmark
     :rtype: tuple
@@ -45,14 +46,14 @@ def coord(x, y, a, b):
 
 def angle_tab(radius, graph):
     """
-    Returns a list of coordinnates in the basic landmark which gives the
-    coordinnates of each vertex. Vertices are proportionally spaced
+    Returns a list of coordinates in the basic landmark which gives the
+    coordinates of each vertex. Vertices are proportionally spaced
     (t = 2*pi/modulo number).
 
     :param radius: Radius of the circle
     :type radius: int
-    :param graph: Graph object which gives the modulo number 
-    :type graph: multiplication_table.process_math.Graph.Graph 
+    :param graph: Graph object which gives the modulo number
+    :type graph: multiplication_table.process_math.Graph.Graph
     :return: Returns a list of coordinates of all vertices
     :rtype: list
     """
@@ -65,7 +66,7 @@ def angle_tab(radius, graph):
 
 def dot(canvas, graph, radius, center, color_graph, color_name):
     """
-    Add the number of dots needed on the circle thanks to the
+    Adds the number of dots needed on the circle thanks to the
     :py:meth:`angle_tab` function. These points are proportionally spaced.
     Also, it calls :py:meth:`name_vertices` function which associates,
     for each dot, a number.
@@ -101,7 +102,7 @@ def dot(canvas, graph, radius, center, color_graph, color_name):
 
 def name_vertices(cnv, radius, graph, center, color_name):
     """
-    Add a name, for each vertex, around the circle.
+    Adds a name, for each vertex, around the circle.
 
     :param cnv: Canvas where the name will be added
     :type cnv: tkinter.Canvas

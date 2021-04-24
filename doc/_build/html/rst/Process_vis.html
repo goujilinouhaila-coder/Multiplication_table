@@ -165,15 +165,15 @@
 <h1>Process visualization<a class="headerlink" href="#process-visualization" title="Permalink to this headline">¶</a></h1>
 <p>This folder contains all the functions and class that designate the graphic part of the project,
 which uses several graphic tools, such as Tkinter, Canvas and other Widgets.
-We have two types of representation, one which is fixed and the other is interactive.
-It also exists other aspects of the interface as an example : The GIF generator and other
+We have two types of representations, one which is fixed and the other which is interactive.
+There also are other aspects of the interface as an example : The GIF generator and other
 aspects of the representation such as the <strong>TABLE</strong> button.</p>
 <div class="section" id="base-visualization">
 <h2>Base visualization<a class="headerlink" href="#base-visualization" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="process_vis.base_vis.circle">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.circle" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function create a circle item in the canvas.</p>
+<dd><p>This function creates a circle item in the canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -197,7 +197,8 @@ aspects of the representation such as the <strong>TABLE</strong> button.</p>
 <dl class="py function">
 <dt id="process_vis.base_vis.coord">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">coord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.coord" title="Permalink to this definition">¶</a></dt>
-<dd><p>Give the coordinates to change the landmark for one point (interger numbers).</p>
+<dd><p>Gives the coordinates to change the landmark for one point (integer
+numbers).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns coordinates of one point in the Canvas landmark</p>
@@ -217,8 +218,8 @@ aspects of the representation such as the <strong>TABLE</strong> button.</p>
 <dl class="py function">
 <dt id="process_vis.base_vis.angle_tab">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">angle_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.angle_tab" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a list of coordinnates in the basic landmark which gives the
-coordinnates of each vertex. Vertices are proportionally spaced
+<dd><p>Returns a list of coordinates in the basic landmark which gives the
+coordinates of each vertex. Vertices are proportionally spaced
 (t = 2*pi/modulo number).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -239,7 +240,7 @@ coordinnates of each vertex. Vertices are proportionally spaced
 <dl class="py function">
 <dt id="process_vis.base_vis.dot">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.dot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the number of dots needed on the circle thanks to the
+<dd><p>Adds the number of dots needed on the circle thanks to the
 <a class="reference internal" href="#process_vis.base_vis.angle_tab" title="process_vis.base_vis.angle_tab"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle_tab()</span></code></a> function. These points are proportionally spaced.
 Also, it calls <a class="reference internal" href="#process_vis.base_vis.name_vertices" title="process_vis.base_vis.name_vertices"><code class="xref py py-meth docutils literal notranslate"><span class="pre">name_vertices()</span></code></a> function which associates,
 for each dot, a number.</p>
@@ -266,7 +267,7 @@ for each dot, a number.</p>
 <dl class="py function">
 <dt id="process_vis.base_vis.name_vertices">
 <code class="sig-prename descclassname">process_vis.base_vis.</code><code class="sig-name descname">name_vertices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cnv</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.base_vis.name_vertices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a name, for each vertex, around the circle.</p>
+<dd><p>Adds a name, for each vertex, around the circle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -370,8 +371,8 @@ as well as design and movement.</p>
 <li><p><strong>N</strong> (<em>float</em>) – Corresponds to the multiplication table. This number is rounded to <span class="math notranslate nohighlight">\(10^{-2}\)</span></p></li>
 <li><p><strong>mod</strong> (<em>int</em>) – Corresponds to the modulo number</p></li>
 <li><p><strong>graph</strong> (<em>multiplication_table.process_math.Graph.Graph</em>) – Graph object which gives the modulo number</p></li>
-<li><p><strong>peak_cursor</strong> (<em>tkinter.Scale</em>) – Slider which change the modulo value according to the user</p></li>
-<li><p><strong>table_cursor</strong> (<em>tkinter.Scale</em>) – Slider which change the table value according to the user</p></li>
+<li><p><strong>peak_cursor</strong> (<em>tkinter.Scale</em>) – Slider which changes the modulo value according to the user</p></li>
+<li><p><strong>table_cursor</strong> (<em>tkinter.Scale</em>) – Slider which changes the table value according to the user</p></li>
 <li><p><strong>state_button</strong> (<em>boolean</em>) – State of the button <a href="#id1"><span class="problematic" id="id2">**</span></a>Play/Pause</p></li>
 </ul>
 </dd>
@@ -381,7 +382,7 @@ as well as design and movement.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.__init__">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">speed</span></em>, <em class="sig-param"><span class="n">state_button</span></em>, <em class="sig-param"><span class="n">background</span></em>, <em class="sig-param"><span class="n">state_circle</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">background_circle</span></em>, <em class="sig-param"><span class="n">outline_circle</span></em>, <em class="sig-param"><span class="n">color_name</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function is a constructor method, that instantiates the speed
+<dd><p>This method is a constructor method, that instantiates the speed
 and all other aspects.</p>
 </dd></dl>
 
@@ -407,7 +408,7 @@ and all other aspects.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.window_init">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">window_init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">background</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.window_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method initializes the interface’window which refers to a
+<dd><p>This method initializes the interface’s window which refers to a
 rectangular area.
 The user can display screen through which he can interact.</p>
 <dl class="field-list simple">
@@ -434,7 +435,7 @@ visualization part of the graph in other words dots, circle and edges.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.table">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.table" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method set the value of table thanks to the cursor and calls the
+<dd><p>This method sets the value of table thanks to the cursor and calls the
 function <a class="reference internal" href="#process_vis.interface.Interface_gestion.show_update" title="process_vis.interface.Interface_gestion.show_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">show_update()</span></code></a> that will change the Canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -446,7 +447,7 @@ function <a class="reference internal" href="#process_vis.interface.Interface_ge
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.vertices">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">vertices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">mod</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.vertices" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method set the value of modulo thanks to the cursor and calls the
+<dd><p>This method sets the value of modulo thanks to the cursor and calls the
 function <a class="reference internal" href="#process_vis.interface.Interface_gestion.show_update" title="process_vis.interface.Interface_gestion.show_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">show_update()</span></code></a> that will change the Canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -475,8 +476,8 @@ placed horizontally and are 250 pixels long.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.move_value">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">move_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.move_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method increases the table number with a step of 0.01 while the
-user doesn’t press on the button</p>
+<dd><p>This method increases the table number with a step of 0.01
+automatically and continuously</p>
 </dd></dl>
 
 <dl class="py function">
@@ -506,7 +507,7 @@ Then, it destroys all the canvas and closes the window.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.create_table_window">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">create_table_window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.create_table_window" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method creates an another window which contains all the modular
+<dd><p>This method creates another window which contains all the modular
 calculations of the current Canvas.
 This window is managed by a scrollbar.</p>
 </dd></dl>
@@ -514,8 +515,8 @@ This window is managed by a scrollbar.</p>
 <dl class="py function">
 <dt id="process_vis.interface.Interface_gestion.create_description">
 <code class="sig-prename descclassname">process_vis.interface.Interface_gestion.</code><code class="sig-name descname">create_description</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.interface.Interface_gestion.create_description" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method creates an another window which contains a description of
-the different graphicals performances.</p>
+<dd><p>This method creates another window which contains a description of
+the different graphical performances.</p>
 </dd></dl>
 
 <dl class="py function">

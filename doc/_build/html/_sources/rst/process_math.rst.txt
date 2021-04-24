@@ -3,7 +3,7 @@ Process math
 
 This folder contains all the functions that designate the mathematical part of the project.
 This part uses modular arithmetic and the structure of the graph, which is defined by
-vertices and edges who are represented by the adjacency matrices.
+vertices and edges who are represented by adjacency matrices.
 
 
 Graph
