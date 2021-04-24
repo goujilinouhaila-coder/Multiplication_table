@@ -163,7 +163,9 @@
             
   <div class="section" id="process-visualization">
 <h1>Process visualization<a class="headerlink" href="#process-visualization" title="Permalink to this headline">¶</a></h1>
-<p>This folder contains …. A REMPLIR :!!!!!!!!!!!!!!!!!!!!!!!</p>
+<p>This folder contains all the functions that designate the graphic part of the project, which uses several graphic tools, such as Tkinter, Canvas and other Widgets.
+We have two types of representation, one which is fixed and the other which is interactive.
+As well as other aspects of the interface as an example : The GIF generator and other aspects of the representation such as the TABLE button.</p>
 <div class="section" id="base-visualization">
 <h2>Base visualization<a class="headerlink" href="#base-visualization" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -275,58 +277,6 @@ proportionally spaced (angle : 2*pi/modulo number).</p>
 </div>
 <div class="section" id="edges-visualization">
 <h2>Edges visualization<a class="headerlink" href="#edges-visualization" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt id="process_vis.edges_vis.all_edges">
-<code class="sig-prename descclassname">process_vis.edges_vis.</code><code class="sig-name descname">all_edges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.edges_vis.all_edges" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function reiterates the <a class="reference internal" href="#process_vis.edges_vis.one_edge" title="process_vis.edges_vis.one_edge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">one_edge()</span></code></a> function for every vertex
-i between 0 and the modulo number - 1.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>canvas</strong> – Canvas where edges will be created</p></li>
-<li><p><strong>graph</strong> – Graph type object</p></li>
-<li><p><strong>radius</strong> (<em>int</em>) – Corresponds to the radius of the circle</p></li>
-<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
-<li><p><strong>color_graph</strong> (<em>list of strings</em>) – It’s about a table of colors of the circle frame</p></li>
-<li><p><strong>edges_width</strong> (<em>int</em>) – The width of ridgs (edges) (in pixels)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns the Canvas widget</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>tkinter.Canvas</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="process_vis.edges_vis.one_edge">
-<code class="sig-prename descclassname">process_vis.edges_vis.</code><code class="sig-name descname">one_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">canvas</span></em>, <em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">angle</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">color_graph</span></em>, <em class="sig-param"><span class="n">edges_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_vis.edges_vis.one_edge" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function draws for any i fixed the edge between the vertex i and
-the vertex j whitch is given by the result
-of the modular calculate.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>graph</strong> – Graph type object</p></li>
-<li><p><strong>canvas</strong> – Canvas where the edge will be created</p></li>
-<li><p><strong>i</strong> (<em>int</em>) – Vertex i</p></li>
-<li><p><strong>angle</strong> – List of coordinates of every vertex</p></li>
-<li><p><strong>center</strong> (<em>int</em>) – Center of the circle in the canvas</p></li>
-<li><p><strong>color_graph</strong> – It’s about a table of colors of the circle frame</p></li>
-<li><p><strong>edges_width</strong> (<em>int</em>) – The width of ridgs (edges) (in pixels)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns the Canvas widget</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>tkinter.Canvas</p>
-</dd>
-</dl>
-</dd></dl>
-
 </div>
 <div class="section" id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h2>
