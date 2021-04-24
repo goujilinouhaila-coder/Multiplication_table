@@ -1,4 +1,0 @@
-numpy==1.19.2
-imageio==2.9.0
-scipy==1.5.2
-Pillow==8.2.0
