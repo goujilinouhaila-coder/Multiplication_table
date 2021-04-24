@@ -1,4 +1,4 @@
-# import multiplication_table.process_vis.base_vis as bv
+import multiplication_table.process_vis.base_vis as bv
 
 
 def all_edges(canvas, graph, radius, center, color_graph, edges_width):
