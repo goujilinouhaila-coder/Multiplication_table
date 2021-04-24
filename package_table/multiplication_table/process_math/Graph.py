@@ -12,13 +12,13 @@ class Graph:
     :type N: float
     :param mod: Corresponds to the modulo number entered by the user
     :type mod: int
-    :param M: Symmetric adjacency sparse matrix used to represent the graph. This dimension of this matrix is (mod*100, mod*100) whose non-diagonal element :math:`m_{ij}` corresponds to an edge between vertex i and vertex j
-    :type M: numpy
+    :param M: Adjacency sparse matrix used to represent the graph. The dimension of this matrix is (mod*100, mod*100) whose non-diagonal element :math:`m_{ij}` corresponds to an edge between vertex i and vertex j
+    :type M: scipy.sparse.coo.coo_matrix
     """
 
     def __init__(self, table_number, modulo_number):
         """
-        Constructor method. This method instantiates an empty graph.
+        Constructor method. This method instantiates a graph from the parameters.
         """
         self.N = round(float(table_number), 2)
         self.mod = int(modulo_number)
@@ -32,7 +32,7 @@ class Graph:
 
     def modulo_result(self, i):
         """
-        Returns the result of the modular multiplication.
+        Returns the result of the modular multiplication for a fixed vertex i.
 
         :param i: Vertex i
         :type i: int
@@ -58,7 +58,7 @@ class Graph:
     def sparse_matrix(self):
         """ 
         Fill the adjacency sparse matrix from the results of the modular
-        multiplication.
+        multiplication for all vertices.
         """
         start = time.time()
         val = [1]*self.mod

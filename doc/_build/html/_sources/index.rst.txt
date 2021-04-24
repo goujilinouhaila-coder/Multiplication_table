@@ -10,12 +10,14 @@ Welcome to Multiplication table's documentation !
    :width: 180
    :align: left
 
-As part of a software development project, which its main goal to create this package 
+This package was made as a project in the software devlopment course which its main goal is to create this package 
 that can produce some of the animations provided in this video : 
-https://youtu.be/-X49VQgi86E.
+**https://youtu.be/-X49VQgi86E**.
 
 You can choose some graphicals aspects as a variation on colors, lines widths, speeds, etc....
 Also, you can find in script.py some example of application to understand this package.
+
+For more informations, you can check this link : **https://github.com/goujilinouhaila-coder/Multiplication_table.git**
 
 .. toctree::
    :maxdepth: 2

@@ -11,37 +11,54 @@ import time
 
 class Interface_gestion:
     """
-    This class supports functions which is used, for the graphical interface
-    and link between the different aspects of visualization,
-    as well as the colors and design. It also generates the movement
-    in any canvas or tkinter toplevel.
+    This class contains functions which are used, for the graphical interface
+    and makes the link between the different aspects of the visualization,
+    as well as design and movement. 
+
+    :param speed: Speed of the circle's movement
+    :type speed: float
+    :param state_circle: Displays the circle's item if it takes True
+    :type state_circle: boolean
+    :param color_graph: List of colors to change the dots and edges color
+    :type color_graph: list
+    :param background_circle: Color of the circle's background
+    :type background_circle: str
+    :param outline_circle: Color of the circle's line
+    :type outline_circle: str
+    :param color_name: Color of text items for vertices's name
+    :type color_name: str
+    :param edges_width: Width of edges in pixels
+    :type edges_width: int
+    :param nb_frame: The number of images captured for a gif since the last gif. 
+    :type nb_frame: int
+    :param nb_video: The number of gif already created
+    :type nb_video: int
+    :param root: Interface window
+    :type root: tkinter.Tk
+    :param canvas: Canvas where all items will be created
+    :type canvas: tkinter.Canvas
+    :param radius: Corresponds to the circle's radius
+    :type radius: int
+    :param center: Coordinates of the circle's center in the Canvas
+    :type center: tuple
+    :param N: Corresponds to the multiplication table. This number is rounded to :math:`10^{-2}`
+    :type N: float
+    :param mod: Corresponds to the modulo number
+    :type mod: int
+    :param graph: Graph object which gives the modulo number 
+    :type graph: multiplication_table.process_math.Graph.Graph
+    :param peak_cursor: Slider which change the modulo value according to the user
+    :type peak_cursor: tkinter.Scale
+    :param table_cursor: Slider which change the table value according to the user
+    :type table_cursor: tkinter.Scale
+    :param state_button: State of the button **Play/Pause
+    :type state_button: boolean
     """
 
     def __init__(self, speed, state_button, background, state_circle, color_graph, background_circle, outline_circle, color_name, edges_width): 
         """
         This function is a constructor method, that instantiates the speed
-        and all different aspects of the design and movement of the circle.
-
-        :param speed: Corresponds to the speed of the circle's movement
-        :type speed: float
-        :param state_button: Show the button if it's true
-        :type state_button: boolean
-        :param state_circle: Displays the frame of the circle if it takes True
-        :type state_circle: boolean
-        :param color_graph: It's about a table of colors of the circle frame
-        :type color_graph: list of strings
-        :param background_circle:  Generates the color of the background of the circle
-        :type background_circle: str
-        :param outline_circle: The color of the circle' lines
-        :type outline_circle: str
-        :param color_name: The color of the numbers placed on the frame of the circle
-        :type color_name: str
-        :param edges_width: The width of ridgs (edges) (in pixels)
-        :type edges_width: int
-        :param nb_frame: The number of images captured for a gif
-        :type nb_frame: int
-        :param nb_video: The number of video already created
-        :type nb_video: int
+        and all other aspects.
         """
         self.nb_frame = 0
         self.nb_video = 0
@@ -59,20 +76,20 @@ class Interface_gestion:
         """
         Initialization of the design aspect parameters.
 
-        :param speed: Corresponds to the speed of the circle's movement
-        :type N: float
-        :param state_circle: Displays the frame of the circle if it takes True
+        :param speed: Speed of the circle's movement
+        :type speed: float
+        :param state_circle: Displays the circle's item if it takes True
         :type state_circle: boolean
-        :param color_graph: It's about a table of colors of the circle frame
-        :type color_graph: list of strings
-        :param background_circle: Generates the color of the background of the circle
+        :param color_graph: List of colors to change the dots and edges color
+        :type color_graph: list
+        :param background_circle: Color of the circle's background
         :type background_circle: str
-        :param outline_circle: The color of the circle' lines
+        :param outline_circle: Color of the circle's line
         :type outline_circle: str
-        :param color_name: The color of the numbers placed on the frame of the circle
+        :param color_name: Color of text items for vertices's name
         :type color_name: str
-        :param edges_width: The width of ridgs (edges) (in pixels)
-        :type edges_width: int
+        :param edges_width: Width of edges in pixels
+        :type edges_width: int 
         """
         self.state_circle = state_circle
         self.outline_circle = outline_circle
@@ -84,8 +101,12 @@ class Interface_gestion:
 
     def window_init(self, background):
         '''
-        Initialize the interface'window refers to a rectangular area somewhere
-        on the user's display screen through which you can interact.
+        This method initializes the interface'window which refers to a
+        rectangular area.
+        The user can display screen through which he can interact.
+
+        :param background: Color of the Canvas's background
+        :type background: str
         '''
         self.root = Tk()
         self.cnv = Canvas(self.root, width=750, height=750, bg=background)
@@ -93,19 +114,19 @@ class Interface_gestion:
 
     def graph_init(self):
         '''
-        This method initializes the graph, as one its radius, its center, 
-        as well as its multiplication table and its modulo.
+        This method initializes the graph by default, as one its radius, its
+        center, its multiplication table and its modulo.
         '''
         self.radius = 300
-        self.N = 2
+        self.N = 2.0
         self.modulo = 2
         self.center = (360, 360)
         self.graph = mt.Graph(self.N, self.modulo)
 
     def graph_vis(self):
         '''
-        Initialize the visualization part of the graph, concerning its dots
-        and edges.
+        This method displays its execution's time in the terminal and also the 
+        visualization part of the graph in other words dots, circle and edges.
         '''
         start = time.time()
         bv.circle(self.cnv, self.center, self.radius, self.state_circle,
@@ -119,9 +140,10 @@ class Interface_gestion:
 
     def table(self, n):
         '''
-        This method is the table of n where the value read by the cursor.
+        This method set the value of table thanks to the cursor and calls the
+        function :py:meth:`show_update` that will change the Canvas.
 
-        :param n: Represent the number in base 10. Like exemple if the cursor is moved switches to position 40; we have a table call ("42")
+        :param n: Represent the table number. For example if the cursor is moved to position 40; we have called the table 2.40.
         :type n: str
         '''
         self.N = float(n)
@@ -130,8 +152,11 @@ class Interface_gestion:
 
     def vertices(self, mod):
         '''
-        Represents the modulo of the multiplication table and which returns to
-        the peaks of the circle.
+        This method set the value of modulo thanks to the cursor and calls the
+        function :py:meth:`show_update` that will change the Canvas.
+
+        :param mod: Represent the modulo number. For example if the cursor is moved to position 40; we have called the table 42.
+        :type n: str
         '''
         self.modulo = int(mod)
         self.graph.mod = int(mod)
@@ -139,7 +164,8 @@ class Interface_gestion:
 
     def show_update(self):
         '''
-        Removes the previous Canvas and recreates a new one.
+        This method removes all Canvas items and recreates them after all the 
+        modifications
         '''
         start = time.time()
         self.cnv.delete("all")
@@ -151,14 +177,14 @@ class Interface_gestion:
         '''
         This method generates the two cursors which captures the number of the
         table and the number of vertices (modulo). The table cursor captures
-        all tables from 2 to 400, it is placed horizontally and is 250 pixels
-        long. The same for the other cursor of the modulo which represents
-        the number of points (vertices).
+        all tables from 2 to 400 with a step of 0.01 and the modulo cursor
+        captures all modulo from 2 to 200 with a step of 1. They are
+        placed horizontally and are 250 pixels long.
         '''
         self.peak_cursor = Scale(self.root, label="Modulo",
                                  font="Arial 12 bold", orient="horizontal",
                                  command=self.vertices, from_=2, to=200,
-                                 length=250, repeatdelay=500)              
+                                 length=250, repeatdelay=500)         
         self.peak_cursor.pack(pady=10, anchor="center")
         self.peak_cursor.set(10)
         self.table_cursor = Scale(self.root, label="Table",
@@ -170,9 +196,8 @@ class Interface_gestion:
 
     def move_value(self):
         '''
-        By this method, we add 0.01 each time we take a value from the
-        multiplication table.
-        We rebuild the movement which is continuous.
+        This method increases the table number with a step of 0.01 while the
+        user doesn't press on the button
         '''
         self.state_button = not self.state_button
         while (self.state_button):
@@ -201,7 +226,7 @@ class Interface_gestion:
         This method accesses the folder where the corresponding images 
         are saved.
         Then it creates the gif from the captured images.
-        The latter is saved in the folder "/gif" in the format: gif{number}.gif
+        This latter is saved in the folder "/gif" in the format: gif{number}.gif
         """
         if (os.path.exists('package_table/temp/png'+str(self.nb_video))):
             folder = 'package_table/temp/png' + str(self.nb_video)
@@ -217,7 +242,7 @@ class Interface_gestion:
 
     def destroy_root(self):
         """
-        This method deletes all the files whose format is
+        This method deletes all the folders whose format is
         "/temp/png{number_video}".
         Then, it destroys all the canvas and closes the window.
         """
@@ -263,8 +288,8 @@ class Interface_gestion:
 
     def motion_button(self):
         '''
-        Provides a button control on the motion graphic and visual, to play or
-        stop the animation.
+        Provides the control buttons, for example, the motion button which
+        actives the animation.
         '''
         self.state_button = False
         button_play = Button(self.root, text="Play/Pause",
@@ -279,9 +304,9 @@ class Interface_gestion:
         button_table_window = Button(self.root, text="Table of",
                                      command=self.create_table_window)
         button_table_window.pack(padx=50, pady=5, side="top")
-        button_table_window = Button(self.root, text="Description",
+        button_description = Button(self.root, text="Description",
                                      command=self.create_description)
-        button_table_window.pack(padx=50, pady=5, side="top")
+        button_description.pack(padx=50, pady=5, side="top")
         quit = Button(self.root, text="Quit", fg="black",
                       command=self.destroy_root)
         quit.pack(padx=50, pady=5, side="bottom")
