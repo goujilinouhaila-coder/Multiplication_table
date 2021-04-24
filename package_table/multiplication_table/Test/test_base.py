@@ -1,6 +1,5 @@
 from multiplication_table.process_vis.base_vis import coord, angle_tab, circle, dot, name_vertices
 from multiplication_table.process_math.Graph import Graph
-import tkinter
 from tkinter import Tk, Canvas
 
 
