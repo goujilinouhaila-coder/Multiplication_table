@@ -1,7 +1,7 @@
 from tkinter import Tk, Canvas, Scale, Button, Toplevel, Label, Scrollbar, Text, END, Y
-# import multiplication_table as mt
-# import multiplication_table.process_vis.edges_vis as ev
-# import multiplication_table.process_vis.base_vis as bv
+import multiplication_table as mt
+import multiplication_table.process_vis.edges_vis as ev
+import multiplication_table.process_vis.base_vis as bv
 from PIL import Image
 import imageio
 import os
