@@ -19,7 +19,7 @@ Clone project and charge current directory to it
 ```
 
 ```
-   cd Multiplication_table
+    cd Multiplication_table
 ```
 
 ## Install
