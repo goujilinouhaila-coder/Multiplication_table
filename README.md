@@ -26,6 +26,9 @@ Clone project and charge current directory to it
 
 ## Install
 
+You can discover our package in the link below: 
+
+https://pypi.org/project/multiplication-table/
 
 ## Structure 
 The structure of our project is as follows:
