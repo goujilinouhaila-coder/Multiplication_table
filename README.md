@@ -26,7 +26,7 @@ $ cd Multiplication_table
 ```
 ## Video of the project 
 
-You will find attched video of the representation of the group project [here](https://www.youtube.com/watch?v=NDZLhT_TG3s).
+You will find attached video of the representation of the group project [here](https://www.youtube.com/watch?v=NDZLhT_TG3s).
 
 ## Install
 
