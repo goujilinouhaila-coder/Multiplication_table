@@ -19,10 +19,10 @@ We decide that the assignment of tasks would take the following way:
 
 5.  The documentation is made by **all members of the group**: 
  <ul>
- <li> **Valérian Sobolak**  generated the `base_vis`' documentation </li>
- <li> **Assia Berrandou** generated the `Class graph` and some functions of the `Interface_gestion` documentation </li>
- <li> **Assane Sene** generated the `edges_vis`' documentation </li>
- <li> **Goujili Nouhaila** generated some functions of `Interface_gestion` documentation </li>
+ <li> Valérian Sobolak  generated the `base_vis`' documentation </li>
+ <li> Assia Berrandou generated the `Class graph` and some functions of the `Interface_gestion` documentation </li>
+ <li> Assane Sene generated the `edges_vis`' documentation </li>
+ <li> Goujili Nouhaila generated some functions of `Interface_gestion` documentation </li>
  </ul>
 
 
