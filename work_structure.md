@@ -13,16 +13,16 @@ We decide that the assignment of tasks will take the following way:
 </ul>
 
 
-3. The aspects of the graphical visualization, as ,  the colors and design; by: **Assane Sene**
+3. The aspects of the graphical visualization, as ,  the colors and design; by: **Assia Berrandou** & **Nouhaila Goujili**
 
 4. The animation of the visualization, by: **Assia Berrandou** and **Nouhaila Goujili**
 
-5. **Assane Sene**  and **Valerian Sobolak**will take care of the documentation. 
+5.  The documentation is made by **all members of the group**. 
 
-6. Tests will be realized by **Assia Berrandou** and **Nouhaila Goujili**. 
+6. Tests will be realized by **Assia Berrandou** and **Valérian Sobolak**. 
 
-The assignment of tasks can be modified for the members of the group. 
+
  
 
 
-Once it's all over we'll do the referendum or what is called by the benchmarking. 
+Once it's all over we'll do the beamer and the video of our group' representation.
