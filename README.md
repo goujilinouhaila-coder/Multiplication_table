@@ -44,7 +44,7 @@ The documentation of this package is available [here](https://multiplication-tab
 ## Structure 
 The structure of our project is as follows:
 
-The beamer presentation is kept in the `./beamer` folder. A documentation will be made using the sphinx package and is kept in the ./doc directory.. 
+The beamer presentation is kept in the `./beamer` folder. A documentation will be made using the sphinx package and is kept in the `./doc` directory.. 
 
 `/.multiplication_table/Test` contains all the tests implemented on the package'functions. 
 
