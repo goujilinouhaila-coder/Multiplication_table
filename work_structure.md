@@ -13,16 +13,22 @@ We decide that the assignment of tasks will take the following way:
 </ul>
 
 
-3. The aspects of the graphical visualization, as ,  the colors and design; by: **Assia Berrandou** & **Nouhaila Goujili**
+3. The aspects of the graphical visualization, as ,  the colors and design; by: **Assia Berrandou** & **Nouhaila Goujili** and **Valérian Sobolak**. 
 
-4. The animation of the visualization, by: **Assia Berrandou** and **Nouhaila Goujili**
+4. The animation of the visualization, by: **Assia Berrandou** and **Nouhaila Goujili**.
 
-5.  The documentation is made by **all members of the group**. 
+5.  The documentation is made by **all members of the group**: 
+ <ul>
+ <li> **Valérian Sobolak**  generated the `base_vis`' documentation. 
+ <li> **Assia Berrandou** generated the `Class graph` and the some functions of `Interface_gestion` documentation.
+ <li> **Assane Sene** generated the `edges_vis`' documentation.
+ <li> **Goujili Nouhaila** generated some functions of `Interface_gestion` documentation.
+ </ul>
 
-6. Tests will be realized by **Assia Berrandou** and **Valérian Sobolak**. 
+
+6. Tests realized by **Assia Berrandou** and **Valérian Sobolak**. 
+
+7. Continuous integration was made by **Valérian Sobolak**. 
 
 
- 
-
-
-Once it's all over we'll do the beamer and the video of our group' representation.
+ When it's all over we made the beamer and the video of our group' representation.
