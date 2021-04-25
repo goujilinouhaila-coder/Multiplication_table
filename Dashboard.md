@@ -24,5 +24,9 @@ About the meeting of **22 April 2021**, we  started writing the beamer by all me
 
 On **23 April 2021**, **Assia Berrandou** & **Valérian Sobolak** started doing the tests of some functions of the package as base, edge and graph functions. 
 
+About the meeting of **24 April 2021**, a few changes were added to the documentation. The code was cleaned and made the pep8 in every bit of the code by **Berrandou Assia** & **Valérian Sobolak**.
+
+Our last meeting was in **25 April 2021**, where the beamer was finalized, the `README.md` updated and the entire structure of the project reviewed.
+
 Thanks to this organization and collaboration, we were able to meet deadlines and deliver actionable results.
 
