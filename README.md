@@ -52,6 +52,8 @@ In addition, we used a continuous integration action diposed in `./github/workfl
 
 The main code is in the `/.multiplication_table` folder. And The `./report` folder contains a jupyter notebook, that generates the graph on the console and the graphical interface.
 
+You can  get a list of the installed package in the `./requirements.txt` folder. 
+
 Finally, to try if our package works well we tested it on some examples that are stored in thefolder `/.Example`
 
 
