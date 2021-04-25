@@ -28,6 +28,17 @@ Clone project and charge current directory to it
 
 
 ## Structure 
+The structure of our project is as follows:
+
+The beamer presentation is kept in the ./beamer folder. 
+
+/.multiplication_table/Test contains all the tests implemented on the package'functions. 
+
+In addition, we used a continuous integration action diposed in ./github/workflows folder.
+
+The main code is in the /.multiplication_table folder.
+
+Finally, to try if our package works well we tested it on some examples that are stored in thefolder /.examples
 
 ### Members
 
