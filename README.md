@@ -18,10 +18,10 @@ The only image that can possibly be remembered for modular arithmetic is the tri
 You can clone the repository on your local machine and reach it with the following commands :
 
 ```sh 
-    $ git clone https://github.com/goujilinouhaila-coder/Multiplication_table.git
+$ git clone https://github.com/goujilinouhaila-coder/Multiplication_table.git
 ```
 ```
-    $ cd Multiplication_table
+$ cd Multiplication_table
 ```
 
 ## Install
