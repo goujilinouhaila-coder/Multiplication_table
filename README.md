@@ -37,7 +37,8 @@ Clone project and charge current directory to it
 - Sobolak Valerian, valerian.sobolak@etu.umontpellier.fr
 - Sene Assane, assane.sene@etu.umontpellier.fr
 
-## URL
+## Sources
 
-https://www.youtube.com/watch?v=-X49VQgi86E
+- https://www.youtube.com/watch?v=-X49VQgi86E
+- http://pascal.ortiz.free.fr/contents/tkinter/projets_tkinter/tables_micmaths/tables_micmaths.pdf
 
