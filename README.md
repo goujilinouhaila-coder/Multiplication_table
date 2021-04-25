@@ -7,7 +7,6 @@
 
 [![Documentation Status](https://readthedocs.org/projects/multiplication-table/badge/?version=assia)](https://multiplication-table.readthedocs.io/en/assia/?badge=assia)
 
-[![PyPi version](https://pypi.org/project/multiplication-table/)
 
 ## Synopsis
 
