@@ -7,6 +7,8 @@
 
 [![Documentation Status](https://readthedocs.org/projects/multiplication-table/badge/?version=assia)](https://multiplication-table.readthedocs.io/en/assia/?badge=assia)
 
+[![PyPi version](https://pypi.org/project/multiplication-table/)
+
 ## Synopsis
 
 In this project, we will highlight the symmetries that are hidden in the distribution of numbers in the multiplication table of positive reals, when viewed through modulo k arithmetic as we change k, in a way that is less often explored: Modular Arithmetic. Based on our construction process, the graphic presentation contains only straight lines. In other words, it is a kind of optical illusion that we are witnessing and it is the entanglement of all these straight lines that gives us the impression of this curved figure that appears.
