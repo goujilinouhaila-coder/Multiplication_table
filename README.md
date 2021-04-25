@@ -16,14 +16,13 @@ The only image that can possibly be remembered for modular arithmetic is that of
 By exploring the multiplication tables, each time we will see on the figure less strokes of what should be there; this means that the square of the multiplication table that is being studied is equal to 1 modulate the number of points. 
 
 ## Getting the code
-Clone project and charge current directory to it 
+You can clone the repository on your local machine and go to it thanks to the following commands :  
 
 ```sh 
-    git clone https://github.com/goujilinouhaila-coder/Multiplication_table.git
+    $ git clone https://github.com/goujilinouhaila-coder/Multiplication_table.git
 ```
-
 ```
-    cd Multiplication_table
+    $ cd Multiplication_table
 ```
 
 ## Install
@@ -36,7 +35,7 @@ $ pip install multiplication_table
 
 And also, you can discover it in the link below: 
 
-https://pypi.org/project/multiplication-table/
+**https://pypi.org/project/multiplication-table/** 
 
 ## Documentation 
 
@@ -45,7 +44,7 @@ The documentation of this package is available [here](https://multiplication-tab
 ## Structure 
 The structure of our project is as follows:
 
-The beamer presentation is kept in the `./beamer` folder. 
+The beamer presentation is kept in the `./beamer` folder. A documentation will be made using the sphinx package and is kept in the ./doc directory.. 
 
 `/.multiplication_table/Test` contains all the tests implemented on the package'functions. 
 
@@ -54,6 +53,7 @@ In addition, we used a continuous integration action diposed in `./github/workfl
 The main code is in the `/.multiplication_table` folder.
 
 Finally, to try if our package works well we tested it on some examples that are stored in thefolder `/.Example`
+
 
 ### Members
 
