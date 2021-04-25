@@ -4,45 +4,40 @@
 \usetheme{Madrid}
 \usecolortheme{default}
 
+
+\includegraphics[width=2.2cm]{hi.jpeg}\\
+{Master MIND/BIOSTAT}
+\vspace{-1.2cm}
 \title[Multiplication Modulaire] 
 {Représentation graphique}
-
 \subtitle{Multiplication Modulaire}
-
 \author{Sobolak Valérian, Goujili Nouhaila, Sene Assane, Berrandou Assia}
-{Master MIND/BIOSTAT}
-
 \institute[VFU] % (optional)
 {Université de Montpellier}
 
-\date[Avril 2021] % (optional)
-{Avril 2021}
 
-\AtBeginSection[]
-{
-\begin{frame}
-\frametitle{Sommaires}
-\tableofcontents[currentsection]
-\end{frame}
-}
 
 \begin{document}
 
 \frame{\titlepage}
 
+\begin {frame}
+\tableofcontents
+\end{frame}
+
 \section{Introduction}
+\subsection{Description mathématiques}
 \begin{frame}{Introduction}
 \framesubtitle{Description mathématiques}
 Ce projet : 
 \begin{itemize}
 \item Fait appel à l'arithmétique modulaire. 
 \begin{itemize}
-\item Soit $p\in \mathbb{N}$ le modulo i.e le reste de la division qui permet de gérer le caractère périodique du calcul
-\item Soit n $\in \mathbb{R}$ la table de multiplication modulo p que l'on veut représenter.
-\item On veut représenter graphiquement le resultat du calcul : $$\forall i \in \{0, ..., p-1\}\ \ \   n \times i \  mod  \ p$$
+\item Soit $p\in \mathbb{N}$ le modulo i.e le reste de la division qui permet de gérer le caractère périodique du calcul.
+\item Soit n $\in \mathbb{R}$ la table de multiplication que l'on veut représenter modulo p.
+\item On veut représenter graphiquement le resultat du calcul : $$\forall i \in \{0, ..., p-1\} \ \ \   n \times i \  mod  \ p.$$
 \end{itemize}
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Introduction}
@@ -52,22 +47,25 @@ Ce projet :
 \begin{itemize} 
 \item Le graphe fini G=(V,E) est défini par :
 \begin{itemize}
-\item L’ensemble fini $V=\{0,1,...,p-1\}$ dont les éléments sont appelés sommets
-\item L’ensemble fini $E=\{e_1,e_2,...,e_n\}$ dont les éléments sont appelés arêtes tel que $$\forall i \in {0,..., p-1} \ \ \  e_i = \{i, n * i \ \ mod \ \ p\}$$
-\item  Une matrice d’adjacences symétrique M de dimension (pxp) dont les lignes et les colonnes représentent les sommets du graphe.
-Si deux somment i et j sont adjacents alors $m_{ij}=m_{ji}=1$ 
+\item L’ensemble fini $V=\{0,1,...,p-1\}$ dont les éléments sont appelés sommets.
+\item L’ensemble fini $E=\{e_1,e_2,...,e_n\}$ dont les éléments sont appelés arêtes tel que $$\forall i \in \{0,..., p-1\} \ \  e_i = \{i, j\} \text{ avec } j = n * i \ mod \ p.$$
+\item  Une matrice d’adjacence symétrique M de dimension (pxp) dont les lignes et les colonnes représentent les sommets du graphe.
+Si deux sommets i et j sont adjacents alors $m_{ij}=m_{ji}=1$. \\ 
+Remarque : Dans le projet, M n'est pas symétrique.
 \end{itemize}
 \end{itemize}
 \end{itemize}
 \end{frame}
 
+\subsection{Outils graphiques}
 \begin{frame}{Introduction}
+
 \framesubtitle{Outils graphiques}
 Le package tkinter :
 \begin{itemize}
-\item module de référence pour les réalisations d'applications avec une interface graphique i.e elle est affecté par l'action de l'utilisateur
-\item Tk : L'objet de type Tk crée une fenêtre.
-\item Canvas : Widget dans lequel on peut dessiner et manipuler des figures géométriques, du textes ou bien encore des images plus ou moins complexe. On appelles ces dernières des items
+\item Module de référence pour les réalisations d'applications avec une interface graphique.
+\item Tk : Objet de type Tk crée une fenêtre.
+\item Canvas : Widget dans lequel on peut dessiner et manipuler des figures géométriques, du texte ou bien encore des images plus ou moins complexes. On appelle ces dernières des items.
 \item Autres Widgets : 
 \begin{itemize}
 \item Scrollbar : Barre de déroulement
@@ -78,117 +76,147 @@ Le package tkinter :
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Nos Objectifs}
+\section{Objectifs}
+\begin{frame}{Objectifs}
 \begin{itemize}
-\item Créer un package représentant ces tables de multiplications modulaires de manière intéractive
-\item Pouvoir les mettre en mouvement 
-\item Générer un gif à partir des frames que l'on a capturé 
-\item Large choix de personnalisation graphique
+\item Créer un package représentant ces tables de multiplications modulaires de manière interactive.
+\item Pouvoir les mettre en mouvement. 
+\item Générer un gif à partir des images que l'on a capturées au préalable.
+\item Large choix de personnalisation graphique.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Représentation du graphe}
 \framesubtitle{Représentation fixe(base\_vis.py)}
 \begin{itemize}
-\item Tout les sommets sont placés sur un cercle de centre C et de rayon R
+\item Tous les sommets sont placés sur un cercle de centre C et de rayon R.
 \item Chaque sommet est espacé de manière proportionnelle d'un angle $$\theta=\frac{2\pi}{p}$$
-\item Dont le couple de coordonnées pour tout sommet $k \in \{0,...p-1\} $ est donné par la formule trigonométrique $$(R\times cos(k\times \theta),R\times sin(k\times \theta))$$
-\item On associe à chacun des sommets, dans le sens horaire, un nombre compris entre 0 et $p-1$ 
+\item Pour tout sommet $k \in \{0,...p-1\} $, le couple de coordonnées est donné par la formule trigonométrique $$(R\times cos(k\times \theta),R\times sin(k\times \theta))$$.
+\item On associe à chacun des sommets, dans le sens horaire, un nombre compris entre 0 et $p-1$. 
 \end{itemize} 
 \end{frame}
 
-
+\section{Représentation du graphe}
+\subsection{Représentation fixe}
 \begin{frame}{Représentation du graphe}
 \framesubtitle{Représentation fixe(edge\_vis.py)}
 \begin{itemize}
-\item Pour un i fixé, on ajoute une arrête caractérisée par un segment entre les sommets i et j=modulo\_result(i) 
-\item On utilise la fonction Canvas.create\_line((xA,yA),(xB,yB)) où (xA,yA) et (xB,yB) sont les couples de coordonnées de i et j respectivement
-\item On réitère cela $\forall i \in \{0,...,p-1\}$ à l'aide d'une boucle for afin d'afficher dans le Canvas tout les items
+\item Pour un i fixé, on ajoute l'arête caractérisée par un segment entre les sommets i et j=modulo\_result(i).
+\item On utilise la fonction \textit{Canvas.create\_line((xA,yA),(xB,yB))} où (xA,yA) et (xB,yB) sont les couples de coordonnées de i et j respectivement.
+\item On réitère cela $\forall i \in \{0,...,p-1\}$ à l'aide d'une boucle for afin d'afficher tous les items dans le Canvas.
 \end{itemize} 
 \end{frame}
 
+\subsection{Représentation interactive}
 \begin{frame}{Représentation du graphe}
-\framesubtitle{Représentation intéractive}
+\framesubtitle{Représentation interactive}
 \begin{itemize} 
-\item Initialiser la fenêtre de l’interface et le Canvas à travers laquelle l'utilisateur peut intéragir. 
-\item On instancie un objet de type Graph et on définit les variables lié à la représentation circulaire (centre et rayon)
-\item On représente pour un n et p fixé le graphe associé.
+\item Initialiser la fenêtre et le Canvas à travers laquelle l'utilisateur peut interagir. 
+\item On instancie un objet de type Graph et on définit les variables liées à la représentation circulaire (centre et rayon).
+\item On représente, pour un n et p fixé, le graphe associé à l'aide des fonctions de la représentation fixe.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Représentation du graphe}
-\framesubtitle{Représentation intéractive}
+\framesubtitle{Représentation interactive}
 \begin{itemize} 
-\item On génère les curseurs qui font varier les valeurs n et p entre 2 et 400, et entre 2 et 200 respectivement. Pour chaque n et p sélectionné par l'utilisateur :
+\item On génère les curseurs qui font varier les valeurs n et p entre 2 et 400 et entre 2 et 200 respectivement. Pour chaque n et p sélectionnés par l'utilisateur :
 \begin{itemize}
-\item On supprime tout les items présent dans le Canvas
-\item On crée de nouveaux items pour le ou les nouveaux paramètres sélectionnés
+\item On supprime tous les items présents dans le Canvas.
+\item On en crée de nouveaux pour le ou les nouveaux paramètres sélectionnés.
 \end{itemize}
 \end{itemize}
 \end{frame}
 
+\subsection{Représentation en continue}
 \begin{frame}{Représentation du graphe}
-\framesubtitle{Représentation en continu}
+\framesubtitle{Représentation en continue}
 Le bouton \textbf{Play/Pause} permet d'augmenter en continu n par pas de 0.01. Pour ce faire, tant que l'on ne reclique pas sur le bouton :  
 \begin{itemize}
-\item On utilise les structures précédemment décrites (Représentation fixe et intéractive) i.e on fait appelle au curseur associé à n et on l'augmente par pas de 0.01 automatiquement
-\item On définit un délai, en milliseconde, à l'aide de la fonction Tk.after(m). Cette dernière met en veille le programme  pendant une durée m avant de passer à la tache suivante.
+\item On utilise les structures précédemment décrites (Représentation fixe et interactive) i.e on fait appelle au curseur associé à n et on l'augmente par pas de 0.01 automatiquement.
+\item On définit un délai, en millisecondes, à l'aide de la fonction \textit{Tk.after(m)}. Cette dernière met en veille le programme  pendant une durée m avant de passer à la tache suivante.
 \item On met à jour la fenêtre.
 \end{itemize} 
 \end{frame}
 
-\begin{frame}{Autres Aspects de l'interface}
-\framesubtitle{Générateur de Gif}
+\subsection{Classe Graph}
+\begin{frame}{Représentation du graphe}
+\framesubtitle{Classe Graph}
+La classe Graph :
 \begin{itemize}
-\item A l'aide du bouton \textbf{Photo}, on capture et stock une image (.png) du Canvas courant
+\item Prend en arguments les paramètres de la multiplication modulaire. De ce fait, on l'appelle dans les autres scripts régulièrement afin de récupérer ces paramètres plus facilement.
+\item Utilise une matrice creuse/sparse pour représenter la matrice d'adjacence M.
+\item Affiche, de manière textuelle, le graphe dans la console.
+\end{itemize}
+\end{frame}
+
+\subsection{Classe Interface\_gestion}
+\begin{frame}{Représentation du graphe}
+\framesubtitle{Classe Interface\_gestion}
+La classe Interface\_gestion : 
+\begin{itemize}
+\item Contient un grand nombre d'arguments liés au design des représentations.
+\item Fait le lien entre la représentation interactive et la représentation en continue.
+\item Elle génère aussi d'autres aspects de l'interface graphique. 
+
+\end{itemize}
+\end{frame}
+
+\section{Autres Aspects de l'interface}
+\subsection{Bouton générateur de Gif}
+\begin{frame}{Autres aspects de l'interface}
+\framesubtitle{Bouton générateur de Gif}
+\begin{itemize}
+\item A l'aide du bouton \textbf{Photo}, on capture et stocke une image (.png) du Canvas courant.
 \item Si plus d'une image est enregistrée, on peut générer, à l'aide du bouton \textbf{Vidéo}, un gif assemblant ces dernières dans l'ordre de capture.
-\item Ce procédé peut être réitérer plusieurs fois et l'on trouve les gifs dans le dossier "/gif" du projet.
+\item Ce procédé peut être réitéré plusieurs fois et on retrouve les gifs dans le dossier \textbf{"/gif "} du projet.
 \end{itemize} 
 \end{frame}
 
-\begin{frame}{Autres Aspects de la représentation}
-\framesubtitle{Bouton Table}
+\subsection{Autres boutons}
+\begin{frame}{Autres aspects de l'interface}
+\framesubtitle{Autres boutons}
 \begin{itemize}
 \item Le bouton \textbf{Table} permet l'ouverture d'une nouvelle fenêtre contenant l'ensemble des résultats courant de la table n modulo p.
-\item Le bouton \textbf{Quit} supprime l'ensemble des images capturées à l'aide du bouton \textbf{Photo}, détruit l'ensemble des widgets ainsi que quitte la fenêtre.
+\item Le bouton \textbf{Quit} supprime l'ensemble des images capturées à l'aide du bouton \textbf{Photo}, détruit l'ensemble des widgets et quitte la fenêtre.
 \item Le bouton \textbf{Description} offre une description rapide des différentes fonctionnalités de l'interface.
 \end{itemize}
-
 \end{frame}
 
-\begin{frame}{Représentation du graphe}
-\framesubtitle{Class Interface\_gestion}
-\begin{itemize}
-\item Classe qui prend en charge les fonctions qui sont utilisées, pour l’interface graphique et le lien entre les différents aspects de la visualisation, ainsi que les couleurs et le design. 
-
-\item Elle génère également le mouvement dans n’importe quelle toile ou toplevel de tkinter.
-\end{itemize}
-
-\end{frame}
-
-
-
-
-\begin{frame}{Représentation du graphe}
-\framesubtitle{Class Graphe}
-\begin{itemize}
-\item Classe qui prend en charge les fonctions qui sont utilisées, pour l’interface graphique et le lien entre les différents aspects de la visualisation, ainsi que les couleurs et le design. 
-
-\item Elle génère également le mouvement dans n’importe quelle toile ou toplevel de tkinter.
-\end{itemize}
-
-\end{frame}
-
-
+\section{Conclusion}
+\subsection{Problèmes rencontrés}
 \begin{frame}{Conclusion}
-
+\framesubtitle{Problèmes rencontrés}
+\begin{itemize} 
+\item Problème dans l'intégration continue causé par le package tkinter (workflow) \textbf{(Non résolu)}.
+\item Problème avec la doc du package \textbf{(Résolu)}.
+\item Problème lorsque l'on crée un jupyter notebook online : le package tkinter provoque un problème avec l'environnement des variables \textbf{(Non résolu)}.
+\item Problèmes de connexion lors des réunions 
+\end{itemize}
 \end{frame}
 
-
-\begin{frame}{Perspective d'amélioration}
-
+\subsection{Généralités}
+\begin{frame}{Conclusion}
+\framesubtitle{Généralités}
+\begin{itemize}
+\item Respect des attentes suggérées dans le sujet.
+\item Respect des délais.
+\item Bonne entente au sein du groupe.
+\end{itemize}
 \end{frame}
+% Pour une fois Assia était contente de son groupe, je cite "c'était cool"
 
+\subsection{Perspectives d'amélioration}
+\begin{frame}{Conclusion}
+\framesubtitle{Perspectives d'amélioration}
+\begin{itemize}
+    \item Inclusion de paramètres par défaut si l'utilisateur ne le précise pas. 
+    \item Plus de personnalisation dans l'interface (Choix des couleurs - Activer/désactiver les décimaux/entiers - Animation auto du modulo).
+    \item Possibilité de rentrer directement la table et/ou le modulo souhaité dans l'interface (au lieu de passer par les curseurs).
+    \item Pouvoir supprimer les images capturées pour le gif sans avoir besoin de quitter l'interface par le bouton \textbf{Quit}.
+    \item Alléger la classe Interface\_gestion.
+\end{itemize}
+\end{frame}
 
 \end{document}
 
