@@ -40,8 +40,7 @@ https://pypi.org/project/multiplication-table/
 
 ## Documentation 
 
-You can find the documentation package on the following link : 
-**https://multiplication-table.readthedocs.io/en/assia/index.html**
+The documentation of this package is available [here](https://multiplication-table.readthedocs.io/en/assia/index.html). 
 
 ## Structure 
 The structure of our project is as follows:
