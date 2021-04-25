@@ -50,7 +50,7 @@ The beamer presentation is kept in the `./beamer` folder. A documentation will b
 
 In addition, we used a continuous integration action diposed in `./github/workflows` folder.
 
-The main code is in the `/.multiplication_table` folder.
+The main code is in the `/.multiplication_table` folder. And The `./report` folder contains a jupyter notebook, that generates the graph on the console and the graphical interface.
 
 Finally, to try if our package works well we tested it on some examples that are stored in thefolder `/.Example`
 
