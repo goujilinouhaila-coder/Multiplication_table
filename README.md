@@ -28,7 +28,11 @@ Clone project and charge current directory to it
 
 ## Install
 
-You can discover our package in the link below: 
+To install this package, you can run its command prompt the following line.
+
+$ pip install multiplication_table 
+
+And also, you can discover it in the link below: 
 
 https://pypi.org/project/multiplication-table/
 
