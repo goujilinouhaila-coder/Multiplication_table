@@ -26,7 +26,6 @@ Clone project and charge current directory to it
 
 ## Install
 
-##  Documentation
 
 ## Structure 
 
