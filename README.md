@@ -13,9 +13,6 @@ In this project, we will highlight the symmetries that are hidden in the distrib
 
 The only image that can possibly be remembered for modular arithmetic is the trigonometry one. But it is the same mechanics as for a simple clock: every time the needle performs a circle turn, we return to the same number. Mathematically speaking, the clock is said to have a modular system of 12: the number 13 returns to the number 1. This type of system allows us to represent multiplication tables. By placing a certain number of points on a circle and connecting the points following a multiplication.
 
-## Wonder 
-By exploring the multiplication tables, each time we will see on the figure less strokes of what should be there; this means that the square of the multiplication table that is being studied is equal to 1 modulate the number of points. 
-
 ## Getting the code
 
 You can clone the repository on your local machine and reach it with the following commands :
