@@ -26,7 +26,8 @@ On **23 April 2021**, **Assia Berrandou** & **Valérian Sobolak** started doing 
 
 About the meeting of **24 April 2021**, a few changes were added to the documentation. The code was cleaned and made the pep8 in every bit of the code by **Berrandou Assia** & **Valérian Sobolak**.
 
-Our last meeting was in **25 April 2021**, where the beamer was finalized, the `README.md` updated and the entire structure of the project reviewed.
+Our last meeting was in **25 April 2021**, where the beamer was finalized, the `README.md` updated and the entire structure of the project reviewed. And we recorded the video 
+of the presentation of our group.
 
 Thanks to this organization and collaboration, we were able to meet deadlines and deliver actionable results.
 
