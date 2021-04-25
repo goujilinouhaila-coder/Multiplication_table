@@ -1,4 +1,4 @@
-In this document, we will detail our structure and organization of our group as well as the appointments and meetings we made to organize ourselves and carry out the tasks. 
+In this document, we will detail our organization of our group as well as the appointments and meetings we made to organize ourselves and carry out the tasks. 
 
 
 For the first meeting of the group which was made on **05 March 2021** , was intended to summarize the actions implemented, create the git repository as well as the branches of each member of the group. 
