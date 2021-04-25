@@ -41,7 +41,7 @@ In addition, we used a continuous integration action diposed in ./github/workflo
 
 The main code is in the /.multiplication_table folder.
 
-Finally, to try if our package works well we tested it on some examples that are stored in thefolder /.examples
+Finally, to try if our package works well we tested it on some examples that are stored in thefolder /.Example
 
 ### Members
 
