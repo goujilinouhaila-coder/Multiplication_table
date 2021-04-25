@@ -21,8 +21,10 @@ def test_angle_tab2():
         assert type(angle[i]) == tuple
 
 
-# The following tests are usually working but we had some issues with the continuous integration on github.
-# When the workflow is running, it would seem it can't find the tkinter package.
+# The following tests are usually working but we had some issues with the 
+# continuous integration on github.
+# When the workflow is running, it would seem it can't find the tkinter 
+# package.
 # This is why we put these functions in comments
         
 # def test_circle():

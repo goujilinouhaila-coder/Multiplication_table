@@ -3,8 +3,10 @@ from multiplication_table.process_math.Graph import Graph
 from multiplication_table.process_vis.edges_vis import one_edge, all_edges
 from multiplication_table.process_vis.base_vis import angle_tab
 
-# The following tests are usually working but we had some issues with the continuous integration on github.
-# When the workflow is running, it would seem it can't find the tkinter package.
+# The following tests are usually working but we had some issues with the
+# continuous integration on github.
+# When the workflow is running, it would seem it can't find the tkinter
+# package.
 # This is why we put these functions in comments
 
 # def test_all_edges():
