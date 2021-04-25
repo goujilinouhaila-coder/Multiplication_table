@@ -65,9 +65,5 @@ Finally, to try if our package works well we tested it on some examples that are
 ## Sources
 
 - https://www.youtube.com/watch?v=-X49VQgi86E
-<<<<<<< HEAD
-
-=======
->>>>>>> 38eeb284369f68575b724b31b4347ceb7c1aeca6
 - http://pascal.ortiz.free.fr/contents/tkinter/projets_tkinter/tables_micmaths/tables_micmaths.pdf
 
