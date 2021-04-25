@@ -6,7 +6,7 @@
 [![Python package](https://github.com/goujilinouhaila-coder/Multiplication_table/actions/workflows/python-package.yml/badge.svg)](https://github.com/goujilinouhaila-coder/Multiplication_table/actions/workflows/python-package.yml)
 
 [![Documentation Status](https://readthedocs.org/projects/multiplication-table/badge/?version=assia)](https://multiplication-table.readthedocs.io/en/assia/?badge=assia)
-
+[![PyPI version](https://badge.fury.io/py/multiplication-table.svg)](https://badge.fury.io/py/multiplication-table)
 
 ## Synopsis
 
