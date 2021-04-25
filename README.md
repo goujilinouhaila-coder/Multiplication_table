@@ -24,6 +24,9 @@ $ git clone https://github.com/goujilinouhaila-coder/Multiplication_table.git
 ```
 $ cd Multiplication_table
 ```
+## Video of the project 
+
+You will find attched video of the representation of the group project [here](https://www.youtube.com/watch?v=NDZLhT_TG3s).
 
 ## Install
 
@@ -45,7 +48,7 @@ The package documentation is available [here](https://multiplication-table.readt
 
 The structure of our project is as follows:
 
-The beamer presentation and the video of the project which is presented by all members of the group are kept in the `./beamer` folder. A documentation will be made using the sphinx package is kept in the `./doc` directory..
+The beamer presentation is kept in the `./beamer` folder. A documentation will be made using the sphinx package is kept in the `./doc` directory..
 
 `/.multiplication_table/Test` contains all the tests implemented on the package functions.
 
