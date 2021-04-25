@@ -45,7 +45,7 @@ The package documentation is available [here](https://multiplication-table.readt
 
 The structure of our project is as follows:
 
-The beamer presentation and the video of the project which is presented by all members of the group are kept in the `./beamer` folder. A documentation will be made using the sphinx package and is kept in the `./doc` directory..
+The beamer presentation and the video of the project which is presented by all members of the group are kept in the `./beamer` folder. A documentation will be made using the sphinx package is kept in the `./doc` directory..
 
 `/.multiplication_table/Test` contains all the tests implemented on the package functions.
 
