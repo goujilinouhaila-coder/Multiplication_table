@@ -19,7 +19,7 @@ By exploring the multiplication tables, each time we will see on the figure less
 Clone project and charge current directory to it 
 
 ```sh 
-    git clone git@github.com:goujilinouhaila-coder/Multiplication_table.git
+    git clone https://github.com/goujilinouhaila-coder/Multiplication_table.git
 ```
 
 ```
